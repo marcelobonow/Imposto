@@ -1,0 +1,9 @@
+﻿  main.cpp
+main.cpp(9): warning C4129: '.': unrecognized character escape sequence
+main.cpp(9): warning C4129: 'l': unrecognized character escape sequence
+  Generating code
+  1 of 5 functions (20.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  Robo_Reconhecimento.vcxproj -> C:\Users\Marcelo\Documents\Robo\PC\Robo_Reconhecimento\Release\Robo_Reconhecimento.exe
