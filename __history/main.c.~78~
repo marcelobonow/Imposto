@@ -1,0 +1,64 @@
+#include <main.h>
+#include <Motor1.c>
+#include <lcd_kit.c>
+
+#include<SonarV1.0.c>
+#include<LinhasV1.0.c>
+
+#define  ch1    pin_a4
+#define  ch2   pin_a5
+#define  ch3   pin_e0
+#define  ch4   pin_e1
+
+void sonar(){
+   printf(lcd_escreve,"\f1. Livre\n2. Labirinto");
+      if(input(ch1)==0){
+         sonar_display();
+      }
+      if(input(ch2)==0){
+         sonar_labirinto();
+      }
+}
+
+void main()
+{
+   lcd_ini();
+   motor_ini();
+   set_pwm(1000); 
+
+   //float distancia1=0,distancia2=0,distancia3=0;
+   
+   printf(lcd_escreve,"Imposto V1.0");
+   delay_ms(2000);
+   do{
+      printf(lcd_escreve,"1. Linhas\n2. Sonar");
+      if(input(ch1)==0){
+         linhas();
+      }
+      if(input(ch2)==0){
+         sonar();
+      }
+      }
+   }while(1);
+   
+   /*
+   do{
+      sonar_display();
+   }while(input(ch1)==1);
+   
+   while(input(ch1)==0);
+
+   do{
+      sonar_labirinto();
+   }while(1);
+*/
+
+
+}
+
+
+
+
+
+
+

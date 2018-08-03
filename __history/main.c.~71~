@@ -1,0 +1,81 @@
+#include <main.h>
+#include <Motor1.c>
+#include <lcd_kit.c>
+
+#include<SonarV1.0>
+
+#define  ch1    pin_a4
+
+void main()
+{
+   lcd_ini();
+   motor_ini();
+   set_pwm(1000); 
+
+   float distancia1=0,distancia2=0,distancia3=0;
+   
+   do{
+      distancia1=le_distancia1();
+      distancia2=le_distancia2();
+      distancia3=le_distancia3();
+   
+      printf(lcd_escreve,"\f%f  %f\n%f",distancia1,distancia2,distancia3);
+      delay_ms(100);
+   }while(input(ch1)==1);
+   
+   while(input(ch1)==0);
+
+   do{
+      distancia1=le_distancia1();
+      distancia2=le_distancia2();
+      distancia3=le_distancia3();
+      set_pwm(900); 
+
+      if(distancia2>10 && distancia1>15 && distancia3>10)
+      {
+         frente();
+      }
+      //else para();
+      if(distancia1<10 && distancia3>10 && distancia2>15)
+      {
+      //if(distancia2<10){tras();}
+         gira_direita();
+      }
+      if(distancia3<10 && distancia1>10 && distancia2>15)
+      {
+      //if(distancia2<10){tras();}
+         gira_esquerda();
+      } //15 7
+      //talvez passar le_distancia pra distancia denovo
+      //provavelmente ocorrerá erro quando 1  menor q 10, e 3 menor q 10, podendo entrar em distancia 2 menor que 10 tbm => assim dantro tras depois de já ter girado[corretamente?]
+      if(distancia2<15) //distancia1.....
+      {
+         para();
+         delay_ms(100); //testar 50
+         //tras(); //manter tras por 100~250ms
+         //delay_ms(100);
+         if(distancia1 > distancia3){
+            gira_esquerda();
+            delay_ms(200);//testar 150 250
+         }
+         if(distancia3 > distancia1){
+            gira_direita();
+            delay_ms(200);//testar 150 250
+         }
+      }
+      if(distancia1<10 && distancia3<10){ // && distancia2>10
+         para();
+      }
+   }
+   while(1);
+
+
+
+}
+
+
+
+
+
+
+

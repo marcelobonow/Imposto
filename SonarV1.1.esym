@@ -1,0 +1,13 @@
+D G "__PCH__" 0 12 ""5.015""
+D G "__DEVICE__" 0 12 ""
+D G "__DATE__" 0 12 ""12-set-17""
+D G "__TIME__" 0 12 ""18:27:58""
+D G "echo1" 0 1 "pin_b6"
+D G "trig1" 0 2 "pin_b7"
+D G "echo2" 0 4 "pin_b5"
+D G "trig2" 0 5 "pin_b4"
+D G "echo3" 0 7 "pin_b2"
+D G "trig3" 0 8 "pin_b3"
+V G "distancia1" 0 10 "float" `34 
+V G "distancia2" 0 10 "float" `35 
+V G "distancia3" 0 10 "float" `36 

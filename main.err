@@ -1,0 +1,5 @@
+>>> Warning 225 "main.c" Line 8(13,23): Duplicate #define
+>>> Warning 203 "main.c" Line 58(1,1): Condition always TRUE
+      Memory usage:   ROM=15%      RAM=1% - 2%
+      0 Errors,  2 Warnings.
+Build Successful.
