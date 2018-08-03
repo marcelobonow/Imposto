@@ -1,20 +1,18 @@
 ÀÄImpostoV1
-   ÀÄMAIN  0/142  Ram=1
+   ÀÄMAIN  0/62  Ram=1
       ÃÄ@cinit1  (Inline)  Ram=0
-      ÃÄlcd_ini  0/100  Ram=2
+      ÃÄlcd_ini  0/102  Ram=2
       ³  ÃÄ@delay_ms1  0/40  Ram=1
       ³  ÃÄlcd_envia_nibble  0/58  Ram=1
       ³  ÃÄ@delay_ms1  0/40  Ram=1
       ³  ÃÄlcd_envia_nibble  0/58  Ram=1
-      ³  ÃÄ@const658  0/20  Ram=0
+      ³  ÃÄ@const646  0/20  Ram=0
       ³  ÀÄlcd_envia_byte  0/52  Ram=3
       ³     ÃÄ@delay_us1  0/34  Ram=1
       ³     ÃÄlcd_envia_nibble  0/58  Ram=1
       ³     ÀÄlcd_envia_nibble  0/58  Ram=1
-      ÃÄmotor_ini  0/30  Ram=0
-      ÃÄset_pwm  0/78  Ram=2
-      ÃÄ@PSTRINGC_674  0/32  Ram=2
-      ³  ÀÄlcd_escreve  0/70  Ram=1
+      ÃÄ@PSTRINGC_662  0/32  Ram=2
+      ³  ÀÄlcd_escreve  0/72  Ram=1
       ³     ÃÄlcd_envia_byte  0/52  Ram=3
       ³     ³  ÀÄ*
       ³     ÃÄ@delay_ms1  0/40  Ram=1
@@ -26,133 +24,6 @@
       ³     ÀÄlcd_envia_byte  0/52  Ram=3
       ³        ÀÄ*
       ÃÄ@delay_ms1  0/40  Ram=1
-      ÃÄ@PSTRINGC_674  0/32  Ram=2
+      ÃÄ@PSTRINGC_662  0/32  Ram=2
       ³  ÀÄ*
-      ÃÄ@delay_ms1  0/40  Ram=1
-      ÃÄlinhas  0/108  Ram=2
-      ³  ÃÄlcd_ini  0/100  Ram=2
-      ³  ³  ÀÄ*
-      ³  ÃÄmotor_ini  0/30  Ram=0
-      ³  ÃÄset_pwm  0/78  Ram=2
-      ³  ÃÄalinhar  0/34  Ram=2
-      ³  ³  ÃÄle_linhas  0/222  Ram=8
-      ³  ³  ÃÄfrente  0/18  Ram=0
-      ³  ³  ÃÄgira_esquerda  0/18  Ram=0
-      ³  ³  ÀÄgira_direita  0/18  Ram=0
-      ³  ÃÄpara  0/18  Ram=0
-      ³  ÃÄ@delay_ms1  0/40  Ram=1
-      ³  ÃÄavancar  0/16  Ram=2
-      ³  ³  ÃÄle_linhas  0/222  Ram=8
-      ³  ³  ÀÄfrente  0/18  Ram=0
-      ³  ÃÄalinhar  0/34  Ram=2
-      ³  ³  ÀÄ*
-      ³  ÃÄpara  0/18  Ram=0
-      ³  ÃÄ@delay_ms1  0/40  Ram=1
-      ³  ÃÄcurva_direita  0/110  Ram=1
-      ³  ³  ÃÄavancar  0/16  Ram=2
-      ³  ³  ³  ÀÄ*
-      ³  ³  ÃÄle_linhas  0/222  Ram=8
-      ³  ³  ÃÄgira_direita  0/18  Ram=0
-      ³  ³  ÃÄpara  0/18  Ram=0
-      ³  ³  ÃÄ@delay_ms1  0/40  Ram=1
-      ³  ³  ÃÄle_linhas  0/222  Ram=8
-      ³  ³  ÃÄgira_direita  0/18  Ram=0
-      ³  ³  ÃÄpara  0/18  Ram=0
-      ³  ³  ÃÄ@delay_ms1  0/40  Ram=1
-      ³  ³  ÃÄle_linhas  0/222  Ram=8
-      ³  ³  ÃÄgira_direita  0/18  Ram=0
-      ³  ³  ÃÄpara  0/18  Ram=0
-      ³  ³  ÃÄ@delay_ms1  0/40  Ram=1
-      ³  ³  ÃÄle_linhas  0/222  Ram=8
-      ³  ³  ÃÄgira_direita  0/18  Ram=0
-      ³  ³  ÃÄpara  0/18  Ram=0
-      ³  ³  ÀÄ@delay_ms1  0/40  Ram=1
-      ³  ÃÄavancar  0/16  Ram=2
-      ³  ³  ÀÄ*
-      ³  ÃÄalinhar  0/34  Ram=2
-      ³  ³  ÀÄ*
-      ³  ÀÄpara  0/18  Ram=0
-      ÀÄsonar_modos  0/108  Ram=1
-         ÃÄ@PSTRINGC_674  0/32  Ram=2
-         ³  ÀÄ*
-         ÃÄ@delay_ms1  0/40  Ram=1
-         ÃÄsonar_labirinto  0/562  Ram=0
-         ³  ÃÄle_distancia1  0/258  Ram=13
-         ³  ³  ÃÄ@ITOF  0/54  Ram=2
-         ³  ³  ÃÄ@ADDFF  0/618  Ram=16
-         ³  ³  ÃÄ@DIVFF  0/346  Ram=14
-         ³  ³  ÃÄ@MULFF  0/242  Ram=11
-         ³  ³  ÀÄ@DIVFF  0/346  Ram=14
-         ³  ÃÄle_distancia2  0/258  Ram=13
-         ³  ³  ÃÄ@ITOF  0/54  Ram=2
-         ³  ³  ÃÄ@ADDFF  0/618  Ram=16
-         ³  ³  ÃÄ@DIVFF  0/346  Ram=14
-         ³  ³  ÃÄ@MULFF  0/242  Ram=11
-         ³  ³  ÀÄ@DIVFF  0/346  Ram=14
-         ³  ÃÄle_distancia3  0/258  Ram=13
-         ³  ³  ÃÄ@ITOF  0/54  Ram=2
-         ³  ³  ÃÄ@ADDFF  0/618  Ram=16
-         ³  ³  ÃÄ@DIVFF  0/346  Ram=14
-         ³  ³  ÃÄ@MULFF  0/242  Ram=11
-         ³  ³  ÀÄ@DIVFF  0/346  Ram=14
-         ³  ÃÄset_pwm  0/78  Ram=2
-         ³  ÃÄ@FLT  0/118  Ram=10
-         ³  ÃÄ@FLT  0/118  Ram=10
-         ³  ÃÄ@FLT  0/118  Ram=10
-         ³  ÃÄfrente  0/18  Ram=0
-         ³  ÃÄ@FLT  0/118  Ram=10
-         ³  ÃÄ@FLT  0/118  Ram=10
-         ³  ÃÄ@FLT  0/118  Ram=10
-         ³  ÃÄgira_direita  0/18  Ram=0
-         ³  ÃÄ@FLT  0/118  Ram=10
-         ³  ÃÄ@FLT  0/118  Ram=10
-         ³  ÃÄ@FLT  0/118  Ram=10
-         ³  ÃÄgira_esquerda  0/18  Ram=0
-         ³  ÃÄ@FLT  0/118  Ram=10
-         ³  ÃÄpara  0/18  Ram=0
-         ³  ÃÄ@delay_ms1  0/40  Ram=1
-         ³  ÃÄ@FLT  0/118  Ram=10
-         ³  ÃÄgira_esquerda  0/18  Ram=0
-         ³  ÃÄ@delay_ms1  0/40  Ram=1
-         ³  ÃÄ@FLT  0/118  Ram=10
-         ³  ÃÄgira_direita  0/18  Ram=0
-         ³  ÃÄ@delay_ms1  0/40  Ram=1
-         ³  ÃÄ@FLT  0/118  Ram=10
-         ³  ÃÄ@FLT  0/118  Ram=10
-         ³  ÀÄpara  0/18  Ram=0
-         ÃÄ@PSTRINGC_674  0/32  Ram=2
-         ³  ÀÄ*
-         ÃÄ@delay_ms1  0/40  Ram=1
-         ÀÄsonar_display  0/176  Ram=0
-            ÃÄle_distancia1  0/258  Ram=13
-            ³  ÀÄ*
-            ÃÄle_distancia2  0/258  Ram=13
-            ³  ÀÄ*
-            ÃÄle_distancia3  0/258  Ram=13
-            ³  ÀÄ*
-            ÃÄlcd_escreve  0/70  Ram=1
-            ³  ÀÄ*
-            ÃÄ@PRINTF_L32D_674FPFPF  0/384  Ram=13
-            ³  ÃÄ@MULFF  0/242  Ram=11
-            ³  ÃÄ@FTOSD  0/64  Ram=5
-            ³  ÃÄ@DIV3232  0/142  Ram=13
-            ³  ÃÄlcd_escreve  0/70  Ram=1
-            ³  ³  ÀÄ*
-            ³  ÃÄlcd_escreve  0/70  Ram=1
-            ³  ³  ÀÄ*
-            ³  ÃÄlcd_escreve  0/70  Ram=1
-            ³  ³  ÀÄ*
-            ³  ÃÄlcd_escreve  0/70  Ram=1
-            ³  ³  ÀÄ*
-            ³  ÀÄ@DIV3232  0/142  Ram=13
-            ÃÄlcd_escreve  0/70  Ram=1
-            ³  ÀÄ*
-            ÃÄlcd_escreve  0/70  Ram=1
-            ³  ÀÄ*
-            ÃÄ@PRINTF_L32D_674FPFPF  0/384  Ram=13
-            ³  ÀÄ*
-            ÃÄlcd_escreve  0/70  Ram=1
-            ³  ÀÄ*
-            ÃÄ@PRINTF_L32D_674FPFPF  0/384  Ram=13
-            ³  ÀÄ*
-            ÀÄ@delay_ms1  0/40  Ram=1
+      ÀÄ@delay_ms1  0/40  Ram=1

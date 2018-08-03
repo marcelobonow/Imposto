@@ -9,3 +9,5 @@
 
 #use delay(clock=48MHz,crystal=20MHz)
 
+#build(reset=0x1000, interrupt=0x1008)
+#org 0x000, 0xfff { }

@@ -1,88 +1,58 @@
 
-ROM used:   4916/32768 (15%)
-            4920/32768 (15%) including unused fragments
+ROM used:   546/32768 (2%)
+            550/32768 (2%) including unused fragments
 
-            3.2 Average locations per line
-            14.1 Average locations per statement
+            0.5 Average locations per line
+            6.3 Average locations per statement
 
-RAM used:   18/2048 (1%) at main() level
-            44/2048 (2%) worst case
+RAM used:   5/2048 (0%) at main() level
+            15/2048 (1%) worst case
 
-Stack used: 7 worst case (7 in main + 0 for interrupts)
+Stack used: 5 worst case (5 in main + 0 for interrupts)
 Stack size: 31
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-   79    45  13  main.c
-   12     0   0  main.h
-  837     0   0  ..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h
-   83    41  12  Motor1.c
-  223    79  23  lcd_kit.c
-  144    78  22  SonarV1.1.c
-  156   106  30  LinhasV1.1.c
+   79     7   8  main.c
+   14     0   0  main.h
+  837     0   0  ..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h
+  223    79  92  lcd_kit.c
 ----- -----
- 1534   349 Total
+ 1153    86 Total
 
 Page ROM  %  RAM   Vol Diff  Functions:
 ---- --- --- ---   --- ----  ----------
-0     40   0    1             @delay_ms1
-0     34   0    1             @delay_us1
-0     18   0    0   108  1.7  frente
-0     18   0    0   108  1.7  gira_esquerda
-0     18   0    0   108  1.7  gira_direita
-0     18   0    0   108  1.7  para
-0     30   0    0    90  2.1  motor_ini
-0     78   1    2    67  0.8  set_pwm
-0     20   0    0             @const658
-0     58   1    1   260  1.9  lcd_envia_nibble
-0     52   1    3   176  2.7  lcd_envia_byte
-0    100   1    2   433  4.3  lcd_ini
-0     36   0    4   186  5.5  lcd_pos_xy
-0     70   1    1   290  4.1  lcd_escreve
-0    258   3   13   591  7.3  le_distancia1
-0     54   1    2             @ITOF
-0    618   6   16             @ADDFF
-0    346   4   14             @DIVFF
-0    242   2   11             @MULFF
-0    258   3   13   585  7.3  le_distancia2
-0    258   3   13   585  7.3  le_distancia3
-0    176   2    0   147  2.1  sonar_display
-0     64   1    5             @FTOSD
-0    142   1   13             @DIV3232
-0    384   4   13             @PRINTF_L32D_674FPFPF
-0    562   6    0   729  3.8  sonar_labirinto
-0    118   1   10             @FLT
-0    222   2    8   759  3.9  le_linhas
-0     34   0    2   202  2.7  alinhar
-0     16   0    2    69  2.3  avancar
-0    110   1    1   419  2.3  curva_direita
-0    108   1    2   505  3.4  linhas
-0    108   1    1   664  3.7  sonar_modos
-0     24   0    0             @const741
-0     32   0    2             @PSTRINGC_674
-0     12   0    0             @const743
-0    142   1    1   404  3.6  MAIN
-0     14   0    0             @const747
-0     20   0    0             @const748
- Inline         0             @cinit1
+0     40   4    1             @delay_ms1
+0     34   3    1             @delay_us1
+0     20   2    0   108  1.7  @const646
+0     58   5    1   260  1.9  lcd_envia_nibble
+0     52   5    3   176  2.7  lcd_envia_byte
+0    102   9    2   433  4.3  lcd_ini
+0     36   3    4   186  5.5  lcd_pos_xy
+0     72   7    1   290  4.1  lcd_escreve
+0     62   6    1   136  2.4  MAIN
+0     14   1    0   433  4.3  @const677
+0     32   3    2   186  5.5  @PSTRINGC_662
+0     20   2    0   290  4.1  @const679
+ Inline         0   145  2.8  @cinit1
 
 Program metrics:
-    Functions               23
-    Statements              349
-    Comments                270
-    Volume (V)              13702
-    Difficulty (D)          76.0
-    Effort to implement (E) 1041130
-    Time to implement (T)   16 hours, 4 minutes
-    Est Delivered Bugs (B)  3
-    Cyclomatic Complexity   39
-    Maintainability (MI)    52
+    Functions               11
+    Statements              86
+    Comments                275
+    Volume (V)              4426
+    Difficulty (D)          38.7
+    Effort to implement (E) 171409
+    Time to implement (T)   2 hours, 39 minutes
+    Est Delivered Bugs (B)  1
+    Cyclomatic Complexity   17
+    Maintainability (MI)    156
 
  Segment     Used  Free
 -----------  ----  ----
 00000-00FFE     0  4096  
 01000-01006     4  4  
-01008-07FFE  4912  23752  
+01008-07FFE   542  28122  
 
 
 

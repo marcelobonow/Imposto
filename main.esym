@@ -1,8 +1,8 @@
-D G "ch4" 0 11 "pin_e1"
+C L "MAIN" 0 5 7 "FUNCTION"
 D G "__PCH__" 0 80 ""5.015""
 D G "__DEVICE__" 0 80 "4550"
-D G "__DATE__" 0 80 ""22-set-17""
-D G "__TIME__" 0 80 ""22:13:56"" "Standard Header file for the PIC18F4550 device ////////////////"
+D G "__DATE__" 0 80 ""02-ago-18""
+D G "__TIME__" 0 80 ""21:54:35"" "Standard Header file for the PIC18F4550 device ////////////////"
 c L "set_tris_a" 2 3 6 "FUNCTION"
 v L "value" 2 45 "int8" `54 
 f B "set_tris_a" 2 45 "void(int8 value)" `53 
@@ -913,140 +913,67 @@ d G "INT_EEPROM" 2 831 "0x00A010"
 d G "INT_OSCF" 2 832 "0x00A080"
 d G "INT_SPP" 2 833 "0x009D80"
 d G "INT_USB" 2 834 "0x00A020"
-D G "m1p1" 3 4 "pin_e2"
-D G "m1p2" 3 5 "pin_c0"
-D G "m2p1" 3 6 "pin_d0"
-D G "m2p2" 3 7 "pin_d1"
-F G "tras" 3 9 "void()" `646 
-F G "frente" 3 16 "void()" `647 
-F G "gira_esquerda" 3 23 "void()" `648 
-F G "gira_direita" 3 30 "void()" `649 
-F G "esquerda_tras" 3 37 "void()" `650 
-F G "direita_tras" 3 44 "void()" `651 
-F G "direita_frente" 3 51 "void()" `652 
-F G "esquerda_frente" 3 58 "void()" `653 
-F G "para" 3 65 "void()" `654 
-F G "motor_ini" 3 72 "void()" `655 
-C L "motor_ini" 3 73 1 "FUNCTION"
-V L "vel" 3 79 "int16" `657 
-F G "set_pwm" 3 79 "void(int16 vel)" `656 
-C L "set_pwm" 3 73 1 "FUNCTION"
-D G "lcd_rs" 4 29 "pin_d2" "pino rs do LCD"
-D G "lcd_enable" 4 30 "pin_d3" "pino enable do LCD"
-D G "lcd_d4" 4 31 "pin_d4" "pino de dados d4 do LCD"
-D G "lcd_d5" 4 32 "pin_d5" "pino de dados d5 do LCD"
-D G "lcd_d6" 4 33 "pin_d6" "pino de dados d6 do LCD"
-D G "lcd_d7" 4 34 "pin_d7" "pino de dados d7 do LCD"
-D G "lcd_type" 4 37 "2" "0=5x7, 1=5x10, 2=2 linhas"
-D G "lcd_seg_lin" 4 38 "0x40" "Endereço da segunda linha na RAM do LCD"
-V G "INI_LCD" 4 41 "[4]" `658 
-C L "lcd_le_byte" 4 2 7 "FUNCTION"
-C L "lcd_le_byte" 4 2 1 "FUNCTION"
-F G "lcd_le_byte" 4 54 "int8()" `661 
-V L "dado" 4 55 "int8" `662  "configura os pinos de dados como entradas"
-C L "lcd_le_byte" 4 2 1 "FUNCTION"
-C L "lcd_le_byte" 4 2 1 "FUNCTION"
-C L "lcd_le_byte" 4 2 2 "FUNCTION"
-C L "lcd_le_byte" 4 2 1 "FUNCTION"
-C L "lcd_le_byte" 4 2 1 "FUNCTION"
-C L "lcd_le_byte" 4 2 1 "FUNCTION"
-C L "lcd_le_byte" 4 2 1 "FUNCTION"
-V L "dado" 4 84 "int8" `664  "envia um dado de quatro bits para o display"
-F G "lcd_envia_nibble" 4 86 "void(int8 dado)" `663  "coloca os quatro bits nas saidas"
-C L "lcd_envia_nibble" 4 2 1 "FUNCTION"
-V L "endereco" 4 98 "int8" `666 
-V L "dado" 4 98 "int8" `667 
-F G "lcd_envia_byte" 4 99 "void(int8 endereco,int8 dado)" `665  "coloca a linha rs em 0"
-C L "lcd_envia_byte" 4 2 3 "FUNCTION"
-C L "lcd_envia_byte" 4 2 3 "FUNCTION"
-C L "lcd_envia_byte" 4 2 1 "FUNCTION"
-C L "lcd_envia_byte" 4 2 1 "FUNCTION"
-C L "lcd_ini" 4 2 1 "FUNCTION"
-F G "lcd_ini" 4 122 "void()" `668 
-V L "conta" 4 123 "int8" `669 
-C L "lcd_ini" 4 2 3 "FUNCTION"
-C L "lcd_ini" 4 2 1 "FUNCTION"
-V L "x" 4 147 "int8" `671 
-V L "y" 4 147 "int8" `672 
-F G "lcd_pos_xy" 4 148 "void(int8 x,int8 y)" `670 
-V L "endereco" 4 149 "int8" `673 
-V L "c" 4 158 "int8" `675  "envia caractere para o display"
-F G "lcd_escreve" 4 160 "void(int8 c)" `674 
-V L "x" 4 176 "int8" `677 
-V L "y" 4 176 "int8" `678  "le caractere do display"
-F G "lcd_le" 4 178 "int8(int8 x,int8 y)" `676 
-V L "valor" 4 179 "int8" `679  "seleciona a posição do caractere"
-C L "lcd_le" 4 2 1 "FUNCTION"
-C L "lcd_le" 4 2 1 "FUNCTION"
-C L "lcd_le" 4 2 1 "FUNCTION"
-C L "lcd_le" 4 2 1 "FUNCTION"
-F G "lcd_apaga" 4 193 "void()" `680 
-F G "lcd_cursor_on" 4 199 "void()" `681 
-F G "lcd_cursor_pisca" 4 204 "void()" `682 
-F G "lcd_cursor_off" 4 209 "void()" `683 
-F G "lcd_corre_esquerda" 4 214 "void()" `684 
-F G "lcd_corre_direita" 4 219 "void()" `685 
-D G "echo1" 5 1 "pin_b6"
-D G "trig1" 5 2 "pin_b7"
-D G "echo2" 5 4 "pin_b5"
-D G "trig2" 5 5 "pin_b4"
-D G "echo3" 5 7 "pin_b2"
-D G "trig3" 5 8 "pin_b3"
-V G "distancia1" 5 10 "float" `686 
-V G "distancia2" 5 10 "float" `687 
-V G "distancia3" 5 10 "float" `688 
-F G "le_distancia1" 5 12 "float()" `689 
-V L "tempo_medido" 5 14 "float" `690 
-V L "tempo_media" 5 15 "float" `691 
-V L "x" 5 16 "int8" `692 
-C L "le_distancia1" 5 26 1 "FUNCTION"
-F G "le_distancia2" 5 38 "float()" `704 
-V L "tempo_medido" 5 40 "float" `705 
-V L "tempo_media" 5 41 "float" `706 
-V L "x" 5 42 "int8" `707 
-C L "le_distancia2" 5 26 1 "FUNCTION"
-F G "le_distancia3" 5 64 "float()" `708 
-V L "tempo_medido" 5 66 "float" `709 
-V L "tempo_media" 5 67 "float" `710 
-V L "x" 5 68 "int8" `711 
-C L "le_distancia3" 5 26 1 "FUNCTION"
-F G "sonar_display" 5 90 "void()" `712 
-F G "sonar_labirinto" 5 100 "void()" `722 
-C L "sonar_labirinto" 5 26 1 "FUNCTION"
-C L "sonar_labirinto" 5 26 1 "FUNCTION"
-C L "sonar_labirinto" 5 26 1 "FUNCTION"
-C L "sonar_labirinto" 5 26 3 "FUNCTION"
-C L "sonar_labirinto" 5 26 1 "FUNCTION"
-C L "sonar_labirinto" 5 26 3 "FUNCTION"
-C L "sonar_labirinto" 5 26 1 "FUNCTION"
-C L "sonar_labirinto" 5 26 1 "FUNCTION"
-C L "sonar_labirinto" 5 26 1 "FUNCTION"
-V G "linha1" 6 1 "int1" `726 
-V G "linha2" 6 1 "int1" `727 
-V G "linha3" 6 1 "int1" `728 
-V G "linha4" 6 1 "int1" `729 
-D G "ch1" 6 3 "pin_a4"
-F G "le_linhas" 6 6 "void()" `730 
-V L "ad1" 6 7 "int16" `731 
-V L "ad2" 6 7 "int16" `732 
-V L "ad3" 6 7 "int16" `733 
-V L "ad4" 6 7 "int16" `734 
-F G "alinhar" 6 55 "void()" `735 
-F G "avancar" 6 69 "void()" `736 
-F G "curva_esquerda" 6 75 "void()" `737 
-F G "curva_direita" 6 88 "void()" `738 
-F G "linhas" 6 113 "void()" `739 
-C L "linhas" 6 123 1 "FUNCTION"
-C L "linhas" 6 123 1 "FUNCTION"
-C L "linhas" 6 123 1 "FUNCTION"
-C L "linhas" 6 123 13 "FUNCTION"
-D G "ch1" 0 8 "pin_a4"
-D G "ch2" 0 9 "pin_a5"
-D G "ch3" 0 10 "pin_e0"
-D G "ch4" 0 11 "pin_e1"
-F G "sonar_modos" 0 13 "void()" `740 
-F G "MAIN" 0 39 "void()" `744 
-C L "MAIN" 0 44 1 "FUNCTION"
+C L "jump_to_irs" 0 2 1 "FUNCTION"
+D G "lcd_rs" 3 29 "pin_d2" "pino rs do LCD"
+D G "lcd_enable" 3 30 "pin_d3" "pino enable do LCD"
+D G "lcd_d4" 3 31 "pin_d4" "pino de dados d4 do LCD"
+D G "lcd_d5" 3 32 "pin_d5" "pino de dados d5 do LCD"
+D G "lcd_d6" 3 33 "pin_d6" "pino de dados d6 do LCD"
+D G "lcd_d7" 3 34 "pin_d7" "pino de dados d7 do LCD"
+D G "lcd_type" 3 37 "2" "0=5x7, 1=5x10, 2=2 linhas"
+D G "lcd_seg_lin" 3 38 "0x40" "Endereço da segunda linha na RAM do LCD"
+C L "jump_to_irs" 3 2 1 "FUNCTION"
+V G "INI_LCD" 3 41 "[4]" `646 
+C L "jump_to_irs" 3 2 7 "FUNCTION"
+C L "lcd_le_byte" 3 2 1 "FUNCTION"
+F G "lcd_le_byte" 3 54 "int8()" `649 
+V L "dado" 3 55 "int8" `650  "configura os pinos de dados como entradas"
+C L "lcd_le_byte" 3 2 1 "FUNCTION"
+C L "lcd_le_byte" 3 2 1 "FUNCTION"
+C L "lcd_le_byte" 3 2 2 "FUNCTION"
+C L "lcd_le_byte" 3 2 1 "FUNCTION"
+C L "lcd_le_byte" 3 2 1 "FUNCTION"
+C L "lcd_le_byte" 3 2 1 "FUNCTION"
+C L "lcd_le_byte" 3 2 1 "FUNCTION"
+V L "dado" 3 84 "int8" `652  "envia um dado de quatro bits para o display"
+F G "lcd_envia_nibble" 3 86 "void(int8 dado)" `651  "coloca os quatro bits nas saidas"
+C L "lcd_envia_nibble" 3 2 1 "FUNCTION"
+V L "endereco" 3 98 "int8" `654 
+V L "dado" 3 98 "int8" `655 
+F G "lcd_envia_byte" 3 99 "void(int8 endereco,int8 dado)" `653  "coloca a linha rs em 0"
+C L "lcd_envia_byte" 3 2 3 "FUNCTION"
+C L "lcd_envia_byte" 3 2 3 "FUNCTION"
+C L "lcd_envia_byte" 3 2 1 "FUNCTION"
+C L "lcd_envia_byte" 3 2 1 "FUNCTION"
+C L "lcd_ini" 3 2 1 "FUNCTION"
+F G "lcd_ini" 3 122 "void()" `656 
+V L "conta" 3 123 "int8" `657 
+C L "lcd_ini" 3 2 3 "FUNCTION"
+C L "lcd_ini" 3 2 1 "FUNCTION"
+V L "x" 3 147 "int8" `659 
+V L "y" 3 147 "int8" `660 
+F G "lcd_pos_xy" 3 148 "void(int8 x,int8 y)" `658 
+V L "endereco" 3 149 "int8" `661 
+V L "c" 3 158 "int8" `663  "envia caractere para o display"
+F G "lcd_escreve" 3 160 "void(int8 c)" `662 
+V L "x" 3 176 "int8" `665 
+V L "y" 3 176 "int8" `666  "le caractere do display"
+F G "lcd_le" 3 178 "int8(int8 x,int8 y)" `664 
+V L "valor" 3 179 "int8" `667  "seleciona a posição do caractere"
+C L "lcd_le" 3 2 1 "FUNCTION"
+C L "lcd_le" 3 2 1 "FUNCTION"
+C L "lcd_le" 3 2 1 "FUNCTION"
+C L "lcd_le" 3 2 1 "FUNCTION"
+F G "lcd_apaga" 3 193 "void()" `668 
+F G "lcd_cursor_on" 3 199 "void()" `669 
+F G "lcd_cursor_pisca" 3 204 "void()" `670 
+F G "lcd_cursor_off" 3 209 "void()" `671 
+F G "lcd_corre_esquerda" 3 214 "void()" `672 
+F G "lcd_corre_direita" 3 219 "void()" `673 
+C L "MAIN" 0 5 25 "FUNCTION"
+F G "MAIN" 0 39 "void()" `674 
+C L "MAIN" 0 5 3 "FUNCTION"
+C L "MAIN" 0 5 6 "FUNCTION"
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep" 0 1
