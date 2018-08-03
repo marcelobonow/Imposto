@@ -1,11 +1,11 @@
 /************************************************************************/
-/*  MOD_LCD.C - Biblioteca de manipulação de módulo LCD                 */
+/*  MOD_LCD.C - Biblioteca de manipulaï¿½ï¿½o de mï¿½dulo LCD                 */
 /*                                                                      */
-/*  Autor: Fábio Pereira                                                */
+/*  Autor: Fï¿½bio Pereira                                                */
 /*                                                                      */
 /************************************************************************/
 /*
-lcd_cursor_on()                        funções LCD
+lcd_cursor_on()                        funï¿½ï¿½es LCD
 lcd_cursor_pisca()
 lcd_cursor_off()
 lcd_corre_esquerda()
@@ -23,8 +23,8 @@ lcd_apaga()
 {
 
 */
-// As definições a seguir são utilizadas para acesso aos pinos do display
-// caso o pino RW não seja utilizado, comente a definição lcd_rw
+// As definiï¿½ï¿½es a seguir sï¿½o utilizadas para acesso aos pinos do display
+// caso o pino RW nï¿½o seja utilizado, comente a definiï¿½ï¿½o lcd_rw
 #ifndef lcd_enable
    #define lcd_rs         pin_d2      // pino rs do LCD
    #define lcd_enable     pin_d3      // pino enable do LCD
@@ -35,9 +35,9 @@ lcd_apaga()
 #endif
 
 #define lcd_type 2           // 0=5x7, 1=5x10, 2=2 linhas
-#define lcd_seg_lin 0x40    // Endereço da segunda linha na RAM do LCD
+#define lcd_seg_lin 0x40    // Endereï¿½o da segunda linha na RAM do LCD
 
-// a constante abaixo define a seqüência de inicialização do módulo LCD
+// a constante abaixo define a seqï¿½ï¿½ncia de inicializaï¿½ï¿½o do mï¿½dulo LCD
 byte CONST INI_LCD[4] = {0x20 | (lcd_type << 2), 0xc, 1, 6};
 
 /*   O 0x20 eh p configurar o tipo do display e talz.
@@ -50,7 +50,7 @@ byte CONST INI_LCD[4] = {0x20 | (lcd_type << 2), 0xc, 1, 6};
 */
 
 byte lcd_le_byte()
-// lê um byte do LCD (somente com pino RW)
+// lï¿½ um byte do LCD (somente com pino RW)
 {
    byte dado;
    // configura os pinos de dados como entradas
@@ -63,16 +63,16 @@ byte lcd_le_byte()
       output_high(lcd_rw);
    #endif
    output_high(lcd_enable); // habilita display
-   dado = 0;   // zera a variável de leitura
-   // lê os quatro bits mais significativos
+   dado = 0;   // zera a variï¿½vel de leitura
+   // lï¿½ os quatro bits mais significativos
    if (input(lcd_d7)) bit_set(dado,7);
    if (input(lcd_d6)) bit_set(dado,6);
    if (input(lcd_d5)) bit_set(dado,5);
    if (input(lcd_d4)) bit_set(dado,4);
-   // dá um pulso na linha enable
+   // dï¿½ um pulso na linha enable
    output_low(lcd_enable);
    output_high(lcd_enable);
-   // lê os quatro bits menos significativos
+   // lï¿½ os quatro bits menos significativos
    if (input(lcd_d7)) bit_set(dado,3);
    if (input(lcd_d6)) bit_set(dado,2);
    if (input(lcd_d5)) bit_set(dado,1);
@@ -89,7 +89,7 @@ void lcd_envia_nibble( byte dado )
    output_bit(lcd_d5,bit_test(dado,1));
    output_bit(lcd_d6,bit_test(dado,2));
    output_bit(lcd_d7,bit_test(dado,3));
-   // dá um pulso na linha enable
+   // dï¿½ um pulso na linha enable
    output_high(lcd_enable);
    output_low(lcd_enable);
 }
@@ -117,8 +117,8 @@ void lcd_envia_byte( boolean endereco, byte dado )
 }
 
 
-void lcd_ini()
-// rotina de inicialização do display
+void InitializeLcd()
+// rotina de inicializaï¿½ï¿½o do display
 {
    byte conta;
    output_low(lcd_d4);
@@ -131,8 +131,8 @@ void lcd_ini()
    #endif
    output_low(lcd_enable);
    delay_ms(15);
-   // envia uma seqüência de 3 vezes 0x03
-   // e depois 0x02 para configurar o módulo
+   // envia uma seqï¿½ï¿½ncia de 3 vezes 0x03
+   // e depois 0x02 para configurar o mï¿½dulo
    // para modo de 4 bits
    for(conta=1;conta<=3;++conta)
    {
@@ -140,7 +140,7 @@ void lcd_ini()
       delay_ms(5);
    }
    lcd_envia_nibble(2);
-   // envia string de inicialização do display
+   // envia string de inicializaï¿½ï¿½o do display
    for(conta=0;conta<=3;++conta) lcd_envia_byte(0,INI_LCD[conta]);
 }
 
@@ -177,11 +177,11 @@ char lcd_le( byte x, byte y)
 // le caractere do display
 {
    char valor;
-   // seleciona a posição do caractere
+   // seleciona a posiï¿½ï¿½o do caractere
    lcd_pos_xy(x,y);
    // ativa rs
    output_high(lcd_rs);
-   // lê o caractere
+   // lï¿½ o caractere
    valor = lcd_le_byte();
    // desativa rs
    output_low(lcd_rs);
