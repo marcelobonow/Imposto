@@ -1,8 +1,8 @@
-C L "MAIN" 0 5 7 "FUNCTION"
-D G "__PCH__" 0 80 ""5.015""
-D G "__DEVICE__" 0 80 "4550"
-D G "__DATE__" 0 80 ""02-ago-18""
-D G "__TIME__" 0 80 ""21:54:35"" "Standard Header file for the PIC18F4550 device ////////////////"
+D G "button4" 0 7 "pin_e1"
+D G "__PCH__" 0 79 ""5.015""
+D G "__DEVICE__" 0 79 "4550"
+D G "__DATE__" 0 79 ""18-ago-18""
+D G "__TIME__" 0 79 ""02:28:23"" "Standard Header file for the PIC18F4550 device ////////////////"
 c L "set_tris_a" 2 3 6 "FUNCTION"
 v L "value" 2 45 "int8" `54 
 f B "set_tris_a" 2 45 "void(int8 value)" `53 
@@ -913,7 +913,6 @@ d G "INT_EEPROM" 2 831 "0x00A010"
 d G "INT_OSCF" 2 832 "0x00A080"
 d G "INT_SPP" 2 833 "0x009D80"
 d G "INT_USB" 2 834 "0x00A020"
-C L "jump_to_irs" 0 2 1 "FUNCTION"
 D G "lcd_rs" 3 29 "pin_d2" "pino rs do LCD"
 D G "lcd_enable" 3 30 "pin_d3" "pino enable do LCD"
 D G "lcd_d4" 3 31 "pin_d4" "pino de dados d4 do LCD"
@@ -921,7 +920,7 @@ D G "lcd_d5" 3 32 "pin_d5" "pino de dados d5 do LCD"
 D G "lcd_d6" 3 33 "pin_d6" "pino de dados d6 do LCD"
 D G "lcd_d7" 3 34 "pin_d7" "pino de dados d7 do LCD"
 D G "lcd_type" 3 37 "2" "0=5x7, 1=5x10, 2=2 linhas"
-D G "lcd_seg_lin" 3 38 "0x40" "Endereço da segunda linha na RAM do LCD"
+D G "lcd_seg_lin" 3 38 "0x40" "Endereï¿½o da segunda linha na RAM do LCD"
 C L "jump_to_irs" 3 2 1 "FUNCTION"
 V G "INI_LCD" 3 41 "[4]" `646 
 C L "jump_to_irs" 3 2 7 "FUNCTION"
@@ -945,11 +944,11 @@ C L "lcd_envia_byte" 3 2 3 "FUNCTION"
 C L "lcd_envia_byte" 3 2 3 "FUNCTION"
 C L "lcd_envia_byte" 3 2 1 "FUNCTION"
 C L "lcd_envia_byte" 3 2 1 "FUNCTION"
-C L "lcd_ini" 3 2 1 "FUNCTION"
-F G "lcd_ini" 3 122 "void()" `656 
+C L "InitializeLcd" 3 2 1 "FUNCTION"
+F G "InitializeLcd" 3 122 "void()" `656 
 V L "conta" 3 123 "int8" `657 
-C L "lcd_ini" 3 2 3 "FUNCTION"
-C L "lcd_ini" 3 2 1 "FUNCTION"
+C L "InitializeLcd" 3 2 3 "FUNCTION"
+C L "InitializeLcd" 3 2 1 "FUNCTION"
 V L "x" 3 147 "int8" `659 
 V L "y" 3 147 "int8" `660 
 F G "lcd_pos_xy" 3 148 "void(int8 x,int8 y)" `658 
@@ -959,7 +958,7 @@ F G "lcd_escreve" 3 160 "void(int8 c)" `662
 V L "x" 3 176 "int8" `665 
 V L "y" 3 176 "int8" `666  "le caractere do display"
 F G "lcd_le" 3 178 "int8(int8 x,int8 y)" `664 
-V L "valor" 3 179 "int8" `667  "seleciona a posição do caractere"
+V L "valor" 3 179 "int8" `667  "seleciona a posiï¿½ï¿½o do caractere"
 C L "lcd_le" 3 2 1 "FUNCTION"
 C L "lcd_le" 3 2 1 "FUNCTION"
 C L "lcd_le" 3 2 1 "FUNCTION"
@@ -970,10 +969,19 @@ F G "lcd_cursor_pisca" 3 204 "void()" `670
 F G "lcd_cursor_off" 3 209 "void()" `671 
 F G "lcd_corre_esquerda" 3 214 "void()" `672 
 F G "lcd_corre_direita" 3 219 "void()" `673 
-C L "MAIN" 0 5 25 "FUNCTION"
-F G "MAIN" 0 39 "void()" `674 
-C L "MAIN" 0 5 3 "FUNCTION"
-C L "MAIN" 0 5 6 "FUNCTION"
+D G "button1" 0 4 "pin_a4"
+D G "button2" 0 5 "pin_a5"
+D G "button3" 0 6 "pin_e0"
+D G "button4" 0 7 "pin_e1"
+V G "counter" 0 9 "int16" `674 
+V G "hideCounter" 0 10 "int32" `675 
+V G "running" 0 11 "int8" `676 
+F G "timerTick" 0 15 "void()" `677 
+V L "value" 0 24 "int16" `682 
+V L "buffer" 0 24 "*int8" `683 
+F G "intToString" 0 25 "void(int16 value,*int8 buffer)" `681 
+F G "MAIN" 0 43 "void()" `687 
+V L "string" 0 71 "int8[5]" `693 
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep" 0 1

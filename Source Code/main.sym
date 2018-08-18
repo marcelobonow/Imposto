@@ -3,67 +3,119 @@
 001     _RETURN_
 002     @SCRATCH
 003     @SCRATCH
-005     lcd_ini.conta
-005     MAIN.@SCRATCH1
-005     @PSTRINGC_662.@SCRATCH1
-006     lcd_ini.@SCRATCH1
-006     @PSTRINGC_662.@SCRATCH2
-007     lcd_escreve.c
-008     lcd_pos_xy.x
-008     @delay_ms1.P1
-009     lcd_pos_xy.y
-00A     lcd_pos_xy.endereco
-00B     lcd_pos_xy.@SCRATCH1
-00C     lcd_envia_byte.endereco
-00D     lcd_envia_byte.dado
-00E     @delay_us1.P1
-00E     lcd_envia_byte.@SCRATCH1
-00F     lcd_envia_nibble.dado
+004     @INTERRUPT_AREA
+005     @INTERRUPT_AREA
+006     @INTERRUPT_AREA
+007     @INTERRUPT_AREA
+008     @INTERRUPT_AREA
+009     @INTERRUPT_AREA
+00A     @INTERRUPT_AREA
+00B     @INTERRUPT_AREA
+00C     @INTERRUPT_AREA
+00D     @INTERRUPT_AREA
+00E     @INTERRUPT_AREA
+00F     @INTERRUPT_AREA
+010     @INTERRUPT_AREA
+011     @INTERRUPT_AREA
+012     @INTERRUPT_AREA
+013     @INTERRUPT_AREA
+014     @INTERRUPT_AREA
+015     @INTERRUPT_AREA
+016-017 counter
+018-01B hideCounter
+01C     running
+01D-021 MAIN.string
+022     InitializeLcd.conta
+022-023 intToString.value
+022     MAIN.@SCRATCH1
+022     @PSTRINGC_662.@SCRATCH1
+022     @PSTRINGR_662.@SCRATCH1
+023     InitializeLcd.@SCRATCH1
+023     @PSTRINGC_662.@SCRATCH2
+023     @PSTRINGR_662.@SCRATCH2
+024     lcd_escreve.c
+024-025 intToString.buffer
+025     lcd_pos_xy.x
+025     @delay_ms1.P1
+026     lcd_pos_xy.y
+026     intToString.@SCRATCH1
+027     lcd_pos_xy.endereco
+027     intToString.@SCRATCH2
+028     lcd_pos_xy.@SCRATCH1
+028     intToString.@SCRATCH3
+029     lcd_envia_byte.endereco
+029     intToString.@SCRATCH4
+02A-02B @DIV1616.P1
+02A     lcd_envia_byte.dado
+02B     @delay_us1.P1
+02B     lcd_envia_byte.@SCRATCH1
+02C-02D @DIV1616.P1
+02C     lcd_envia_nibble.dado
+02E     @DIV1616.@SCRATCH1
+02F     timerTick.@SCRATCH1
+030     timerTick.@SCRATCH2
+031     timerTick.@SCRATCH3
+032     timerTick.@SCRATCH4
+033-036 @DIV3232.P1
+033     timerTick.@SCRATCH5
+034     timerTick.@SCRATCH6
+035     timerTick.@SCRATCH7
+036     timerTick.@SCRATCH8
+037-03A @DIV3232.P1
+03B     @DIV3232.@SCRATCH1
+03C     @DIV3232.@SCRATCH2
+03D     @DIV3232.@SCRATCH3
+03E     @DIV3232.@SCRATCH4
+03F     @DIV3232.@SCRATCH5
 F83     PSP_DATA
 FB4.6   C1OUT
 FB4.7   C2OUT
-FBB     CCP_2
 FBB     CCP_2_LOW
+FBB     CCP_2
 FBC     CCP_2_HIGH
-FBE     CCP_1_LOW
 FBE     CCP_1
+FBE     CCP_1_LOW
 FBF     CCP_1_HIGH
 FE1-FE2 @WRITE_PACKED_MEMORY.P1
 FE1-FE2 @READ_PACKED_MEMORY.P2
-FE9-FEA @WRITE_PROGRAM_MEMORY.P1
-FE9-FEA @WRITE_PACKED_MEMORY.P2
-FE9-FEA @READ_PACKED_MEMORY.P3
-FE9-FEA @READ_PROGRAM_MEMORY.P4
-FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
-FF6-FF8 @READ_PROGRAM_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P1
+FE9-FEA @READ_PROGRAM_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P3
+FE9-FEA @READ_PACKED_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
 
 ROM Allocation:
-001008  INI_LCD.call
-001018  INI_LCD.data
-00101C  @const677.call
-00102A  @const679.call
-00103E  @delay_ms1
-001066  lcd_envia_nibble
-0010A0  @delay_us1
-0010C2  lcd_envia_byte
-0010F6  lcd_ini
-00115C  lcd_pos_xy
-001180  lcd_escreve
-0011C8  @PSTRINGC_662
-0011E8  @cinit1
-0011E8  MAIN
-0011F8  @cinit2
+001096  INI_LCD.call
+0010B0  INI_LCD.data
+0010B4  @DIV3232
+001144  timerTick
+0011AA  @const690.call
+0011BA  @delay_ms1
+0011E2  lcd_envia_nibble
+00121C  @delay_us1
+00123E  lcd_envia_byte
+001272  InitializeLcd
+0012D8  lcd_pos_xy
+0012FA  lcd_escreve
+001340  @PSTRINGC_662
+001362  @DIV1616
+0013A4  intToString
+00150C  @PSTRINGR_662
+001532  @cinit1
+001532  MAIN
+001544  @cinit2
 
 Project Directory:
-    C:\Users\Administrador\Music\Fred\Robo\ImpostoV1.2\
+    D:\Projetos\Imposto\Source Code\
 
 Project Files:
-    main.c                                                  [02-ago-18 21:54  CRC=74E1CB8B]
-    main.h                                                  [02-ago-18 21:54  CRC=34230740]
-    ..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h [12-nov-13 13:35  CRC=5337E248]
-    lcd_kit.c                                               [22-set-17 18:38  CRC=26E5BDDC]
+    main.c                                                  [18-ago-18 02:28  CRC=6A71C4C8]
+    main.h                                                  [16-ago-18 23:46  CRC=6FD77C0A]
+    18F4550.h                                               [12-nov-13 14:35  CRC=5337E248]
+    LCD_KIT.c                                               [18-ago-18 00:50  CRC=2F7E563E]
 
-Source signature=4A0830CB
+Source signature=8C7DCF96
 
 Units:
     main (main)

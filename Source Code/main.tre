@@ -1,29 +1,52 @@
-ÀÄImpostoV1
-   ÀÄMAIN  0/62  Ram=1
-      ÃÄ@cinit1  (Inline)  Ram=0
-      ÃÄlcd_ini  0/102  Ram=2
-      ³  ÃÄ@delay_ms1  0/40  Ram=1
-      ³  ÃÄlcd_envia_nibble  0/58  Ram=1
-      ³  ÃÄ@delay_ms1  0/40  Ram=1
-      ³  ÃÄlcd_envia_nibble  0/58  Ram=1
-      ³  ÃÄ@const646  0/20  Ram=0
-      ³  ÀÄlcd_envia_byte  0/52  Ram=3
-      ³     ÃÄ@delay_us1  0/34  Ram=1
-      ³     ÃÄlcd_envia_nibble  0/58  Ram=1
-      ³     ÀÄlcd_envia_nibble  0/58  Ram=1
-      ÃÄ@PSTRINGC_662  0/32  Ram=2
-      ³  ÀÄlcd_escreve  0/72  Ram=1
-      ³     ÃÄlcd_envia_byte  0/52  Ram=3
-      ³     ³  ÀÄ*
-      ³     ÃÄ@delay_ms1  0/40  Ram=1
-      ³     ÃÄlcd_pos_xy  0/36  Ram=4
-      ³     ³  ÀÄlcd_envia_byte  0/52  Ram=3
-      ³     ³     ÀÄ*
-      ³     ÃÄlcd_envia_byte  0/52  Ram=3
-      ³     ³  ÀÄ*
-      ³     ÀÄlcd_envia_byte  0/52  Ram=3
-      ³        ÀÄ*
-      ÃÄ@delay_ms1  0/40  Ram=1
-      ÃÄ@PSTRINGC_662  0/32  Ram=2
-      ³  ÀÄ*
-      ÀÄ@delay_ms1  0/40  Ram=1
+ÀÄmain
+   ÃÄMAIN  0/154  Ram=1
+   ³  ÃÄ@cinit1  (Inline)  Ram=0
+   ³  ÃÄInitializeLcd  0/102  Ram=2
+   ³  ³  ÃÄ@delay_ms1  0/40  Ram=1
+   ³  ³  ÃÄlcd_envia_nibble  0/58  Ram=1
+   ³  ³  ÃÄ@delay_ms1  0/40  Ram=1
+   ³  ³  ÃÄlcd_envia_nibble  0/58  Ram=1
+   ³  ³  ÃÄ@const646  0/30  Ram=0
+   ³  ³  ÀÄlcd_envia_byte  0/52  Ram=3
+   ³  ³     ÃÄ@delay_us1  0/34  Ram=1
+   ³  ³     ÃÄlcd_envia_nibble  0/58  Ram=1
+   ³  ³     ÀÄlcd_envia_nibble  0/58  Ram=1
+   ³  ÃÄlcd_pos_xy  0/34  Ram=4
+   ³  ³  ÀÄlcd_envia_byte  0/52  Ram=3
+   ³  ³     ÀÄ*
+   ³  ÃÄ@PSTRINGC_662  0/34  Ram=2
+   ³  ³  ÀÄlcd_escreve  0/70  Ram=1
+   ³  ³     ÃÄlcd_envia_byte  0/52  Ram=3
+   ³  ³     ³  ÀÄ*
+   ³  ³     ÃÄ@delay_ms1  0/40  Ram=1
+   ³  ³     ÃÄlcd_pos_xy  0/34  Ram=4
+   ³  ³     ³  ÀÄ*
+   ³  ³     ÃÄlcd_envia_byte  0/52  Ram=3
+   ³  ³     ³  ÀÄ*
+   ³  ³     ÀÄlcd_envia_byte  0/52  Ram=3
+   ³  ³        ÀÄ*
+   ³  ÃÄ@delay_ms1  0/40  Ram=1
+   ³  ÃÄlcd_pos_xy  0/34  Ram=4
+   ³  ³  ÀÄ*
+   ³  ÃÄlcd_pos_xy  0/34  Ram=4
+   ³  ³  ÀÄ*
+   ³  ÃÄlcd_escreve  0/70  Ram=1
+   ³  ³  ÀÄ*
+   ³  ÃÄlcd_escreve  0/70  Ram=1
+   ³  ³  ÀÄ*
+   ³  ÃÄintToString  0/360  Ram=8
+   ³  ³  ÃÄ@DIV1616  0/66  Ram=5
+   ³  ³  ÃÄ@DIV1616  0/66  Ram=5
+   ³  ³  ÃÄ@DIV1616  0/66  Ram=5
+   ³  ³  ÃÄ@DIV1616  0/66  Ram=5
+   ³  ³  ÃÄ@DIV1616  0/66  Ram=5
+   ³  ³  ÃÄ@DIV1616  0/66  Ram=5
+   ³  ³  ÃÄ@DIV1616  0/66  Ram=5
+   ³  ³  ÃÄ@DIV1616  0/66  Ram=5
+   ³  ³  ÀÄ@DIV1616  0/66  Ram=5
+   ³  ÃÄ@PSTRINGR_662  0/38  Ram=2
+   ³  ³  ÀÄlcd_escreve  0/70  Ram=1
+   ³  ³     ÀÄ*
+   ³  ÀÄ@delay_ms1  0/40  Ram=1
+   ÀÄtimerTick  0/102  Ram=8
+      ÀÄ@DIV3232  0/144  Ram=13
