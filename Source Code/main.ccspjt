@@ -50,9 +50,9 @@ Fixed=
 1=main.c
 2=LinhasV1.1.c
 3=SonarV1.1.c
-4=main.h
-5=LCD_KIT.c
-6=..\..\..\Program Files (x86)\PICC\examples\ex_stwt.c
+4=LCD_KIT.c
+5=main_old.c
+6=
 7=
 [Units]
 Count=1

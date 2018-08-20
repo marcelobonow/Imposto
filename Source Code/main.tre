@@ -1,20 +1,21 @@
 ÀÄmain
-   ÃÄMAIN  0/154  Ram=1
+   ÃÄMAIN  0/208  Ram=1
    ³  ÃÄ@cinit1  (Inline)  Ram=0
-   ³  ÃÄInitializeLcd  0/102  Ram=2
-   ³  ³  ÃÄ@delay_ms1  0/40  Ram=1
-   ³  ³  ÃÄlcd_envia_nibble  0/58  Ram=1
-   ³  ³  ÃÄ@delay_ms1  0/40  Ram=1
-   ³  ³  ÃÄlcd_envia_nibble  0/58  Ram=1
-   ³  ³  ÃÄ@const646  0/30  Ram=0
-   ³  ³  ÀÄlcd_envia_byte  0/52  Ram=3
-   ³  ³     ÃÄ@delay_us1  0/34  Ram=1
+   ³  ÃÄSetup  0/42  Ram=0
+   ³  ³  ÀÄInitializeLcd  0/102  Ram=2
+   ³  ³     ÃÄ@delay_ms1  0/40  Ram=1
    ³  ³     ÃÄlcd_envia_nibble  0/58  Ram=1
-   ³  ³     ÀÄlcd_envia_nibble  0/58  Ram=1
+   ³  ³     ÃÄ@delay_ms1  0/40  Ram=1
+   ³  ³     ÃÄlcd_envia_nibble  0/58  Ram=1
+   ³  ³     ÃÄ@const646  0/30  Ram=0
+   ³  ³     ÀÄlcd_envia_byte  0/52  Ram=3
+   ³  ³        ÃÄ@delay_us1  0/34  Ram=1
+   ³  ³        ÃÄlcd_envia_nibble  0/58  Ram=1
+   ³  ³        ÀÄlcd_envia_nibble  0/58  Ram=1
    ³  ÃÄlcd_pos_xy  0/34  Ram=4
    ³  ³  ÀÄlcd_envia_byte  0/52  Ram=3
    ³  ³     ÀÄ*
-   ³  ÃÄ@PSTRINGC_662  0/34  Ram=2
+   ³  ÃÄ@PSTRINGC_662  0/32  Ram=2
    ³  ³  ÀÄlcd_escreve  0/70  Ram=1
    ³  ³     ÃÄlcd_envia_byte  0/52  Ram=3
    ³  ³     ³  ÀÄ*
@@ -26,15 +27,28 @@
    ³  ³     ÀÄlcd_envia_byte  0/52  Ram=3
    ³  ³        ÀÄ*
    ³  ÃÄ@delay_ms1  0/40  Ram=1
+   ³  ÃÄClearScreen  0/42  Ram=0
+   ³  ³  ÃÄlcd_pos_xy  0/34  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@PSTRINGC_662  0/32  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄlcd_pos_xy  0/34  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÀÄ@PSTRINGC_662  0/32  Ram=2
+   ³  ³     ÀÄ*
    ³  ÃÄlcd_pos_xy  0/34  Ram=4
    ³  ³  ÀÄ*
    ³  ÃÄlcd_pos_xy  0/34  Ram=4
    ³  ³  ÀÄ*
-   ³  ÃÄlcd_escreve  0/70  Ram=1
+   ³  ÃÄ@PSTRINGC_662  0/32  Ram=2
    ³  ³  ÀÄ*
-   ³  ÃÄlcd_escreve  0/70  Ram=1
+   ³  ÃÄ@PSTRINGC_662  0/32  Ram=2
    ³  ³  ÀÄ*
-   ³  ÃÄintToString  0/360  Ram=8
+   ³  ÃÄlcd_pos_xy  0/34  Ram=4
+   ³  ³  ÀÄ*
+   ³  ÃÄ@PSTRINGC_662  0/32  Ram=2
+   ³  ³  ÀÄ*
+   ³  ÃÄIntToString  0/360  Ram=8
    ³  ³  ÃÄ@DIV1616  0/66  Ram=5
    ³  ³  ÃÄ@DIV1616  0/66  Ram=5
    ³  ³  ÃÄ@DIV1616  0/66  Ram=5
@@ -48,5 +62,4 @@
    ³  ³  ÀÄlcd_escreve  0/70  Ram=1
    ³  ³     ÀÄ*
    ³  ÀÄ@delay_ms1  0/40  Ram=1
-   ÀÄtimerTick  0/102  Ram=8
-      ÀÄ@DIV3232  0/144  Ram=13
+   ÀÄtimerTick  0/6  Ram=0

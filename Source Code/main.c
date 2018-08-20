@@ -6,24 +6,89 @@
 #define button3 pin_e0
 #define button4 pin_e1
 
-int16 counter;
-int32 hideCounter;
 int running;
+const char blankScreen[] = "                ";
+
+void ClearScreen();
+void Setup();
+void IntToString(int16, char *);
 
 #int_timer0
 void timerTick()
 {
-    if (running)
-        hideCounter++;
-    if (hideCounter % 1000 == 0)
-    {
-        counter++;
-    }
+    //if (running)
+    //Codigo
 }
 
-void intToString(int16 value, char *buffer)
+void main()
 {
+    Setup();
+    lcd_pos_xy(1, 1);
+    printf(lcd_escreve, " Inicializando");
+    delay_ms(20);
+    do
+    {
+        ClearScreen();
+        if (input(button1) == 0)
+        {
+            running = 1;
+        }
+        if (input(button2) == 0)
+        {
+            running = 0;
+        }
+        lcd_pos_xy(1, 1);
 
+        int16 ad1;
+        set_adc_channel(1);
+        delay_us(25);
+        lcd_pos_xy(1, 2);
+        if (ad1 > 9306)
+        {
+            printf(lcd_escreve, "Maior que 9306");
+        }
+        else
+            printf(lcd_escreve, "Menor que 9306");
+        lcd_pos_xy(1, 1);
+        ad1 = read_adc();
+
+        char string[5];
+        //intToString(counter, string);
+        //printf(lcd_escreve, "C:");
+        //printf(lcd_escreve, string);
+        printf(lcd_escreve, "1: ");
+        intToString(ad1, string);
+        printf(lcd_escreve, string);
+
+        delay_ms(100);
+    } while (1);
+}
+
+void Setup()
+{
+    running = 1;
+
+    setup_adc_ports(AN0_TO_AN3);
+    setup_adc(ADC_CLOCK_DIV_4);
+
+    setup_timer_0(RTCC_INTERNAL | RTCC_DIV_2 | RTCC_8_BIT);
+    set_timer0(0);
+    enable_interrupts(INT_TIMER0);
+    enable_interrupts(GLOBAL);
+
+    InitializeLcd();
+}
+
+void ClearScreen()
+{
+    lcd_pos_xy(1, 1);
+    printf(lcd_escreve, blankScreen);
+    lcd_pos_xy(1, 2);
+    printf(lcd_escreve, blankScreen);
+}
+
+void IntToString(int16 value, char *buffer)
+{
     buffer[0] = (value / 10000) % 10;
     buffer[1] = (value / 1000) % 10;
     buffer[2] = (value / 100) % 10;
@@ -36,42 +101,5 @@ void intToString(int16 value, char *buffer)
     buffer[3] += 48;
     buffer[4] += 48;
 
-    buffer[5] = 0;
-}
-
-void main()
-{
-    counter = 0;
-    hideCounter = 0;
-    running = 1;
-
-    setup_timer_0(RTCC_INTERNAL | RTCC_DIV_2 | RTCC_8_BIT);
-    set_timer0(0);
-    enable_interrupts(INT_TIMER0);
-    enable_interrupts(GLOBAL);
-
-    InitializeLcd();
-    lcd_pos_xy(1, 1);
-    printf(lcd_escreve, " Inicializando");
-    delay_ms(20);
-    do
-    {
-        lcd_pos_xy(1, 1);
-        if (input(button1) == 0)
-        {
-            running = 1;
-        }
-        if (input(button2) == 0)
-        {
-            running = 0;
-        }
-        lcd_pos_xy(1, 2);
-        printf(lcd_escreve, "C:");
-
-        char string[5];
-        intToString(counter, string);
-
-        printf(lcd_escreve, string);
-        delay_ms(100);
-    } while (1);
+    buffer[5] = '\0';
 }

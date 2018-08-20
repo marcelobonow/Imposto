@@ -1,24 +1,24 @@
 
-ROM used:   1480/32768 (5%)
-            1484/32768 (5%) including unused fragments
+ROM used:   1430/32768 (4%)
+            1434/32768 (4%) including unused fragments
 
-            1.3 Average locations per line
-            12.2 Average locations per statement
+            1.2 Average locations per line
+            10.9 Average locations per statement
 
-RAM used:   30/2048 (1%) at main() level
-            64/2048 (3%) worst case
+RAM used:   24/2048 (1%) at main() level
+            43/2048 (2%) worst case
 
-Stack used: 7 worst case (5 in main + 2 for interrupts)
+Stack used: 7 worst case (6 in main + 1 for interrupts)
 Stack size: 31
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-   78    42  35  main.c
+  106    52  40  main.c
    14     0   0  main.h
   837     0   0  18F4550.h
-  223    79  65  LCD_KIT.c
+  223    79  60  LCD_KIT.c
 ----- -----
- 1152   121 Total
+ 1180   131 Total
 
 Page ROM  %  RAM   Vol Diff  Functions:
 ---- --- --- ---   --- ----  ----------
@@ -27,37 +27,42 @@ Page ROM  %  RAM   Vol Diff  Functions:
 0     30   1    0             @const646
 0     58   2    1   260  1.9  lcd_envia_nibble
 0     52   2    3   176  2.7  lcd_envia_byte
-0    102   3    2   433  4.3  InitializeLcd
+0    102   4    2   433  4.3  InitializeLcd
 0     34   1    4   186  5.5  lcd_pos_xy
 0     70   2    1   290  4.1  lcd_escreve
-0    102   3    8    74  2.6  timerTick
-0    144   5   13   562  4.8  @DIV3232
-0    360  12    8   562  4.8  intToString
-0     66   2    5   748  5.2  @DIV1616
-0    154   5    1   748  5.2  MAIN
-0     16   1    0             @const690
-0     34   1    2             @PSTRINGC_662
+0     18   1    0   822  5.2  @const675
+0      6   0    0     3  0.0  timerTick
+0    208   7    1   835  5.7  MAIN
+0     16   1    0   822  5.2  @const687
+0     32   1    2  1021  6.2  @PSTRINGC_662
+0     16   1    0   822  5.2  @const690
+0     16   1    0  1021  6.2  @const691
+0      4   0    0             @const693
 0     38   1    2             @PSTRINGR_662
+0     42   1    0   170  2.2  Setup
+0     42   1    0   108  1.7  ClearScreen
+0    360  13    8   562  4.8  IntToString
+0     66   2    5             @DIV1616
  Inline         0             @cinit1
 
 Program metrics:
-    Functions               10
-    Statements              121
-    Comments                221
-    Volume (V)              6319
-    Difficulty (D)          40.7
-    Effort to implement (E) 257069
-    Time to implement (T)   3 hours, 58 minutes
-    Est Delivered Bugs (B)  1
-    Cyclomatic Complexity   16
-    Maintainability (MI)    139
+    Functions               15
+    Statements              131
+    Comments                226
+    Volume (V)              12139
+    Difficulty (D)          61.3
+    Effort to implement (E) 744066
+    Time to implement (T)   11 hours, 29 minutes
+    Est Delivered Bugs (B)  3
+    Cyclomatic Complexity   29
+    Maintainability (MI)    87
 
  Segment     Used  Free
 -----------  ----  ----
 00000-00FFE     0  4096  
 01000-01006     4  4  
 01008-01094   142  0  
-01096-07FFE  1334  27188  
+01096-07FFE  1284  27238  
 
 
 
