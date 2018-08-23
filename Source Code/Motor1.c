@@ -1,6 +1,6 @@
 #build(reset=0x1000, interrupt=0x1008)
 #org 0x000, 0xfff { }
-   
+
 #define  m1p1   pin_e2
 #define  m1p2   pin_c0
 #define  m2p1   pin_d0

@@ -117,7 +117,7 @@ void lcd_envia_byte( boolean endereco, byte dado )
 }
 
 
-void InitializeLcd()
+void lcd_ini()
 // rotina de inicializa��o do display
 {
    byte conta;
