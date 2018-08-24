@@ -1,5 +1,6 @@
->>> Warning 225 "main.c" Line 8(13,23): Duplicate #define
->>> Warning 203 "main.c" Line 58(1,1): Condition always TRUE
-      Memory usage:   ROM=15%      RAM=1% - 2%
-      0 Errors,  2 Warnings.
-Build Successful.
+>>> Warning 203 "main.c" Line 115(1,1): Condition always TRUE
+>>> Warning 216 "main.c" Line 142(1,2): Interrupts disabled during call to prevent re-entrancy:  (@delay_ms1)
+>>> Warning 216 "main.c" Line 142(1,2): Interrupts disabled during call to prevent re-entrancy:  (lcd_envia_nibble)
+>>> Warning 216 "main.c" Line 142(1,2): Interrupts disabled during call to prevent re-entrancy:  (lcd_envia_byte)
+>>> Warning 216 "main.c" Line 142(1,2): Interrupts disabled during call to prevent re-entrancy:  (lcd_pos_xy)
+>>> Warning 216 "main.c" Line 142(1,2): Interrupts disabled during call to prevent re-entrancy:  (@PSTRINGC_678)

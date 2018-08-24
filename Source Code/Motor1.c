@@ -80,3 +80,12 @@ void set_pwm(int16 vel){
    set_pwm1_duty((int16)vel);
    set_pwm2_duty((int16)vel);     //-50);
 }
+
+void SetLeft(int16 vel)
+{
+     set_pwm1_duty((int16)vel);
+}
+void SetRight(int16 vel)
+{
+       set_pwm2_duty((int16)vel);
+}

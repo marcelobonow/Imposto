@@ -10,29 +10,31 @@
 int running;
 const char blankScreen[] = "                ";
 
+#ifdef DEBUG
+int16 pwm;
+#endif
+
 int16 ad1, ad2, ad3, ad4;
 int16 timerBase;
 int8 adCounter;
-char string[5];
 
 void ClearScreen();
 void Setup();
-void IntToString(int16, char *);
 
 #int_timer0
 void timerTick()
 {
-    if (running)
-     {
-        if (adCounter == 0)
+    if (running == 1)
+    {
+        if (adCounter == 1)
         {
             ad1 = read_adc();
         }
-        else if (adCounter == 1)
+        else if (adCounter == 2)
         {
             ad2 = read_adc();
         }
-        else if (adCounter == 2)
+        else if (adCounter == 3)
         {
             ad3 = read_adc();
         }
@@ -42,29 +44,52 @@ void timerTick()
             ad4 = read_adc();
         }
 
+        set_adc_channel(adCounter + 1);
+
+        // if (ad1 + ad2 < 400)
+        // {
+        //     if ((float)ad1 / ad1 + ad2 > 0.52f)
+        //     {
+        //         SetLeft(900);
+        //         //SetRight((((float)ad2 / ad1 + ad2) * 200) + 800);
+        //         frente();
+        //     }
+        //     else if ((float)ad2 / ad1 + ad2 > 0.52f)
+        //     {
+        //         SetRight(900);
+        //         //SetLeft((((float)ad1 / ad1 + ad2) * 200) + 800);
+        //         frente();
+        //     }
+        //     else
+        //     {
+        //         set_pwm(900);
+        //         frente();
+        //     }
+        // }
+        // else
+        // {
+        //     set_pwm(0);
+        //     //para();
+        // }
+
         if (timerBase == 2000)
         {
             timerBase = 0;
             ClearScreen();
             lcd_pos_xy(1, 1);
             printf(lcd_escreve, "1: ");
-            intToString(ad1, string);
-            printf(lcd_escreve, string);
+            printf(lcd_escreve, "%04ld", ad1);
             printf(lcd_escreve, " 2: ");
-            intToString(ad2, string);
-            printf(lcd_escreve, string);
+            printf(lcd_escreve, "%04ld", ad2);
             lcd_pos_xy(1, 2);
             printf(lcd_escreve, "3: ");
-            intToString(ad3, string);
-            printf(lcd_escreve, string);
+            printf(lcd_escreve, "%04ld", ad3);
             printf(lcd_escreve, " 4: ");
-            intToString(ad4, string);
-            printf(lcd_escreve, string);
+            printf(lcd_escreve, "%04ld", ad4);
         }
         timerBase++;
         adCounter++;
         ///Seta para pegar no proximo tick
-        set_adc_channel(adCounter + 1);
     }
 }
 
@@ -79,12 +104,9 @@ void main()
         if (input(button1) == 0)
         {
             running = 1;
+            lcd_pos_xy(1,1);
+            printf(lcd_escreve, "Frente");
             frente();
-        }
-        else
-        {
-            para();
-            delay_ms(200);
         }
         if (input(button2) == 0)
         {
@@ -96,6 +118,7 @@ void main()
 void Setup()
 {
     running = 1;
+    adCounter = 1;
 
     setup_adc_ports(AN0_TO_AN3);
     setup_adc(ADC_CLOCK_DIV_4);
@@ -105,9 +128,9 @@ void Setup()
     enable_interrupts(INT_TIMER0);
     enable_interrupts(GLOBAL);
 
-    InitializeLcd();
+    lcd_ini();
     motor_ini();
-    set_pwm(900); 
+    set_pwm(900);
 }
 
 void ClearScreen()
@@ -116,19 +139,4 @@ void ClearScreen()
     printf(lcd_escreve, blankScreen);
     lcd_pos_xy(1, 2);
     printf(lcd_escreve, blankScreen);
-}
-
-void IntToString(int16 value, char *buffer)
-{
-    buffer[0] = (value / 1000) % 10;
-    buffer[1] = (value / 100) % 10;
-    buffer[2] = (value / 10) % 10;
-    buffer[3] = value % 10;
-
-    buffer[0] += 48;
-    buffer[1] += 48;
-    buffer[2] += 48;
-    buffer[3] += 48;
-
-    buffer[4] = '\0';
 }

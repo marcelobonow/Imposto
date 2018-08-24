@@ -49,10 +49,10 @@ Fixed=
 [Opened Files]
 1=LinhasV1.1.c
 2=SonarV1.1.c
-3=LCD_KIT.c
-4=main_old.c
-5=Motor1.c
-6=main.c
+3=main_old.c
+4=Motor1.c
+5=main.c
+6=
 7=
 8=
 [Units]
