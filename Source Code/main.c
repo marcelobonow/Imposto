@@ -20,72 +20,75 @@ void Setup();
 #int_timer0
 void timerTick()
 {
+    if (adCounter == 1)
+    {
+        ad1 = read_adc();
+    }
+    else if (adCounter == 2)
+    {
+        ad2 = read_adc();
+    }
+    else if (adCounter == 3)
+    {
+        ad3 = read_adc();
+    }
+    else
+    {
+        adCounter = 0;
+        ad4 = read_adc();
+    }
+    if (timerBase == 2000)
+    {
+        timerBase = 0;
+        ClearScreen();
+        lcd_pos_xy(1, 1);
+        printf(lcd_escreve, "1: ");
+        printf(lcd_escreve, "%04ld", ad1);
+        printf(lcd_escreve, " 2: ");
+        printf(lcd_escreve, "%04ld", ad2);
+        lcd_pos_xy(1, 2);
+        printf(lcd_escreve, "3: ");
+        printf(lcd_escreve, "%04ld", ad3);
+        printf(lcd_escreve, " 4: ");
+        printf(lcd_escreve, "%04ld", ad4);
+    }
+    timerBase++;
+    adCounter++;
+
+    set_adc_channel(adCounter + 1);
     if (running == 1)
     {
-            if (adCounter == 1)
-            {
-                ad1 = read_adc();
-            }
-            else if (adCounter == 2)
-            {
-                ad2 = read_adc();
-            }
-            else if (adCounter == 3)
-            {
-                ad3 = read_adc();
-            }
-            else
-            {
-                adCounter = 0;
-                ad4 = read_adc();
-            }
-
-        set_adc_channel(adCounter + 1);
-
-        if (timerBase == 2000)
+        ///alto significa escuro
+        if (ad1 + ad2 > 250)
         {
-            timerBase = 0;
-            ClearScreen();
-            lcd_pos_xy(1, 1);
-            printf(lcd_escreve, "1: ");
-            printf(lcd_escreve, "%04ld", ad1);
-            printf(lcd_escreve, " 2: ");
-            printf(lcd_escreve, "%04ld", ad2);
-            lcd_pos_xy(1, 2);
-            printf(lcd_escreve, "3: ");
-            printf(lcd_escreve, "%04ld", ad3);
-            printf(lcd_escreve, " 4: ");
-            printf(lcd_escreve, "%04ld", ad4);
-
-            ///alto significa escuro
-            if (ad1 + ad2 > 1000)
+            //Como quanto mais escuro mais alto, isso significa que o que esta com menos tem que subir,
+            //e vai subir proporcionalmente a quanto a menos ele tem, esse valor é exatamente o oposto (que esta no outro ad)
+            //
+            if ((float)ad1 / ad1 + ad2 < 0.48f)
             {
-                //Como quanto mais escuro mais alto, isso significa que o que esta com menos tem que subir,
-                //e vai subir proporcionalmente a quanto a menos ele tem, esse valor é exatamente o oposto (que esta no outro ad)
-                //
-                if ((float)ad1 / ad1 + ad2 < 0.48f)
-                {
-                    SetLeft(1023);
-                    SetRight((((float)ad2 / ad1 + ad2) * 70) + 950);
-                }
-                else if ((float)ad2 / ad1 + ad2 < 0.48f)
-                {
-                    SetRight(1023);
-                    SetLeft((((float)ad1 / ad1 + ad2) * 70) + 950);
-                }
-                else
-                {
-                    set_pwm(1000);
-                }
+                SetRight(1023);
+                SetLeft((((float)ad1 / ad1 + ad2) * 200) + 800);
+            }
+            else if ((float)ad2 / ad1 + ad2 < 0.48f)
+            {
+                SetLeft(1023);
+                SetRight((((float)ad2 / ad1 + ad2) * 200) + 800);
             }
             else
             {
-                set_pwm(0);
+                SetBothPwm(1023);
             }
         }
-        timerBase++;
-        adCounter++;
-        ///Seta para pegar no proximo tick
+        else
+        {
+            SetBothPwm(0);
+        }
+    }
+
+    ///Seta para pegar no proximo tick
+    else
+    {
+        SetBothPwm(0);
     }
 }
 
@@ -103,7 +106,7 @@ void main()
             running = 1;
             lcd_pos_xy(1, 1);
             printf(lcd_escreve, "Frente");
-            set_pwm(1000);
+            SetBothPwm(1023);
         }
         if (input(button2) == 0)
         {
@@ -126,8 +129,8 @@ void Setup()
     enable_interrupts(GLOBAL);
 
     lcd_ini();
-    motor_ini();
-    set_pwm(900);
+    MotorInitialize();
+    SetBothPwm(1023);
     frente();
 }
 

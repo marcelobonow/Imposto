@@ -78,7 +78,7 @@ void para()
       output_bit(m2p2, 0);
 }
 
-void motor_ini()
+void MotorInitialize()
 {
       setup_timer_2(T2_DIV_BY_16, 255, 1); //341 us overflow, 341 us interrupt
 
@@ -86,7 +86,7 @@ void motor_ini()
       setup_ccp2(CCP_PWM);
 }
 
-void set_pwm(int16 vel)
+void SetBothPwm(int16 vel)
 {
       set_pwm1_duty((int16)vel);
       set_pwm2_duty((int16)vel); //-50);

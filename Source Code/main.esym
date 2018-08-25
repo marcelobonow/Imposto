@@ -1,7 +1,7 @@
-D G "__PCH__" 0 141 ""5.015""
-D G "__DEVICE__" 0 141 "4550"
-D G "__DATE__" 0 141 ""23-ago-18""
-D G "__TIME__" 0 141 ""23:20:16"" "Standard Header file for the PIC18F4550 device ////////////////"
+D G "__PCH__" 0 142 ""5.015""
+D G "__DEVICE__" 0 142 "4550"
+D G "__DATE__" 0 142 ""25-ago-18""
+D G "__TIME__" 0 142 ""00:52:15"" "Standard Header file for the PIC18F4550 device ////////////////"
 c L "set_tris_a" 2 3 6 "FUNCTION"
 v L "value" 2 45 "int8" `54 
 f B "set_tris_a" 2 45 "void(int8 value)" `53 
@@ -925,11 +925,11 @@ F G "direita_tras" 3 50 "void()" `651
 F G "direita_frente" 3 58 "void()" `652 
 F G "esquerda_frente" 3 66 "void()" `653 
 F G "para" 3 74 "void()" `654 
-F G "motor_ini" 3 82 "void()" `655 
-C L "motor_ini" 3 83 1 "FUNCTION"
+F G "MotorInitialize" 3 82 "void()" `655 
+C L "MotorInitialize" 3 83 1 "FUNCTION"
 V L "vel" 3 89 "int16" `657 
-F G "set_pwm" 3 90 "void(int16 vel)" `656 
-C L "set_pwm" 3 83 1 "FUNCTION"
+F G "SetBothPwm" 3 90 "void(int16 vel)" `656 
+C L "SetBothPwm" 3 83 1 "FUNCTION"
 V L "vel" 3 95 "int16" `659 
 F G "SetRight" 3 96 "void(int16 vel)" `658 
 V L "vel" 3 99 "int16" `661 
@@ -1004,13 +1004,12 @@ V G "adCounter" 0 15 "int8" `699
 f G "ClearScreen" 0 17 "void()" `700 
 f G "Setup" 0 18 "void()" `701 
 F G "timerTick" 0 22 "void()" `702 
-C L "timerTick" 0 40 9 "FUNCTION"
-C L "timerTick" 0 40 1 "FUNCTION"
-C L "timerTick" 0 40 2 "FUNCTION"
-C L "timerTick" 0 40 1 "FUNCTION"
-F G "MAIN" 0 107 "void()" `730 
-F G "Setup" 0 130 "void()" `701 
-F G "ClearScreen" 0 149 "void()" `700 
+C L "timerTick" 0 61 1 "FUNCTION"
+C L "timerTick" 0 61 2 "FUNCTION"
+C L "timerTick" 0 61 1 "FUNCTION"
+F G "MAIN" 0 96 "void()" `730 
+F G "Setup" 0 119 "void()" `701 
+F G "ClearScreen" 0 138 "void()" `700 
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep" 0 1

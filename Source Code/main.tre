@@ -1,7 +1,7 @@
 ÀÄmain
-   ÃÄMAIN  0/184  Ram=1
+   ÃÄMAIN  0/182  Ram=1
    ³  ÃÄ@cinit1  (Inline)  Ram=0
-   ³  ÃÄSetup  0/70  Ram=0
+   ³  ÃÄSetup  0/68  Ram=0
    ³  ³  ÃÄlcd_ini  0/174  Ram=2
    ³  ³  ³  ÃÄ@delay_ms1  0/40  Ram=1
    ³  ³  ³  ÃÄlcd_envia_nibble  0/58  Ram=1
@@ -12,8 +12,8 @@
    ³  ³  ³     ÃÄ@delay_us1  0/32  Ram=1
    ³  ³  ³     ÃÄlcd_envia_nibble  0/58  Ram=1
    ³  ³  ³     ÀÄlcd_envia_nibble  0/58  Ram=1
-   ³  ³  ÃÄmotor_ini  0/32  Ram=0
-   ³  ³  ÃÄset_pwm  0/78  Ram=2
+   ³  ³  ÃÄMotorInitialize  0/32  Ram=0
+   ³  ³  ÃÄSetBothPwm  0/78  Ram=2
    ³  ³  ÀÄfrente  0/20  Ram=0
    ³  ÃÄlcd_pos_xy  0/34  Ram=4
    ³  ³  ÀÄlcd_envia_byte  0/52  Ram=3
@@ -34,8 +34,8 @@
    ³  ³  ÀÄ*
    ³  ÃÄ@PSTRINGC_678  0/32  Ram=2
    ³  ³  ÀÄ*
-   ³  ÀÄset_pwm  0/78  Ram=2
-   ÀÄtimerTick  0/1342  Ram=4
+   ³  ÀÄSetBothPwm  0/78  Ram=2
+   ÀÄtimerTick  0/1260  Ram=4
       ÃÄClearScreen  0/42  Ram=0
       ³  ÃÄlcd_pos_xy  0/34  Ram=4
       ³  ³  ÀÄ*
@@ -72,7 +72,7 @@
       ÃÄ@ITOF  0/54  Ram=2
       ÃÄ@ADDFF  0/618  Ram=16
       ÃÄ@FLT  0/118  Ram=10
-      ÃÄSetLeft  0/40  Ram=2
+      ÃÄSetRight  0/40  Ram=2
       ÃÄ@ITOF  0/54  Ram=2
       ÃÄ@ITOF  0/54  Ram=2
       ÃÄ@DIVFF  0/346  Ram=14
@@ -81,14 +81,14 @@
       ÃÄ@MULFF  0/242  Ram=11
       ÃÄ@ADDFF  0/618  Ram=16
       ÃÄ@SFTOI  0/56  Ram=4
-      ÃÄSetRight  0/40  Ram=2
+      ÃÄSetLeft  0/40  Ram=2
       ÃÄ@ITOF  0/54  Ram=2
       ÃÄ@ITOF  0/54  Ram=2
       ÃÄ@DIVFF  0/346  Ram=14
       ÃÄ@ITOF  0/54  Ram=2
       ÃÄ@ADDFF  0/618  Ram=16
       ÃÄ@FLT  0/118  Ram=10
-      ÃÄSetRight  0/40  Ram=2
+      ÃÄSetLeft  0/40  Ram=2
       ÃÄ@ITOF  0/54  Ram=2
       ÃÄ@ITOF  0/54  Ram=2
       ÃÄ@DIVFF  0/346  Ram=14
@@ -97,6 +97,7 @@
       ÃÄ@MULFF  0/242  Ram=11
       ÃÄ@ADDFF  0/618  Ram=16
       ÃÄ@SFTOI  0/56  Ram=4
-      ÃÄSetLeft  0/40  Ram=2
-      ÃÄset_pwm  0/78  Ram=2
-      ÀÄset_pwm  0/78  Ram=2
+      ÃÄSetRight  0/40  Ram=2
+      ÃÄSetBothPwm  0/78  Ram=2
+      ÃÄSetBothPwm  0/78  Ram=2
+      ÀÄSetBothPwm  0/78  Ram=2

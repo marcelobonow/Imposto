@@ -34,7 +34,7 @@
 024     lcd_ini.@SCRATCH1
 02E-02F @PRINTF_LD_678.P1
 02E-031 @SFTOI.P2
-02E-02F set_pwm.vel
+02E-02F SetBothPwm.vel
 02E     timerTick.@SCRATCH1
 02E     @PSTRINGC_678.@SCRATCH1
 02F     timerTick.@SCRATCH2
@@ -125,37 +125,37 @@ ROM Allocation:
 001356  @DIVFF
 0014B0  @ADDFF
 00171A  @FLT
-001790  SetLeft
+001790  SetRight
 0017B8  @MULFF
 0018AA  @SFTOI
-0018E2  SetRight
-00190A  set_pwm
+0018E2  SetLeft
+00190A  SetBothPwm
 001958  timerTick
-001E96  @const703.call
-001E9A  @const708.call
-001EA0  @const710.call
-001EA4  @const712.call
-001EAA  @const733.call
-001EBA  @const734.call
-001EC2  lcd_ini
-001F70  motor_ini
-001F90  frente
-001FA4  Setup
-001FEA  @cinit1
-001FEA  MAIN
-001FFC  @cinit2
+001E44  @const703.call
+001E48  @const708.call
+001E4E  @const710.call
+001E52  @const712.call
+001E58  @const733.call
+001E68  @const734.call
+001E70  lcd_ini
+001F1E  MotorInitialize
+001F3E  frente
+001F52  Setup
+001F96  @cinit1
+001F96  MAIN
+001FA8  @cinit2
 
 Project Directory:
     D:\Projetos\Imposto\Source Code\
 
 Project Files:
-    main.c                                                  [23-ago-18 23:20  CRC=95C096C6]
+    main.c                                                  [25-ago-18 00:52  CRC=817C6B01]
     main.h                                                  [23-ago-18 01:55  CRC=6FD77C0A]
     18F4550.h                                               [12-nov-13 14:35  CRC=5337E248]
-    Motor1.c                                                [23-ago-18 22:54  CRC=373C0987]
+    Motor1.c                                                [25-ago-18 00:33  CRC=9999F85D]
     LCD_KIT.c                                               [23-ago-18 02:24  CRC=AD240354]
 
-Source signature=EA540547
+Source signature=386DC858
 
 Units:
     main (main)
