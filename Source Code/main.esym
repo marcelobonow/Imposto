@@ -1,8 +1,7 @@
-D G "button4" 0 8 "pin_e1"
-D G "__PCH__" 0 142 ""5.015""
-D G "__DEVICE__" 0 142 "4550"
-D G "__DATE__" 0 142 ""23-ago-18""
-D G "__TIME__" 0 142 ""22:19:02"" "Standard Header file for the PIC18F4550 device ////////////////"
+D G "__PCH__" 0 141 ""5.015""
+D G "__DEVICE__" 0 141 "4550"
+D G "__DATE__" 0 141 ""23-ago-18""
+D G "__TIME__" 0 141 ""23:20:16"" "Standard Header file for the PIC18F4550 device ////////////////"
 c L "set_tris_a" 2 3 6 "FUNCTION"
 v L "value" 2 45 "int8" `54 
 f B "set_tris_a" 2 45 "void(int8 value)" `53 
@@ -917,24 +916,24 @@ D G "m1p1" 3 4 "pin_e2"
 D G "m1p2" 3 5 "pin_c0"
 D G "m2p1" 3 6 "pin_d0"
 D G "m2p2" 3 7 "pin_d1"
-F G "tras" 3 9 "void()" `646 
-F G "frente" 3 16 "void()" `647 
-F G "gira_esquerda" 3 23 "void()" `648 
-F G "gira_direita" 3 30 "void()" `649 
-F G "esquerda_tras" 3 37 "void()" `650 
-F G "direita_tras" 3 44 "void()" `651 
-F G "direita_frente" 3 51 "void()" `652 
-F G "esquerda_frente" 3 58 "void()" `653 
-F G "para" 3 65 "void()" `654 
-F G "motor_ini" 3 72 "void()" `655 
-C L "motor_ini" 3 73 1 "FUNCTION"
-V L "vel" 3 79 "int16" `657 
-F G "set_pwm" 3 79 "void(int16 vel)" `656 
-C L "set_pwm" 3 73 1 "FUNCTION"
-V L "vel" 3 84 "int16" `659 
-F G "SetLeft" 3 85 "void(int16 vel)" `658 
-V L "vel" 3 88 "int16" `661 
-F G "SetRight" 3 89 "void(int16 vel)" `660 
+F G "tras" 3 10 "void()" `646 
+F G "frente" 3 18 "void()" `647 
+F G "gira_esquerda" 3 26 "void()" `648 
+F G "gira_direita" 3 34 "void()" `649 
+F G "esquerda_tras" 3 42 "void()" `650 
+F G "direita_tras" 3 50 "void()" `651 
+F G "direita_frente" 3 58 "void()" `652 
+F G "esquerda_frente" 3 66 "void()" `653 
+F G "para" 3 74 "void()" `654 
+F G "motor_ini" 3 82 "void()" `655 
+C L "motor_ini" 3 83 1 "FUNCTION"
+V L "vel" 3 89 "int16" `657 
+F G "set_pwm" 3 90 "void(int16 vel)" `656 
+C L "set_pwm" 3 83 1 "FUNCTION"
+V L "vel" 3 95 "int16" `659 
+F G "SetRight" 3 96 "void(int16 vel)" `658 
+V L "vel" 3 99 "int16" `661 
+F G "SetLeft" 3 100 "void(int16 vel)" `660 
 D G "lcd_rs" 4 29 "pin_d2" "pino rs do LCD"
 D G "lcd_enable" 4 30 "pin_d3" "pino enable do LCD"
 D G "lcd_d4" 4 31 "pin_d4" "pino de dados d4 do LCD"
@@ -996,20 +995,22 @@ D G "button3" 0 7 "pin_e0"
 D G "button4" 0 8 "pin_e1"
 V G "running" 0 10 "int8" `690 
 V G "blankScreen" 0 11 "[1]" `691 
-V G "ad1" 0 17 "int16" `694 
-V G "ad2" 0 17 "int16" `695 
-V G "ad3" 0 17 "int16" `696 
-V G "ad4" 0 17 "int16" `697 
-V G "timerBase" 0 18 "int16" `698 
-V G "adCounter" 0 19 "int8" `699 
-f G "ClearScreen" 0 21 "void()" `700 
-f G "Setup" 0 22 "void()" `701 
-F G "timerTick" 0 26 "void()" `702 
-C L "timerTick" 0 49 15 "FUNCTION"
-C L "timerTick" 0 49 1 "FUNCTION"
-F G "MAIN" 0 97 "void()" `714 
-F G "Setup" 0 119 "void()" `701 
-F G "ClearScreen" 0 137 "void()" `700 
+V G "ad1" 0 13 "int16" `694 
+V G "ad2" 0 13 "int16" `695 
+V G "ad3" 0 13 "int16" `696 
+V G "ad4" 0 13 "int16" `697 
+V G "timerBase" 0 14 "int16" `698 
+V G "adCounter" 0 15 "int8" `699 
+f G "ClearScreen" 0 17 "void()" `700 
+f G "Setup" 0 18 "void()" `701 
+F G "timerTick" 0 22 "void()" `702 
+C L "timerTick" 0 40 9 "FUNCTION"
+C L "timerTick" 0 40 1 "FUNCTION"
+C L "timerTick" 0 40 2 "FUNCTION"
+C L "timerTick" 0 40 1 "FUNCTION"
+F G "MAIN" 0 107 "void()" `730 
+F G "Setup" 0 130 "void()" `701 
+F G "ClearScreen" 0 149 "void()" `700 
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep" 0 1

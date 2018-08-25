@@ -52,7 +52,7 @@ Fixed=
 3=main_old.c
 4=Motor1.c
 5=main.c
-6=
+6=LCD_KIT.c
 7=
 8=
 [Units]

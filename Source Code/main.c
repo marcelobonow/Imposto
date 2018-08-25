@@ -10,10 +10,6 @@
 int running;
 const char blankScreen[] = "                ";
 
-#ifdef DEBUG
-int16 pwm;
-#endif
-
 int16 ad1, ad2, ad3, ad4;
 int16 timerBase;
 int8 adCounter;
@@ -26,51 +22,25 @@ void timerTick()
 {
     if (running == 1)
     {
-        if (adCounter == 1)
-        {
-            ad1 = read_adc();
-        }
-        else if (adCounter == 2)
-        {
-            ad2 = read_adc();
-        }
-        else if (adCounter == 3)
-        {
-            ad3 = read_adc();
-        }
-        else
-        {
-            adCounter = 0;
-            ad4 = read_adc();
-        }
+            if (adCounter == 1)
+            {
+                ad1 = read_adc();
+            }
+            else if (adCounter == 2)
+            {
+                ad2 = read_adc();
+            }
+            else if (adCounter == 3)
+            {
+                ad3 = read_adc();
+            }
+            else
+            {
+                adCounter = 0;
+                ad4 = read_adc();
+            }
 
         set_adc_channel(adCounter + 1);
-
-        // if (ad1 + ad2 < 400)
-        // {
-        //     if ((float)ad1 / ad1 + ad2 > 0.52f)
-        //     {
-        //         SetLeft(900);
-        //         //SetRight((((float)ad2 / ad1 + ad2) * 200) + 800);
-        //         frente();
-        //     }
-        //     else if ((float)ad2 / ad1 + ad2 > 0.52f)
-        //     {
-        //         SetRight(900);
-        //         //SetLeft((((float)ad1 / ad1 + ad2) * 200) + 800);
-        //         frente();
-        //     }
-        //     else
-        //     {
-        //         set_pwm(900);
-        //         frente();
-        //     }
-        // }
-        // else
-        // {
-        //     set_pwm(0);
-        //     //para();
-        // }
 
         if (timerBase == 2000)
         {
@@ -86,6 +56,32 @@ void timerTick()
             printf(lcd_escreve, "%04ld", ad3);
             printf(lcd_escreve, " 4: ");
             printf(lcd_escreve, "%04ld", ad4);
+
+            ///alto significa escuro
+            if (ad1 + ad2 > 1000)
+            {
+                //Como quanto mais escuro mais alto, isso significa que o que esta com menos tem que subir,
+                //e vai subir proporcionalmente a quanto a menos ele tem, esse valor é exatamente o oposto (que esta no outro ad)
+                //
+                if ((float)ad1 / ad1 + ad2 < 0.48f)
+                {
+                    SetLeft(1023);
+                    SetRight((((float)ad2 / ad1 + ad2) * 70) + 950);
+                }
+                else if ((float)ad2 / ad1 + ad2 < 0.48f)
+                {
+                    SetRight(1023);
+                    SetLeft((((float)ad1 / ad1 + ad2) * 70) + 950);
+                }
+                else
+                {
+                    set_pwm(1000);
+                }
+            }
+            else
+            {
+                set_pwm(0);
+            }
         }
         timerBase++;
         adCounter++;
@@ -99,14 +95,15 @@ void main()
     lcd_pos_xy(1, 1);
     printf(lcd_escreve, " Inicializando");
     delay_ms(1000);
+
     do
     {
         if (input(button1) == 0)
         {
             running = 1;
-            lcd_pos_xy(1,1);
+            lcd_pos_xy(1, 1);
             printf(lcd_escreve, "Frente");
-            frente();
+            set_pwm(1000);
         }
         if (input(button2) == 0)
         {
@@ -117,8 +114,8 @@ void main()
 
 void Setup()
 {
-    running = 1;
     adCounter = 1;
+    running = 1;
 
     setup_adc_ports(AN0_TO_AN3);
     setup_adc(ADC_CLOCK_DIV_4);
@@ -131,6 +128,7 @@ void Setup()
     lcd_ini();
     motor_ini();
     set_pwm(900);
+    frente();
 }
 
 void ClearScreen()
