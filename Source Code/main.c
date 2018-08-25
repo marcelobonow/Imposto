@@ -8,7 +8,6 @@
 #define button4 pin_e1
 
 int running;
-const char blankScreen[] = "                ";
 
 int16 ad1, ad2, ad3, ad4;
 int16 timerBase;
@@ -41,7 +40,6 @@ void timerTick()
     {
         timerBase = 0;
         ClearScreen();
-        lcd_pos_xy(1, 1);
         printf(lcd_escreve, "1: ");
         printf(lcd_escreve, "%04ld", ad1);
         printf(lcd_escreve, " 2: ");
@@ -55,7 +53,7 @@ void timerTick()
     timerBase++;
     adCounter++;
 
-    set_adc_channel(adCounter + 1);
+    set_adc_channel(adCounter);
     if (running == 1)
     {
         ///alto significa escuro
@@ -136,8 +134,5 @@ void Setup()
 
 void ClearScreen()
 {
-    lcd_pos_xy(1, 1);
-    printf(lcd_escreve, blankScreen);
-    lcd_pos_xy(1, 2);
-    printf(lcd_escreve, blankScreen);
+    lcd_escreve('\f');
 }

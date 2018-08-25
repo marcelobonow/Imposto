@@ -1,7 +1,7 @@
-D G "__PCH__" 0 142 ""5.015""
-D G "__DEVICE__" 0 142 "4550"
-D G "__DATE__" 0 142 ""25-ago-18""
-D G "__TIME__" 0 142 ""00:52:15"" "Standard Header file for the PIC18F4550 device ////////////////"
+D G "__PCH__" 0 148 ""5.015""
+D G "__DEVICE__" 0 148 "4550"
+D G "__DATE__" 0 148 ""25-ago-18""
+D G "__TIME__" 0 148 ""01:47:19"" "Standard Header file for the PIC18F4550 device ////////////////"
 c L "set_tris_a" 2 3 6 "FUNCTION"
 v L "value" 2 45 "int8" `54 
 f B "set_tris_a" 2 45 "void(int8 value)" `53 
@@ -994,22 +994,21 @@ D G "button2" 0 6 "pin_a5"
 D G "button3" 0 7 "pin_e0"
 D G "button4" 0 8 "pin_e1"
 V G "running" 0 10 "int8" `690 
-V G "blankScreen" 0 11 "[1]" `691 
-V G "ad1" 0 13 "int16" `694 
-V G "ad2" 0 13 "int16" `695 
-V G "ad3" 0 13 "int16" `696 
-V G "ad4" 0 13 "int16" `697 
-V G "timerBase" 0 14 "int16" `698 
-V G "adCounter" 0 15 "int8" `699 
-f G "ClearScreen" 0 17 "void()" `700 
-f G "Setup" 0 18 "void()" `701 
-F G "timerTick" 0 22 "void()" `702 
-C L "timerTick" 0 61 1 "FUNCTION"
-C L "timerTick" 0 61 2 "FUNCTION"
-C L "timerTick" 0 61 1 "FUNCTION"
-F G "MAIN" 0 96 "void()" `730 
-F G "Setup" 0 119 "void()" `701 
-F G "ClearScreen" 0 138 "void()" `700 
+V G "ad1" 0 12 "int16" `691 
+V G "ad2" 0 12 "int16" `692 
+V G "ad3" 0 12 "int16" `693 
+V G "ad4" 0 12 "int16" `694 
+V G "timerBase" 0 13 "int16" `695 
+V G "adCounter" 0 14 "int8" `696 
+f G "ClearScreen" 0 16 "void()" `697 
+f G "Setup" 0 17 "void()" `698 
+F G "timerTick" 0 21 "void()" `699 
+C L "timerTick" 0 59 1 "FUNCTION"
+C L "timerTick" 0 59 2 "FUNCTION"
+C L "timerTick" 0 59 1 "FUNCTION"
+F G "MAIN" 0 94 "void()" `727 
+F G "Setup" 0 117 "void()" `698 
+F G "ClearScreen" 0 136 "void()" `697 
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep" 0 1

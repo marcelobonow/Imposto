@@ -33,8 +33,8 @@
 023     MAIN.@SCRATCH1
 024     lcd_ini.@SCRATCH1
 02E-02F @PRINTF_LD_678.P1
-02E-031 @SFTOI.P2
 02E-02F SetBothPwm.vel
+02E-031 @SFTOI.P1
 02E     timerTick.@SCRATCH1
 02E     @PSTRINGC_678.@SCRATCH1
 02F     timerTick.@SCRATCH2
@@ -45,23 +45,23 @@
 030     @PRINTF_LD_678.@SCRATCH1
 031     timerTick.@SCRATCH4
 031     @PRINTF_LD_678.@SCRATCH2
-032-035 @FLT.P1
+032-035 @DIVFF.P1
 032-035 @ADDFF.P2
-032-035 @DIVFF.P3
+032-033 @ITOF.P3
 032-035 @MULFF.P4
-032-033 @ITOF.P5
+032-035 @FLT.P5
 032     @PRINTF_LD_678.@SCRATCH3
 033     @PRINTF_LD_678.@SCRATCH4
 034     @PRINTF_LD_678.@SCRATCH5
 035     @PRINTF_LD_678.@SCRATCH6
-036-039 @FLT.P1
-036-039 @DIVFF.P2
-036-039 @MULFF.P3
-036-039 @ADDFF.P4
+036-039 @DIVFF.P1
+036-039 @FLT.P2
+036-039 @ADDFF.P3
+036-039 @MULFF.P4
 036     @PRINTF_LD_678.@SCRATCH7
 037     lcd_escreve.c
-038     @delay_ms1.P1
 038     lcd_pos_xy.x
+038     @delay_ms1.P1
 039     lcd_pos_xy.y
 03A     lcd_pos_xy.endereco
 03A     @DIVFF.@SCRATCH1
@@ -100,62 +100,60 @@ FBE     CCP_1_LOW
 FBF     CCP_1_HIGH
 FE1-FE2 @WRITE_PACKED_MEMORY.P1
 FE1-FE2 @READ_PACKED_MEMORY.P2
-FE9-FEA @READ_PROGRAM_MEMORY.P1
-FE9-FEA @READ_PACKED_MEMORY.P2
-FE9-FEA @WRITE_PACKED_MEMORY.P3
-FE9-FEA @WRITE_PROGRAM_MEMORY.P4
+FE9-FEA @WRITE_PACKED_MEMORY.P1
+FE9-FEA @READ_PROGRAM_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P3
+FE9-FEA @READ_PACKED_MEMORY.P4
 FF6-FF8 @READ_PROGRAM_MEMORY.P1
 FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
 
 ROM Allocation:
 001096  INI_LCD.call
 0010B0  INI_LCD.data
-0010B4  blankScreen.call
-0010B4  blankScreen.data
-0010C6  @delay_us1
-0010E6  lcd_envia_nibble
-001120  lcd_envia_byte
-001154  lcd_pos_xy
-001176  @delay_ms1
-00119E  lcd_escreve
-0011E4  @PSTRINGC_678
-001204  ClearScreen
-00122E  @PRINTF_LD_678
-001320  @ITOF
-001356  @DIVFF
-0014B0  @ADDFF
-00171A  @FLT
-001790  SetRight
-0017B8  @MULFF
-0018AA  @SFTOI
-0018E2  SetLeft
-00190A  SetBothPwm
-001958  timerTick
-001E44  @const703.call
-001E48  @const708.call
-001E4E  @const710.call
-001E52  @const712.call
-001E58  @const733.call
-001E68  @const734.call
-001E70  lcd_ini
-001F1E  MotorInitialize
-001F3E  frente
-001F52  Setup
-001F96  @cinit1
-001F96  MAIN
-001FA8  @cinit2
+0010B4  @delay_us1
+0010D4  lcd_envia_nibble
+00110E  lcd_envia_byte
+001142  @delay_ms1
+00116A  lcd_pos_xy
+00118C  lcd_escreve
+0011D2  ClearScreen
+0011DC  @PSTRINGC_678
+0011FC  @PRINTF_LD_678
+0012EE  @ITOF
+001324  @DIVFF
+00147E  @ADDFF
+0016E8  @FLT
+00175E  SetRight
+001786  @MULFF
+001878  @SFTOI
+0018B0  SetLeft
+0018D8  SetBothPwm
+001926  timerTick
+001DFC  @const700.call
+001E00  @const705.call
+001E06  @const707.call
+001E0A  @const709.call
+001E10  @const730.call
+001E20  @const731.call
+001E28  lcd_ini
+001ED6  MotorInitialize
+001EF6  frente
+001F0A  Setup
+001F4E  MAIN
+001F4E  @cinit1
+001F60  @cinit2
 
 Project Directory:
     D:\Projetos\Imposto\Source Code\
 
 Project Files:
-    main.c                                                  [25-ago-18 00:52  CRC=817C6B01]
+    main.c                                                  [25-ago-18 01:47  CRC=0F734F8C]
     main.h                                                  [23-ago-18 01:55  CRC=6FD77C0A]
     18F4550.h                                               [12-nov-13 14:35  CRC=5337E248]
     Motor1.c                                                [25-ago-18 00:33  CRC=9999F85D]
     LCD_KIT.c                                               [23-ago-18 02:24  CRC=AD240354]
 
-Source signature=386DC858
+Source signature=C664ACE3
 
 Units:
     main (main)

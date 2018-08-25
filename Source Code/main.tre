@@ -35,18 +35,10 @@
    ³  ÃÄ@PSTRINGC_678  0/32  Ram=2
    ³  ³  ÀÄ*
    ³  ÀÄSetBothPwm  0/78  Ram=2
-   ÀÄtimerTick  0/1260  Ram=4
-      ÃÄClearScreen  0/42  Ram=0
-      ³  ÃÄlcd_pos_xy  0/34  Ram=4
-      ³  ³  ÀÄ*
-      ³  ÃÄ@PSTRINGC_678  0/32  Ram=2
-      ³  ³  ÀÄ*
-      ³  ÃÄlcd_pos_xy  0/34  Ram=4
-      ³  ³  ÀÄ*
-      ³  ÀÄ@PSTRINGC_678  0/32  Ram=2
+   ÀÄtimerTick  0/1238  Ram=4
+      ÃÄClearScreen  0/10  Ram=0
+      ³  ÀÄlcd_escreve  0/70  Ram=1
       ³     ÀÄ*
-      ÃÄlcd_pos_xy  0/34  Ram=4
-      ³  ÀÄ*
       ÃÄ@PSTRINGC_678  0/32  Ram=2
       ³  ÀÄ*
       ÃÄ@PRINTF_LD_678  0/242  Ram=9
