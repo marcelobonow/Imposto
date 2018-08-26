@@ -92,18 +92,18 @@
 F83     PSP_DATA
 FB4.6   C1OUT
 FB4.7   C2OUT
-FBB     CCP_2
 FBB     CCP_2_LOW
+FBB     CCP_2
 FBC     CCP_2_HIGH
 FBE     CCP_1
 FBE     CCP_1_LOW
 FBF     CCP_1_HIGH
 FE1-FE2 @WRITE_PACKED_MEMORY.P1
 FE1-FE2 @READ_PACKED_MEMORY.P2
-FE9-FEA @WRITE_PACKED_MEMORY.P1
-FE9-FEA @READ_PROGRAM_MEMORY.P2
-FE9-FEA @WRITE_PROGRAM_MEMORY.P3
-FE9-FEA @READ_PACKED_MEMORY.P4
+FE9-FEA @READ_PROGRAM_MEMORY.P1
+FE9-FEA @WRITE_PACKED_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P3
+FE9-FEA @WRITE_PROGRAM_MEMORY.P4
 FF6-FF8 @READ_PROGRAM_MEMORY.P1
 FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
 
@@ -134,26 +134,25 @@ ROM Allocation:
 001E06  @const707.call
 001E0A  @const709.call
 001E10  @const730.call
-001E20  @const731.call
-001E28  lcd_ini
-001ED6  MotorInitialize
-001EF6  frente
-001F0A  Setup
-001F4E  MAIN
-001F4E  @cinit1
-001F60  @cinit2
+001E20  lcd_ini
+001ECE  MotorInitialize
+001EEE  frente
+001F02  Setup
+001F46  @cinit1
+001F46  MAIN
+001F58  @cinit2
 
 Project Directory:
     D:\Projetos\Imposto\Source Code\
 
 Project Files:
-    main.c                                                  [25-ago-18 01:47  CRC=0F734F8C]
+    main.c                                                  [26-ago-18 16:20  CRC=FDB051E6]
     main.h                                                  [23-ago-18 01:55  CRC=6FD77C0A]
     18F4550.h                                               [12-nov-13 14:35  CRC=5337E248]
     Motor1.c                                                [25-ago-18 00:33  CRC=9999F85D]
     LCD_KIT.c                                               [23-ago-18 02:24  CRC=AD240354]
 
-Source signature=C664ACE3
+Source signature=B4A1AF3D
 
 Units:
     main (main)

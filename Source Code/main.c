@@ -102,9 +102,6 @@ void main()
         if (input(button1) == 0)
         {
             running = 1;
-            lcd_pos_xy(1, 1);
-            printf(lcd_escreve, "Frente");
-            SetBothPwm(1023);
         }
         if (input(button2) == 0)
         {
@@ -116,7 +113,7 @@ void main()
 void Setup()
 {
     adCounter = 1;
-    running = 1;
+    running = 0;
 
     setup_adc_ports(AN0_TO_AN3);
     setup_adc(ADC_CLOCK_DIV_4);

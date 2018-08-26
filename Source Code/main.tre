@@ -1,5 +1,5 @@
 ÀÄmain
-   ÃÄMAIN  0/182  Ram=1
+   ÃÄMAIN  0/116  Ram=1
    ³  ÃÄ@cinit1  (Inline)  Ram=0
    ³  ÃÄSetup  0/68  Ram=0
    ³  ³  ÃÄlcd_ini  0/174  Ram=2
@@ -29,12 +29,7 @@
    ³  ³     ³  ÀÄ*
    ³  ³     ÀÄlcd_envia_byte  0/52  Ram=3
    ³  ³        ÀÄ*
-   ³  ÃÄ@delay_ms1  0/40  Ram=1
-   ³  ÃÄlcd_pos_xy  0/34  Ram=4
-   ³  ³  ÀÄ*
-   ³  ÃÄ@PSTRINGC_678  0/32  Ram=2
-   ³  ³  ÀÄ*
-   ³  ÀÄSetBothPwm  0/78  Ram=2
+   ³  ÀÄ@delay_ms1  0/40  Ram=1
    ÀÄtimerTick  0/1238  Ram=4
       ÃÄClearScreen  0/10  Ram=0
       ³  ÀÄlcd_escreve  0/70  Ram=1
