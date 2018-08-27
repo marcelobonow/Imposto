@@ -1,8 +1,8 @@
 ÀÄmain
-   ÃÄMAIN  0/116  Ram=1
+   ÃÄMAIN  0/132  Ram=1
    ³  ÃÄ@cinit1  (Inline)  Ram=0
    ³  ÃÄSetup  0/68  Ram=0
-   ³  ³  ÃÄlcd_ini  0/174  Ram=2
+   ³  ³  ÃÄlcd_ini  0/162  Ram=2
    ³  ³  ³  ÃÄ@delay_ms1  0/40  Ram=1
    ³  ³  ³  ÃÄlcd_envia_nibble  0/58  Ram=1
    ³  ³  ³  ÃÄ@delay_ms1  0/40  Ram=1
@@ -18,6 +18,7 @@
    ³  ÃÄlcd_pos_xy  0/34  Ram=4
    ³  ³  ÀÄlcd_envia_byte  0/52  Ram=3
    ³  ³     ÀÄ*
+   ³  ÃÄ@delay_ms1  0/40  Ram=1
    ³  ÃÄ@PSTRINGC_678  0/32  Ram=2
    ³  ³  ÀÄlcd_escreve  0/70  Ram=1
    ³  ³     ÃÄlcd_envia_byte  0/52  Ram=3
@@ -30,7 +31,7 @@
    ³  ³     ÀÄlcd_envia_byte  0/52  Ram=3
    ³  ³        ÀÄ*
    ³  ÀÄ@delay_ms1  0/40  Ram=1
-   ÀÄtimerTick  0/952  Ram=4
+   ÀÄtimerTick  0/572  Ram=4
       ÃÄClearScreen  0/10  Ram=0
       ³  ÀÄlcd_escreve  0/70  Ram=1
       ³     ÀÄ*
@@ -49,10 +50,6 @@
       ÃÄ@ITOF  0/54  Ram=2
       ÃÄ@ITOF  0/54  Ram=2
       ÃÄ@DIVFF  0/346  Ram=14
-      ÃÄ@MULFF  0/242  Ram=11
-      ÃÄ@ADDFF  0/618  Ram=16
-      ÃÄ@MULFF  0/242  Ram=11
-      ÃÄ@ADDFF  0/618  Ram=16
       ÃÄlcd_pos_xy  0/34  Ram=4
       ³  ÀÄ*
       ÃÄ@FLT  0/118  Ram=10
@@ -65,21 +62,6 @@
       ³  ÀÄ*
       ÃÄSetRight  0/40  Ram=2
       ÃÄSetLeft  0/40  Ram=2
-      ÃÄ@SFTOI  0/56  Ram=4
-      ÃÄ@PSTRINGCN_678  0/30  Ram=3
-      ³  ÀÄlcd_escreve  0/70  Ram=1
-      ³     ÀÄ*
-      ÃÄ@PRINTF_LD_678  0/242  Ram=9
-      ³  ÀÄ*
-      ÃÄ@SFTOI  0/56  Ram=4
-      ÃÄ@PSTRINGCN_678  0/30  Ram=3
-      ³  ÀÄ*
-      ÃÄ@PRINTF_LD_678  0/242  Ram=9
-      ³  ÀÄ*
-      ÃÄ@SFTOI  0/56  Ram=4
-      ÃÄSetLeft  0/40  Ram=2
-      ÃÄ@SFTOI  0/56  Ram=4
-      ÃÄSetRight  0/40  Ram=2
       ÃÄSetBothPwm  0/78  Ram=2
       ÃÄlcd_pos_xy  0/34  Ram=4
       ³  ÀÄ*

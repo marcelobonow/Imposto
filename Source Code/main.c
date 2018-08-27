@@ -64,9 +64,6 @@ void timerTick()
         float ad1Ratio = (float)ad1 / (float)(ad1 + ad2);
         float ad2Ratio = (float)ad2 / (float)(ad1 + ad2);
 
-        float pwm1 = ad1Ratio * 246 + 777;
-        float pwm2 = ad2Ratio * 246 + 777;
-
         ///alto significa escuro
         if (ad1 + ad2 > 300)
         {
@@ -76,13 +73,13 @@ void timerTick()
             lcd_pos_xy(1, 2);
 
             //O ad1 é o da direita, se este esta maior, significa que o robo esta a direit
-            if (ad1Ratio > 0.7f)
+            if (ad1Ratio > 0.55f)
             {
                 printf(lcd_escreve, "Esta a direita");
                 SetRight(1023);
                 SetLeft(0);
             }
-            else if (ad2Ratio > 0.7f)
+            else if (ad2Ratio > 0.55f)
             {
                 printf(lcd_escreve, "Esta a esquerda");
                 SetRight(0);
@@ -90,17 +87,13 @@ void timerTick()
             }
             else
             {
-                printf(lcd_escreve, "p1: %4ld", (long)pwm1);
-                printf(lcd_escreve, "p2: %4ld", (long)pwm2);
-
-                SetLeft(pwm1);
-                SetRight(pwm2);
+                SetBothPwm(1023);
             }
         }
         else
         {
             ///Esta fora da pista, deve fazer algo
-            SetBothPwm(0);
+            //SetBothPwm(0);
             lcd_pos_xy(1, 2);
 
             printf(lcd_escreve, "Se perdeu");
@@ -119,6 +112,7 @@ void main()
 {
     Setup();
     lcd_pos_xy(1, 1);
+    delay_ms(5);
     printf(lcd_escreve, " Inicializando");
     delay_ms(1000);
     do
