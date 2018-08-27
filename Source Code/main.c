@@ -1,3 +1,4 @@
+//#DEFINE DEBUG
 #include <main.h>
 #include <Motor1.c>
 #include <LCD_KIT.c>
@@ -44,50 +45,74 @@ void timerTick()
         printf(lcd_escreve, "%04ld", ad1);
         printf(lcd_escreve, " 2: ");
         printf(lcd_escreve, "%04ld", ad2);
-        lcd_pos_xy(1, 2);
-        printf(lcd_escreve, "3: ");
-        printf(lcd_escreve, "%04ld", ad3);
-        printf(lcd_escreve, " 4: ");
-        printf(lcd_escreve, "%04ld", ad4);
+        // lcd_pos_xy(1, 2);
+        // printf(lcd_escreve, "3: ");
+        // printf(lcd_escreve, "%04ld", ad3);
+        // printf(lcd_escreve, " 4: ");
+        // printf(lcd_escreve, "%04ld", ad4);
     }
     timerBase++;
     adCounter++;
 
     set_adc_channel(adCounter);
+#ifdef DEBUG
+    SetLeft(0);
+    SetRight(1023);
+#else
     if (running == 1)
     {
+        float ad1Ratio = (float)ad1 / (float)(ad1 + ad2);
+        float ad2Ratio = (float)ad2 / (float)(ad1 + ad2);
+
+        float pwm1 = ad1Ratio * 246 + 777;
+        float pwm2 = ad2Ratio * 246 + 777;
+
         ///alto significa escuro
-        if (ad1 + ad2 > 250)
+        if (ad1 + ad2 > 300)
         {
             //Como quanto mais escuro mais alto, isso significa que o que esta com menos tem que subir,
             //e vai subir proporcionalmente a quanto a menos ele tem, esse valor é exatamente o oposto (que esta no outro ad)
-            //
-            if ((float)ad1 / ad1 + ad2 < 0.48f)
+
+            lcd_pos_xy(1, 2);
+
+            //O ad1 é o da direita, se este esta maior, significa que o robo esta a direit
+            if (ad1Ratio > 0.7f)
             {
+                printf(lcd_escreve, "Esta a direita");
                 SetRight(1023);
-                SetLeft((((float)ad1 / ad1 + ad2) * 200) + 800);
+                SetLeft(0);
             }
-            else if ((float)ad2 / ad1 + ad2 < 0.48f)
+            else if (ad2Ratio > 0.7f)
             {
+                printf(lcd_escreve, "Esta a esquerda");
+                SetRight(0);
                 SetLeft(1023);
-                SetRight((((float)ad2 / ad1 + ad2) * 200) + 800);
             }
             else
             {
-                SetBothPwm(1023);
+                printf(lcd_escreve, "p1: %4ld", (long)pwm1);
+                printf(lcd_escreve, "p2: %4ld", (long)pwm2);
+
+                SetLeft(pwm1);
+                SetRight(pwm2);
             }
         }
         else
         {
+            ///Esta fora da pista, deve fazer algo
             SetBothPwm(0);
+            lcd_pos_xy(1, 2);
+
+            printf(lcd_escreve, "Se perdeu");
+            
         }
     }
 
-    ///Seta para pegar no proximo tick
     else
     {
         SetBothPwm(0);
     }
+#endif
 }
 
 void main()
@@ -96,7 +121,6 @@ void main()
     lcd_pos_xy(1, 1);
     printf(lcd_escreve, " Inicializando");
     delay_ms(1000);
-
     do
     {
         if (input(button1) == 0)

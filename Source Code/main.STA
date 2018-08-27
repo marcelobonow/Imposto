@@ -1,78 +1,82 @@
 
-ROM used:   4022/32768 (12%)
-            4026/32768 (12%) including unused fragments
+ROM used:   3818/32768 (12%)
+            3822/32768 (12%) including unused fragments
 
-            3.1 Average locations per line
-            20.8 Average locations per statement
+            2.9 Average locations per line
+            19.5 Average locations per statement
 
 RAM used:   36/2048 (2%) at main() level
-            66/2048 (3%) worst case
+            82/2048 (4%) worst case
 
 Stack used: 11 worst case (5 in main + 6 for interrupts)
 Stack size: 31
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-  136    71  37  main.c
+  160    74  38  main.c
    14     0   0  main.h
   837     0   0  18F4550.h
   103    43  22  Motor1.c
-  223    79  41  LCD_KIT.c
+  223    79  40  LCD_KIT.c
 ----- -----
- 1313   193 Total
+ 1337   196 Total
 
 Page ROM  %  RAM   Vol Diff  Functions:
 ---- --- --- ---   --- ----  ----------
-0     40   0    1             @delay_ms1
+0     40   1    1             @delay_ms1
 0     32   0    1             @delay_us1
 0     20   0    0   108  1.7  frente
 0     32   0    0    90  2.1  MotorInitialize
 0     78   1    2    53  1.7  SetBothPwm
-0     40   0    2    30  1.5  SetRight
-0     40   0    2    40  0.6  SetLeft
+0     40   1    2    30  1.5  SetRight
+0     40   1    2    40  0.6  SetLeft
 0     30   0    0             @const662
 0     58   1    1   260  1.9  lcd_envia_nibble
 0     52   1    3   176  2.7  lcd_envia_byte
 0    174   2    2   433  4.3  lcd_ini
 0     34   0    4   186  5.5  lcd_pos_xy
 0     70   1    1   290  4.1  lcd_escreve
-0   1238  15    4  1560  6.9  timerTick
+0    952  12    4  1802  6.7  timerTick
 0      4   0    0             @const700
 0     32   0    2             @PSTRINGC_678
 0    242   3    9             @PRINTF_LD_678
 0      6   0    0             @const705
-0      4   0    0             @const707
-0      6   0    0             @const709
 0     54   1    2             @ITOF
-0    346   4   14             @DIVFF
-0    618   8   16             @ADDFF
-0    118   1   10             @FLT
+0    346   5   14             @DIVFF
 0    242   3   11             @MULFF
+0    618   8   16             @ADDFF
+0    118   2   10   255  3.9  @FLT
+0     16   0    0             @const725
+0     16   0    0   250  2.3  @const726
+0     10   0    0    17  0.8  @const727
 0     56   1    4             @SFTOI
-0    116   1    1   255  3.9  MAIN
-0     16   0    0             @const730
+0     30   0    3    17  0.8  @PSTRINGCN_678
+0     10   0    0   255  3.9  @const732
+0     10   0    0    17  0.8  @const733
+0    116   2    1   255  3.9  MAIN
+0     16   0    0    17  0.8  @const737
 0     68   1    0   250  2.3  Setup
 0     10   0    0    17  0.8  ClearScreen
- Inline         0    17  0.8  @cinit1
+ Inline         0             @cinit1
 
 Program metrics:
-    Functions               15
-    Statements              193
-    Comments                230
-    Volume (V)              6066
-    Difficulty (D)          39.6
-    Effort to implement (E) 240299
-    Time to implement (T)   3 hours, 42 minutes
-    Est Delivered Bugs (B)  1
-    Cyclomatic Complexity   19
-    Maintainability (MI)    87
+    Functions               21
+    Statements              196
+    Comments                240
+    Volume (V)              8152
+    Difficulty (D)          53.8
+    Effort to implement (E) 438795
+    Time to implement (T)   6 hours, 46 minutes
+    Est Delivered Bugs (B)  2
+    Cyclomatic Complexity   25
+    Maintainability (MI)    60
 
  Segment     Used  Free
 -----------  ----  ----
 00000-00FFE     0  4096  
 01000-01006     4  4  
 01008-01094   142  0  
-01096-07FFE  3876  24646  
+01096-07FFE  3672  24850  
 
 
 
