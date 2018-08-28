@@ -1,8 +1,9 @@
-D G "__PCH__" 0 156 ""5.015""
-D G "__DEVICE__" 0 156 "4550"
-D G "__DATE__" 0 156 ""27-ago-18""
-D G "__TIME__" 0 156 ""23:07:44"" "#DEFINE DEBUG"
-c L "set_tris_a" 2 1 6 "FUNCTION"
+D G "button4" 0 8 "pin_e1"
+D G "__PCH__" 0 257 ""5.015""
+D G "__DEVICE__" 0 257 "4550"
+D G "__DATE__" 0 257 ""28-ago-18""
+D G "__TIME__" 0 257 ""07:48:27"" "Standard Header file for the PIC18F4550 device ////////////////"
+c L "set_tris_a" 2 3 6 "FUNCTION"
 v L "value" 2 45 "int8" `54 
 f B "set_tris_a" 2 45 "void(int8 value)" `53 
 v L "value" 2 46 "int8" `56 
@@ -101,7 +102,7 @@ d G "putc" 2 131 "putchar"
 d G "fputc" 2 132 "putchar"
 d G "fgets" 2 133 "gets"
 d G "fputs" 2 134 "puts"
-c L "output_drive" 2 1 3 "FUNCTION"
+c L "output_drive" 2 3 3 "FUNCTION"
 f B "restart_cause" 2 139 "int8()" `105 
 f B "reset_cpu" 2 140 "void()" `106 
 f B "sleep" 2 141 "void()" `107 
@@ -116,7 +117,7 @@ d G "WDT_FROM_SLEEP" 2 149 "3"
 d G "RESET_INSTRUCTION" 2 150 "0"
 d G "SLEEP_FULL" 2 153 "0" "Default"
 d G "SLEEP_IDLE" 2 154 "1" "Clock and peripherals don't stop"
-c L "sleep" 2 1 5 "FUNCTION"
+c L "sleep" 2 3 5 "FUNCTION"
 v L "mode" 2 161 "int8" `111 
 f B "setup_timer_0" 2 161 "void(int8 mode)" `110 
 v L "value" 2 162 "int16" `113 
@@ -156,7 +157,7 @@ d G "RTCC_DIV_128" 2 196 "6"
 d G "RTCC_DIV_256" 2 197 "7"
 d G "RTCC_OFF" 2 198 "0x80"
 d G "RTCC_8_BIT" 2 199 "0x40"
-c L "get_rtcc" 2 1 8 "FUNCTION"
+c L "get_rtcc" 2 3 8 "FUNCTION"
 v L "mode" 2 210 "int16" `122 
 f B "setup_wdt" 2 210 "void(int16 mode)" `121 
 f B "restart_wdt" 2 211 "void()" `123  "Constants used for SETUP_WDT() are:"
@@ -178,7 +179,7 @@ d G "WDT_16" 2 228 "0x1B00"
 d G "WDT_32S" 2 229 "0x1D00"
 d G "WDT_64S" 2 230 "0x1F00"
 d G "WDT_128S" 2 231 "0x2100"
-c L "restart_wdt" 2 1 3 "FUNCTION"
+c L "restart_wdt" 2 3 3 "FUNCTION"
 v L "mode" 2 237 "int16" `125 
 f B "setup_timer_1" 2 237 "void(int16 mode)" `124 
 f B "get_timer1" 2 238 "int16()" `126 
@@ -193,7 +194,7 @@ d G "T1_DIV_BY_1" 2 249 "0"
 d G "T1_DIV_BY_2" 2 250 "0x10"
 d G "T1_DIV_BY_4" 2 251 "0x20"
 d G "T1_DIV_BY_8" 2 252 "0x30"
-c L "set_timer1" 2 1 3 "FUNCTION"
+c L "set_timer1" 2 3 3 "FUNCTION"
 v L "mode" 2 257 "int8" `130 
 v L "period" 2 257 "int8" `131 
 v L "postscale" 2 257 "int8" `132 
@@ -205,7 +206,7 @@ d G "T2_DISABLED" 2 261 "0"
 d G "T2_DIV_BY_1" 2 262 "4"
 d G "T2_DIV_BY_4" 2 263 "5"
 d G "T2_DIV_BY_16" 2 264 "6"
-c L "set_timer2" 2 1 3 "FUNCTION"
+c L "set_timer2" 2 3 3 "FUNCTION"
 v L "mode" 2 269 "int16" `137 
 f B "setup_timer_3" 2 269 "void(int16 mode)" `136 
 f B "get_timer3" 2 270 "int16()" `138 
@@ -219,7 +220,7 @@ d G "T3_DIV_BY_1" 2 279 "0"
 d G "T3_DIV_BY_2" 2 280 "0x10"
 d G "T3_DIV_BY_4" 2 281 "0x20"
 d G "T3_DIV_BY_8" 2 282 "0x30"
-c L "set_timer3" 2 1 4 "FUNCTION"
+c L "set_timer3" 2 3 4 "FUNCTION"
 v L "mode" 2 288 "int32" `142 
 f B "setup_ccp1" 2 288 "void(int32 mode)" `141 
 v L "mode" 2 289 "int32" `144 
@@ -241,7 +242,7 @@ d G "CCP_PWM" 2 302 "0xC"
 d G "CCP_PWM_PLUS_1" 2 303 "0x1c"
 d G "CCP_PWM_PLUS_2" 2 304 "0x2c"
 d G "CCP_PWM_PLUS_3" 2 305 "0x3c"
-c L "set_pwm1_duty" 2 1 1 "FUNCTION"
+c L "set_pwm1_duty" 2 3 1 "FUNCTION"
 d G "T3_CCP1_TO_2" 2 311 "0x48"
 d G "T3_CCP2" 2 312 "0x8"
 d G "CCP_PWM_H_H" 2 315 "0x0c"
@@ -265,7 +266,7 @@ d G "CCP_SHUTDOWN_BD_L" 2 336 "0x000000"
 d G "CCP_SHUTDOWN_BD_H" 2 337 "0x010000"
 d G "CCP_SHUTDOWN_BD_F" 2 338 "0x020000"
 d G "CCP_SHUTDOWN_RESTART" 2 340 "0x80000000"
-c L "set_pwm1_duty" 2 1 1 "FUNCTION"
+c L "set_pwm1_duty" 2 3 1 "FUNCTION"
 v L "mode" 2 344 "int32" `152 
 f B "setup_ccp2" 2 344 "void(int32 mode)" `151 
 v L "mode" 2 345 "int32" `154 
@@ -273,7 +274,7 @@ v L "pwm" 2 345 "int8" `155
 f G "setup_ccp2" 2 345 "void(int32 mode,int8 pwm)" `153 
 v L "value" 2 346 "int16" `157 
 f B "set_pwm2_duty" 2 346 "void(int16 value)" `156 
-c L "set_pwm2_duty" 2 1 5 "FUNCTION"
+c L "set_pwm2_duty" 2 3 5 "FUNCTION"
 v L "mode" 2 355 "int8" `162 
 f B "setup_psp" 2 355 "void(int8 mode)" `161 
 f B "psp_output_full" 2 356 "int8()" `163 
@@ -281,7 +282,7 @@ f B "psp_input_full" 2 357 "int8()" `164
 f B "psp_overflow" 2 358 "int8()" `165  "Constants used in SETUP_PSP() are:"
 d G "PSP_ENABLED" 2 360 "0x10"
 d G "PSP_DISABLED" 2 361 "0"
-c L "psp_overflow" 2 1 3 "FUNCTION"
+c L "psp_overflow" 2 3 3 "FUNCTION"
 v L "mode" 2 368 "int32" `168 
 f B "setup_spi" 2 368 "void(int32 mode)" `167 
 v L "value" 2 369 "int8" `170 
@@ -314,7 +315,7 @@ d G "SPI_SAMPLE_AT_MIDDLE" 2 393 "0x0000"
 d G "SPI_SAMPLE_AT_END" 2 394 "0x8000"
 d G "SPI_L_TO_H" 2 397 "SPI_SCK_IDLE_LOW"
 d G "SPI_H_TO_L" 2 398 "SPI_SCK_IDLE_HIGH"
-c L "spi_data_in2" 2 1 2 "FUNCTION"
+c L "spi_data_in2" 2 3 2 "FUNCTION"
 v L "baud" 2 402 "int32" `184 
 f B "setup_uart" 2 402 "void(int32 baud)" `183 
 v L "baud" 2 403 "int32" `186 
@@ -339,7 +340,7 @@ d G "UART_AUTODETECT" 2 413 "8"
 d G "UART_AUTODETECT_NOWAIT" 2 414 "9"
 d G "UART_WAKEUP_ON_RDA" 2 415 "10"
 d G "UART_SEND_BREAK" 2 416 "13"
-c L "set_uart_speed" 2 1 3 "FUNCTION"
+c L "set_uart_speed" 2 3 3 "FUNCTION"
 v L "mode" 2 420 "int32" `202 
 f B "setup_comparator" 2 420 "void(int32 mode)" `201  "Constants used in setup_comparator() are:"
 d G "A0_A3_A1_A3" 2 422 "0xfff04"
@@ -352,14 +353,14 @@ d G "A0_VR_A1_VR" 2 428 "0x3ff06"
 d G "A3_VR_A2_VR" 2 429 "0xcff0e"
 d G "CP1_INVERT" 2 430 "0x0000010"
 d G "CP2_INVERT" 2 431 "0x0000020"
-c L "setup_comparator" 2 1 2 "FUNCTION"
+c L "setup_comparator" 2 3 2 "FUNCTION"
 v L "mode" 2 438 "int8" `206 
 f B "setup_vref" 2 438 "void(int8 mode)" `205  "Constants used in setup_vref() are:"
 d G "VREF_LOW" 2 440 "0xa0"
 d G "VREF_HIGH" 2 441 "0x80"
 d G "VREF_F5" 2 443 "0x40"
 d G "VREF_COMP" 2 444 "0x10"
-c L "setup_vref" 2 1 2 "FUNCTION"
+c L "setup_vref" 2 3 2 "FUNCTION"
 v L "mode" 2 448 "int8" `208 
 f B "setup_low_volt_detect" 2 448 "void(int8 mode)" `207  "Constants used in setup_low_volt_detect() are:"
 d G "LVD_LVDIN" 2 450 "0x1F"
@@ -380,7 +381,7 @@ d G "LVD_22" 2 464 "0x11"
 d G "LVD_21" 2 465 "0x10"
 d G "LVD_TRIGGER_BELOW" 2 467 "0"
 d G "LVD_TRIGGER_ABOVE" 2 468 "0x80"
-c L "setup_low_volt_detect" 2 1 2 "FUNCTION"
+c L "setup_low_volt_detect" 2 3 2 "FUNCTION"
 v L "mode" 2 473 "int16" `210 
 f B "setup_oscillator" 2 473 "int8(int16 mode)" `209 
 v L "mode" 2 474 "int16" `212 
@@ -401,7 +402,7 @@ d G "OSC_IDLE_MODE" 2 490 "0x80"
 d G "OSC_31250" 2 491 "0x8000"
 d G "OSC_STATE_STABLE" 2 495 "4"
 d G "OSC_STATE_EXT_RUNNING" 2 496 "8"
-c L "setup_oscillator" 2 1 4 "FUNCTION"
+c L "setup_oscillator" 2 3 4 "FUNCTION"
 v L "mode" 2 503 "int16" `215 
 f B "setup_adc" 2 503 "void(int16 mode)" `214 
 f B "read_adc" 2 504 "int8()" `216 
@@ -427,7 +428,7 @@ d G "ADC_TAD_MUL_8" 2 523 "0x20"
 d G "ADC_TAD_MUL_12" 2 524 "0x28"
 d G "ADC_TAD_MUL_16" 2 525 "0x30"
 d G "ADC_TAD_MUL_20" 2 526 "0x38"
-c L "adc_done" 2 1 1 "FUNCTION"
+c L "adc_done" 2 3 1 "FUNCTION"
 v L "pins" 2 529 "int8" `224 
 f B "setup_adc_ports" 2 529 "void(int8 pins)" `223 
 v L "pins" 2 530 "int8" `226 
@@ -468,7 +469,7 @@ d G "VSS_VREF" 2 565 "0x10" "Range 0-VrefH"
 d G "ADC_START_AND_READ" 2 568 "7" "This is the default if nothing is specified"
 d G "ADC_START_ONLY" 2 569 "1"
 d G "ADC_READ_ONLY" 2 570 "6"
-c L "set_adc_channel" 2 1 3 "FUNCTION"
+c L "set_adc_channel" 2 3 3 "FUNCTION"
 v L "x" 2 576 "sint8" `231 
 f B "abs" 2 576 "sint8(sint8 x)" `230 
 v L "x" 2 577 "sint16" `233 
@@ -838,7 +839,7 @@ f G "get_capture_time" 2 753 "int16(int8 stream)" `597
 f B "get_capture_event" 2 754 "int8()" `599 
 v L "stream" 2 755 "int8" `601 
 f G "get_capture_event" 2 755 "int8(int8 stream)" `600  "Enviroment Prototypes:"
-c L "get_capture_event" 2 1 2 "FUNCTION"
+c L "get_capture_event" 2 3 2 "FUNCTION"
 v L "address" 2 768 "int16" `603 
 f B "goto_address" 2 768 "void(int16 address)" `602 
 v L "label" 2 769 "int16" `605 
@@ -864,7 +865,7 @@ f B "read_eeprom" 2 786 "int8(__EEADDRESS__ address)" `622
 v L "address" 2 787 "__EEADDRESS__" `625 
 v L "value" 2 787 "int8" `626 
 f B "write_eeprom" 2 787 "void(__EEADDRESS__ address,int8 value)" `624  "INT"
-c L "write_eeprom" 2 1 4 "FUNCTION"
+c L "write_eeprom" 2 3 4 "FUNCTION"
 v L "interrupt" 2 794 "int32" `628 
 f B "enable_interrupts" 2 794 "void(int32 interrupt)" `627 
 v L "interrupt" 2 795 "int32" `630 
@@ -989,30 +990,49 @@ F G "lcd_cursor_pisca" 4 204 "void()" `686
 F G "lcd_cursor_off" 4 209 "void()" `687 
 F G "lcd_corre_esquerda" 4 214 "void()" `688 
 F G "lcd_corre_direita" 4 219 "void()" `689 
-D G "button1" 0 6 "pin_a4"
-D G "button2" 0 7 "pin_a5"
-D G "button3" 0 8 "pin_e0"
-D G "button4" 0 9 "pin_e1"
-V G "running" 0 11 "int8" `690 
+D G "button1" 0 5 "pin_a4"
+D G "button2" 0 6 "pin_a5"
+D G "button3" 0 7 "pin_e0"
+D G "button4" 0 8 "pin_e1"
+V G "running" 0 10 "int8" `690  "extremo esquerda, centro esquerda, centro direita, extrema direita"
 V G "ad1" 0 13 "int16" `691 
 V G "ad2" 0 13 "int16" `692 
 V G "ad3" 0 13 "int16" `693 
 V G "ad4" 0 13 "int16" `694 
 V G "timerBase" 0 14 "int16" `695 
-V G "adCounter" 0 15 "int8" `696 
-f G "ClearScreen" 0 17 "void()" `697 
-f G "Setup" 0 18 "void()" `698 
-F G "timerTick" 0 22 "void()" `699 
-C L "timerTick" 0 48 5 "FUNCTION"
-V L "ad1Ratio" 0 64 "float" `707 
-V L "ad2Ratio" 0 65 "float" `713 
-C L "timerTick" 0 48 1 "FUNCTION"
-C L "timerTick" 0 48 2 "FUNCTION"
-C L "timerTick" 0 48 1 "FUNCTION"
-C L "timerTick" 0 48 2 "FUNCTION"
-F G "MAIN" 0 113 "void()" `725 
-F G "Setup" 0 133 "void()" `698 
-F G "ClearScreen" 0 152 "void()" `697 
+V G "adCounter" 0 15 "int8" `696  "/Em qual decisão ele ta"
+V G "decisionCounter" 0 18 "int8" `697 
+V G "decisionInCoolDown" 0 20 "int8" `698 
+V G "alignRatio" 0 23 "float" `699 
+f G "ClearScreen" 0 25 "void()" `700 
+f G "Setup" 0 26 "void()" `701 
+f G "AndarReto" 0 27 "void()" `702  "/Se tiver retorna 1"
+f G "IsCenterAlign" 0 29 "int8()" `703  "/Curva a direita"
+f G "IsRight" 0 31 "int8()" `704 
+f G "IsLeft" 0 32 "int8()" `705 
+f G "IsAllAlign" 0 33 "int8()" `706  "/uma linha preta sobre todos"
+f G "Align" 0 35 "void()" `707 
+F G "timerTick" 0 39 "void()" `708 
+C L "timerTick" 0 19 1 "FUNCTION"
+C L "timerTick" 0 19 2 "FUNCTION"
+F G "MAIN" 0 89 "void()" `727 
+C L "MAIN" 0 19 1 "FUNCTION"
+F G "AndarReto" 0 140 "void()" `702 
+F G "IsCenterAlign" 0 145 "int8()" `703 
+V L "ad2Ratio" 0 146 "float" `731 
+V L "ad3Ratio" 0 147 "float" `737 
+F G "IsRight" 0 158 "int8()" `704 
+F G "IsLeft" 0 169 "int8()" `705 
+F G "IsAllAlign" 0 180 "int8()" `706 
+F G "Align" 0 192 "void()" `707 
+V L "ad2Ratio" 0 193 "float" `741 
+V L "ad3Ratio" 0 194 "float" `742 
+C L "Align" 0 19 1 "FUNCTION"
+C L "Align" 0 19 2 "FUNCTION"
+C L "Align" 0 19 1 "FUNCTION"
+C L "Align" 0 19 2 "FUNCTION"
+F G "Setup" 0 234 "void()" `701 
+F G "ClearScreen" 0 253 "void()" `700 
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep" 0 1
