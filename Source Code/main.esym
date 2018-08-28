@@ -1,7 +1,7 @@
-D G "__PCH__" 0 158 ""5.015""
-D G "__DEVICE__" 0 158 "4550"
-D G "__DATE__" 0 158 ""27-ago-18""
-D G "__TIME__" 0 158 ""01:20:00"" "#DEFINE DEBUG"
+D G "__PCH__" 0 156 ""5.015""
+D G "__DEVICE__" 0 156 "4550"
+D G "__DATE__" 0 156 ""27-ago-18""
+D G "__TIME__" 0 156 ""23:07:44"" "#DEFINE DEBUG"
 c L "set_tris_a" 2 1 6 "FUNCTION"
 v L "value" 2 45 "int8" `54 
 f B "set_tris_a" 2 45 "void(int8 value)" `53 
@@ -1010,9 +1010,9 @@ C L "timerTick" 0 48 1 "FUNCTION"
 C L "timerTick" 0 48 2 "FUNCTION"
 C L "timerTick" 0 48 1 "FUNCTION"
 C L "timerTick" 0 48 2 "FUNCTION"
-F G "MAIN" 0 112 "void()" `720 
-F G "Setup" 0 132 "void()" `698 
-F G "ClearScreen" 0 151 "void()" `697 
+F G "MAIN" 0 113 "void()" `725 
+F G "Setup" 0 133 "void()" `698 
+F G "ClearScreen" 0 152 "void()" `697 
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep" 0 1

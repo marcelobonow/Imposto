@@ -73,21 +73,22 @@ void timerTick()
             lcd_pos_xy(1, 2);
 
             //O ad1 é o da direita, se este esta maior, significa que o robo esta a direit
-            if (ad1Ratio > 0.55f)
+            if (ad1Ratio > 0.7f)
             {
                 printf(lcd_escreve, "Esta a direita");
-                SetRight(1023);
+                SetRight(950);
                 SetLeft(0);
             }
-            else if (ad2Ratio > 0.55f)
+            else if (ad2Ratio > 0.7f)
             {
                 printf(lcd_escreve, "Esta a esquerda");
                 SetRight(0);
-                SetLeft(1023);
+                SetLeft(950);
             }
             else
             {
-                SetBothPwm(1023);
+                SetLeft((long)(ad1Ratio * 100) + 850);
+                SetRight((long)(ad2Ratio * 100) + 850);
             }
         }
         else

@@ -34,22 +34,25 @@
 024     lcd_ini.@SCRATCH1
 02E-031 timerTick.ad1Ratio
 032-035 timerTick.ad2Ratio
-036-037 SetLeft.vel
+036-039 @MULFF.P1
+036-039 @SFTOI.P2
+036-037 SetBothPwm.vel
 036-037 @PRINTF_LD_678.P1
 036-039 @FLT.P2
-036-037 SetRight.vel
-036-037 SetBothPwm.vel
 036     timerTick.@SCRATCH1
 036     @PSTRINGC_678.@SCRATCH1
 037     timerTick.@SCRATCH2
 037     @PSTRINGC_678.@SCRATCH2
+038-039 SetLeft.vel
+038-039 SetRight.vel
 038     timerTick.@SCRATCH3
 038     @PRINTF_LD_678.@SCRATCH1
 039     timerTick.@SCRATCH4
 039     @PRINTF_LD_678.@SCRATCH2
-03A-03D @DIVFF.P1
-03A-03D @FLT.P2
-03A-03B @ITOF.P3
+03A-03B @ITOF.P1
+03A-03D @MULFF.P2
+03A-03D @FLT.P3
+03A-03D @DIVFF.P4
 03A     @PRINTF_LD_678.@SCRATCH3
 03B     @PRINTF_LD_678.@SCRATCH4
 03C     @PRINTF_LD_678.@SCRATCH5
@@ -57,10 +60,13 @@
 03E-041 @DIVFF.P1
 03E     @PRINTF_LD_678.@SCRATCH7
 03E     @FLT.@SCRATCH1
+03E     @MULFF.@SCRATCH1
 03F     lcd_escreve.c
 03F     @FLT.@SCRATCH2
-040     lcd_pos_xy.x
+03F     @MULFF.@SCRATCH2
 040     @delay_ms1.P1
+040     lcd_pos_xy.x
+040     @MULFF.@SCRATCH3
 041     lcd_pos_xy.y
 042     lcd_pos_xy.endereco
 042     @DIVFF.@SCRATCH1
@@ -81,15 +87,15 @@ FB4.7   C2OUT
 FBB     CCP_2
 FBB     CCP_2_LOW
 FBC     CCP_2_HIGH
-FBE     CCP_1_LOW
 FBE     CCP_1
+FBE     CCP_1_LOW
 FBF     CCP_1_HIGH
-FE1-FE2 @READ_PACKED_MEMORY.P1
-FE1-FE2 @WRITE_PACKED_MEMORY.P2
-FE9-FEA @WRITE_PROGRAM_MEMORY.P1
-FE9-FEA @WRITE_PACKED_MEMORY.P2
-FE9-FEA @READ_PACKED_MEMORY.P3
-FE9-FEA @READ_PROGRAM_MEMORY.P4
+FE1-FE2 @WRITE_PACKED_MEMORY.P1
+FE1-FE2 @READ_PACKED_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P1
+FE9-FEA @WRITE_PROGRAM_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P3
+FE9-FEA @READ_PACKED_MEMORY.P4
 FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
 FF6-FF8 @READ_PROGRAM_MEMORY.P2
 
@@ -110,33 +116,35 @@ ROM Allocation:
 00147E  @FLT
 0014F4  SetRight
 00151C  SetLeft
-001544  SetBothPwm
-001592  timerTick
-0017CE  @const700.call
-0017D2  @const705.call
-0017D8  @const717.call
-0017E8  @const718.call
-0017F8  @const719.call
-001802  @const723.call
-001812  lcd_ini
-0018B4  MotorInitialize
-0018D4  frente
-0018E8  Setup
-00192C  MAIN
-00192C  @cinit1
-00193E  @cinit2
+001544  @MULFF
+001636  @SFTOI
+00166E  SetBothPwm
+0016BC  timerTick
+001986  @const700.call
+00198A  @const705.call
+001990  @const717.call
+0019A0  @const718.call
+0019B0  @const724.call
+0019BA  @const728.call
+0019CA  lcd_ini
+001A78  MotorInitialize
+001A98  frente
+001AAC  Setup
+001AF0  MAIN
+001AF0  @cinit1
+001B02  @cinit2
 
 Project Directory:
     D:\Projetos\Imposto\Source Code\
 
 Project Files:
-    main.c                                                  [27-ago-18 01:20  CRC=51792BFB]
+    main.c                                                  [27-ago-18 23:07  CRC=523C4A46]
     main.h                                                  [23-ago-18 01:55  CRC=6FD77C0A]
     18F4550.h                                               [12-nov-13 14:35  CRC=5337E248]
     Motor1.c                                                [25-ago-18 00:33  CRC=9999F85D]
     LCD_KIT.c                                               [23-ago-18 02:24  CRC=AD240354]
 
-Source signature=086A8952
+Source signature=092DA79D
 
 Units:
     main (main)
