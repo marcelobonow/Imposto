@@ -159,13 +159,13 @@ Project Directory:
     D:\Projetos\Imposto\Source Code\
 
 Project Files:
-    main.c                                                  [28-ago-18 07:48  CRC=7A40F947]
+    main.c                                                  [28-ago-18 07:52  CRC=90B97CAF]
     main.h                                                  [23-ago-18 01:55  CRC=6FD77C0A]
     18F4550.h                                               [12-nov-13 14:35  CRC=5337E248]
     Motor1.c                                                [25-ago-18 00:33  CRC=9999F85D]
     LCD_KIT.c                                               [23-ago-18 02:24  CRC=AD240354]
 
-Source signature=3132569E
+Source signature=47AADA06
 
 Units:
     main (main)

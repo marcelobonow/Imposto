@@ -1,8 +1,7 @@
-D G "button4" 0 8 "pin_e1"
 D G "__PCH__" 0 257 ""5.015""
 D G "__DEVICE__" 0 257 "4550"
 D G "__DATE__" 0 257 ""28-ago-18""
-D G "__TIME__" 0 257 ""07:48:27"" "Standard Header file for the PIC18F4550 device ////////////////"
+D G "__TIME__" 0 257 ""07:52:49"" "Standard Header file for the PIC18F4550 device ////////////////"
 c L "set_tris_a" 2 3 6 "FUNCTION"
 v L "value" 2 45 "int8" `54 
 f B "set_tris_a" 2 45 "void(int8 value)" `53 
@@ -1017,22 +1016,22 @@ C L "timerTick" 0 19 1 "FUNCTION"
 C L "timerTick" 0 19 2 "FUNCTION"
 F G "MAIN" 0 89 "void()" `727 
 C L "MAIN" 0 19 1 "FUNCTION"
-F G "AndarReto" 0 140 "void()" `702 
-F G "IsCenterAlign" 0 145 "int8()" `703 
-V L "ad2Ratio" 0 146 "float" `731 
-V L "ad3Ratio" 0 147 "float" `737 
-F G "IsRight" 0 158 "int8()" `704 
-F G "IsLeft" 0 169 "int8()" `705 
-F G "IsAllAlign" 0 180 "int8()" `706 
-F G "Align" 0 192 "void()" `707 
-V L "ad2Ratio" 0 193 "float" `741 
-V L "ad3Ratio" 0 194 "float" `742 
+F G "AndarReto" 0 141 "void()" `702 
+F G "IsCenterAlign" 0 146 "int8()" `703 
+V L "ad2Ratio" 0 147 "float" `731 
+V L "ad3Ratio" 0 148 "float" `737 
+F G "IsRight" 0 159 "int8()" `704 
+F G "IsLeft" 0 170 "int8()" `705 
+F G "IsAllAlign" 0 181 "int8()" `706 
+F G "Align" 0 193 "void()" `707 
+V L "ad2Ratio" 0 194 "float" `741 
+V L "ad3Ratio" 0 195 "float" `742 
 C L "Align" 0 19 1 "FUNCTION"
 C L "Align" 0 19 2 "FUNCTION"
 C L "Align" 0 19 1 "FUNCTION"
 C L "Align" 0 19 2 "FUNCTION"
-F G "Setup" 0 234 "void()" `701 
-F G "ClearScreen" 0 253 "void()" `700 
+F G "Setup" 0 235 "void()" `701 
+F G "ClearScreen" 0 254 "void()" `700 
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep" 0 1

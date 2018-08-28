@@ -1,5 +1,5 @@
 ÀÄmain
-   ÃÄMAIN  0/266  Ram=1
+   ÃÄMAIN  0/286  Ram=1
    ³  ÃÄ@cinit1  (Inline)  Ram=0
    ³  ÃÄSetup  0/56  Ram=0
    ³  ³  ÃÄlcd_ini  0/162  Ram=2
@@ -65,7 +65,8 @@
    ³  ÃÄIsAllAlign  0/78  Ram=0
    ³  ÃÄSetBothPwm  0/78  Ram=2
    ³  ÃÄ@delay_ms1  0/40  Ram=1
-   ³  ÀÄSetBothPwm  0/78  Ram=2
+   ³  ÃÄSetBothPwm  0/78  Ram=2
+   ³  ÀÄ@delay_ms1  0/40  Ram=1
    ÀÄtimerTick  0/258  Ram=0
       ÃÄlcd_pos_xy  0/34  Ram=4
       ³  ÀÄ*

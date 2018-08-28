@@ -1,9 +1,9 @@
->>> Warning 203 "main.c" Line 136(1,1): Condition always TRUE
->>> Warning 216 "main.c" Line 255(1,2): Interrupts disabled during call to prevent re-entrancy:  (@delay_ms1)
->>> Warning 216 "main.c" Line 255(1,2): Interrupts disabled during call to prevent re-entrancy:  (lcd_envia_nibble)
->>> Warning 216 "main.c" Line 255(1,2): Interrupts disabled during call to prevent re-entrancy:  (lcd_envia_byte)
->>> Warning 216 "main.c" Line 255(1,2): Interrupts disabled during call to prevent re-entrancy:  (lcd_pos_xy)
->>> Warning 216 "main.c" Line 255(1,2): Interrupts disabled during call to prevent re-entrancy:  (@PSTRINGC_678)
+>>> Warning 203 "main.c" Line 137(1,1): Condition always TRUE
+>>> Warning 216 "main.c" Line 256(1,2): Interrupts disabled during call to prevent re-entrancy:  (@delay_ms1)
+>>> Warning 216 "main.c" Line 256(1,2): Interrupts disabled during call to prevent re-entrancy:  (lcd_envia_nibble)
+>>> Warning 216 "main.c" Line 256(1,2): Interrupts disabled during call to prevent re-entrancy:  (lcd_envia_byte)
+>>> Warning 216 "main.c" Line 256(1,2): Interrupts disabled during call to prevent re-entrancy:  (lcd_pos_xy)
+>>> Warning 216 "main.c" Line 256(1,2): Interrupts disabled during call to prevent re-entrancy:  (@PSTRINGC_678)
       Memory usage:   ROM=11%      RAM=2% - 4%
       0 Errors,  6 Warnings.
 Build Successful.

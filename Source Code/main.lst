@@ -1,9 +1,9 @@
-CCS PCH C Compiler, Version 5.015, 5967               28-ago-18 07:48
+CCS PCH C Compiler, Version 5.015, 5967               28-ago-18 07:52
 
                Filename:   D:\Projetos\Imposto\Source Code\main.lst
 
-               ROM used:   3510 bytes (11%)
-                           Largest free fragment is 25158
+               ROM used:   3530 bytes (11%)
+                           Largest free fragment is 25138
                RAM used:   42 (2%) at main() level
                            85 (4%) worst case
                Stack used: 12 locations (6 in main + 6 for interrupts)
@@ -1773,12 +1773,22 @@ CCS PCH C Compiler, Version 5.015, 5967               28-ago-18 07:48
 1DB0:  MOVLW  84
 1DB2:  MOVWF  29
 1DB4:  RCALL  15EC
+1DB6:  CLRF   16
+1DB8:  BTFSC  FF2.7
+1DBA:  BSF    16.7
+1DBC:  BCF    FF2.7
 ....................         } 
+....................         delay_ms(200); 
+1DBE:  MOVLW  C8
+1DC0:  MOVWF  4D
+1DC2:  CALL   1164
+1DC6:  BTFSC  16.7
+1DC8:  BSF    FF2.7
 ....................     } while (1); 
-1DB6:  BRA    1D38
+1DCA:  BRA    1D38
 .................... } 
 ....................  
-1DB8:  SLEEP 
+1DCC:  SLEEP 
 .................... void AndarReto() 
 .................... { 
 ....................     SetBothPwm(1023); 

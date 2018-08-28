@@ -133,6 +133,7 @@ void main()
             delay_ms(2000);
             SetBothPwm(900);
         }
+        delay_ms(200);
     } while (1);
 }
 
