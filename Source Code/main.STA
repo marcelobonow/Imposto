@@ -1,9 +1,9 @@
 
-ROM used:   4412/32768 (13%)
-            4416/32768 (13%) including unused fragments
+ROM used:   6040/32768 (18%)
+            6044/32768 (18%) including unused fragments
 
-            2.9 Average locations per line
-            16.0 Average locations per statement
+            3.4 Average locations per line
+            14.1 Average locations per statement
 
 RAM used:   42/2048 (2%) at main() level
             88/2048 (4%) worst case
@@ -13,76 +13,86 @@ Stack size: 31
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-  311   138  50  main.c
+  572   289  68  main.c
    14     0   0  main.h
   837     0   0  18F4550.h
-  133    59  21  Motor1.c
-  223    79  29  LCD_KIT.c
+  133    59  14  Motor1.c
+  223    79  19  LCD_KIT.c
 ----- -----
- 1518   276 Total
+ 1779   427 Total
 
 Page ROM  %  RAM   Vol Diff  Functions:
 ---- --- --- ---   --- ----  ----------
 0     40   0    1             @delay_ms1
 0     32   0    1             @delay_us1
-0     20   0    0   108  1.7  frente
-0     20   0    0   108  1.7  LeftBackwardRightForward
+0     18   0    0   108  1.7  frente
+0     18   0    0   108  1.7  LeftBackwardRightForward
 0     18   0    0   108  1.7  RightBackwardLeftForward
 0     32   0    0    90  2.1  MotorInitialize
 0     78   1    2    53  1.7  SetBothPwm
 0     40   0    2    30  1.5  SetRight
 0     40   0    2    40  0.6  SetLeft
 0     30   0    0             @const666
-0     58   1    1   260  1.9  lcd_envia_nibble
-0     52   1    3   176  2.7  lcd_envia_byte
-0    162   2    2   433  4.3  lcd_ini
+0     58   0    1   260  1.9  lcd_envia_nibble
+0     52   0    3   176  2.7  lcd_envia_byte
+0    162   1    2   433  4.3  lcd_ini
 0     34   0    4   186  5.5  lcd_pos_xy
 0     70   1    1   290  4.1  lcd_escreve
 0    202   2    0   659  5.1  timerTick
-0      8   0    0   136  2.4  @const714
+0      8   0    0   659  5.1  @const719
 0     30   0    3             @PSTRINGCN_682
 0     40   0    3             @DIV88
-0    170   2    6    17  0.8  @PRINTF_D_682
-0      8   0    0             @const723
-0    356   4    1  1247  6.2  MAIN
-0     16   0    0   270  6.9  @const727
+0    170   1    6             @PRINTF_D_682
+0      8   0    0             @const728
+0    968   8    1  4676  6.4  MAIN
+0     16   0    0  2696  6.4  @const732
 0     44   0    2             @PSTRINGC_682
-0     14   0    0    17  0.8  @const729
-0     54   1    2   121  3.3  @ITOF
-0    346   4   14   270  6.9  @DIVFF
-0    322   4   12   270  6.9  IsCenterAlign
+0     14   0    0             @const734
+0     18   0    0             @const735
+0     54   0    2             @ITOF
+0    346   3   14   270  6.9  @DIVFF
+0    322   3   12   270  6.9  IsCenterAlign
 0    118   1   10   123  3.8  @FLT
-0     78   1    0   123  3.8  IsRight
+0     76   1    0   123  3.8  IsRight
+0     48   0    0    80  3.0  IsCenterInside
+0     48   0    0    80  3.0  IsMarginsInside
+0     44   0    0    80  3.0  IsMarginsOutside
+0     72   1    0   121  3.3  IsAllOutside
+0     76   1    0   123  3.8  IsLeft
 0     78   1    0   121  3.3  IsAllAlign
-0    642   7   12   771  5.8  Align
-0     16   0    0   123  3.8  @const742
-0     16   0    0   209  2.3  @const743
-0    242   3   11    17  0.8  @MULFF
-0    618   7   16    17  0.8  @ADDFF
-0     56   1    4   209  2.3  @SFTOI
-0     10   0    0     3  0.0  @const754
-0     46   1    0   209  2.3  Setup
+0    642   5   12   771  5.8  Align
+0     16   0    0             @const748
+0     16   0    0             @const749
+0    242   2   11   774  6.3  @MULFF
+0    618   5   16   774  6.3  @ADDFF
+0     56   0    4   774  6.3  @SFTOI
+0     10   0    0             @const760
+0    674   6   12   774  6.3  InvertedAlign
+0     16   0    0   209  2.3  @const763
+0     16   0    0   209  2.3  @const764
+0     10   0    0    17  0.8  @const767
+0     46   0    0   209  2.3  Setup
 0     10   0    0    17  0.8  ClearScreen
- Inline         0    17  0.8  @cinit1
+ Inline         0             @cinit1
 
 Program metrics:
-    Functions               34
-    Statements              276
-    Comments                258
-    Volume (V)              12974
-    Difficulty (D)          100.0
-    Effort to implement (E) 1296989
-    Time to implement (T)   20 hours, 1 minutes
-    Est Delivered Bugs (B)  4
-    Cyclomatic Complexity   41
-    Maintainability (MI)    61
+    Functions               36
+    Statements              427
+    Comments                296
+    Volume (V)              28145
+    Difficulty (D)          135.1
+    Effort to implement (E) 3802191
+    Time to implement (T)   58 hours, 41 minutes
+    Est Delivered Bugs (B)  8
+    Cyclomatic Complexity   114
+    Maintainability (MI)    47
 
  Segment     Used  Free
 -----------  ----  ----
 00000-00FFE     0  4096  
 01000-01006     4  4  
 01008-01094   142  0  
-01096-07FFE  4266  24256  
+01096-07FFE  5894  22628  
 
 
 

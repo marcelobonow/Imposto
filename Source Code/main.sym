@@ -33,35 +33,43 @@
 024     decisionInCoolDown
 025-028 alignRatio
 029     lcd_ini.conta
-029-02C IsCenterAlign.ad2Ratio
+029-02C InvertedAlign.ad2Ratio
 029-02C Align.ad2Ratio
+029-02C IsCenterAlign.ad2Ratio
 029     MAIN.@SCRATCH1
 02A     lcd_ini.@SCRATCH1
-02D-030 Align.ad3Ratio
 02D-030 IsCenterAlign.ad3Ratio
+02D-030 InvertedAlign.ad3Ratio
+02D-030 Align.ad3Ratio
+031-032 InvertedAlign.pwm1
 031-032 Align.pwm1
 031     IsCenterAlign.@SCRATCH1
 032     IsCenterAlign.@SCRATCH2
+033-034 InvertedAlign.pwm2
 033-034 Align.pwm2
 033     IsCenterAlign.@SCRATCH3
 034     IsCenterAlign.@SCRATCH4
 035-036 SetLeft.vel
-035-038 @FLT.P1
 035-036 SetRight.vel
-035-038 @SFTOI.P1
+035-038 @FLT.P1
 035-038 @MULFF.P2
 035-036 SetBothPwm.vel
+035-038 @SFTOI.P1
 035     @PSTRINGC_682.@SCRATCH1
 035     Align.@SCRATCH1
+035     InvertedAlign.@SCRATCH1
 036     @PSTRINGC_682.@SCRATCH2
 036     Align.@SCRATCH2
+036     InvertedAlign.@SCRATCH2
 037     Align.@SCRATCH3
+037     InvertedAlign.@SCRATCH3
 038     Align.@SCRATCH4
-039-03C @ADDFF.P1
+038     InvertedAlign.@SCRATCH4
+039-03C @FLT.P1
 039-03C @MULFF.P2
-039-03C @FLT.P3
-039-03C @DIVFF.P4
-039-03A @ITOF.P5
+039-03C @DIVFF.P3
+039-03A @ITOF.P4
+039-03C @ADDFF.P5
 03D-040 @DIVFF.P1
 03D-040 @ADDFF.P2
 03D     @FLT.@SCRATCH1
@@ -83,8 +91,8 @@
 046     @ADDFF.@SCRATCH6
 047     @ADDFF.@SCRATCH7
 048     @ADDFF.@SCRATCH8
-049     @PSTRINGCN_682.P1
-049     @PRINTF_D_682.P2
+049     @PRINTF_D_682.P1
+049     @PSTRINGCN_682.P2
 04A     @PRINTF_D_682.P1
 04A     @PSTRINGCN_682.@SCRATCH1
 04B     @PSTRINGCN_682.@SCRATCH2
@@ -92,8 +100,8 @@
 04C     @PRINTF_D_682.@SCRATCH2
 04D     @PRINTF_D_682.@SCRATCH3
 04E     @PRINTF_D_682.@SCRATCH4
-04F     lcd_escreve.c
 04F     @DIV88.P1
+04F     lcd_escreve.c
 050     lcd_pos_xy.x
 050     @delay_ms1.P1
 050     @DIV88.P2
@@ -117,12 +125,12 @@ FBE     CCP_1_LOW
 FBF     CCP_1_HIGH
 FE1-FE2 @READ_PACKED_MEMORY.P1
 FE1-FE2 @WRITE_PACKED_MEMORY.P2
-FE9-FEA @WRITE_PACKED_MEMORY.P1
-FE9-FEA @WRITE_PROGRAM_MEMORY.P2
-FE9-FEA @READ_PACKED_MEMORY.P3
-FE9-FEA @READ_PROGRAM_MEMORY.P4
-FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
-FF6-FF8 @READ_PROGRAM_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P1
+FE9-FEA @WRITE_PACKED_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P3
+FE9-FEA @READ_PACKED_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
 
 ROM Allocation:
 001096  INI_LCD.call
@@ -138,48 +146,58 @@ ROM Allocation:
 0011FA  @DIV88
 001222  @PRINTF_D_682
 0012CC  timerTick
-001396  @const714.call
-00139E  @const723.call
-0013A6  @const727.call
-0013B6  @const729.call
-0013C4  @const742.call
-0013D4  @const743.call
-0013E4  @const754.call
-0013EE  lcd_ini
-001490  MotorInitialize
-0014B0  Setup
-0014DE  @PSTRINGC_682
-00150A  IsAllAlign
-001558  @ITOF
-00158E  @DIVFF
-0016E8  @FLT
-00175E  SetBothPwm
-0017AC  LeftBackwardRightForward
-0017C0  RightBackwardLeftForward
-0017D2  @MULFF
-0018C4  @ADDFF
-001B2E  @SFTOI
-001B66  SetLeft
-001B8E  SetRight
-001BB6  frente
-001BCA  Align
-001E4C  IsRight
-001E9A  IsCenterAlign
-001FDC  @cinit1
-001FDC  MAIN
-002004  @cinit2
+001396  @const719.call
+00139E  @const728.call
+0013A6  @const732.call
+0013B6  @const734.call
+0013C4  @const735.call
+0013D6  @const748.call
+0013E6  @const749.call
+0013F6  @const760.call
+001400  @const763.call
+001410  @const764.call
+001420  @const767.call
+00142A  lcd_ini
+0014CC  MotorInitialize
+0014EC  Setup
+00151A  @PSTRINGC_682
+001546  IsAllAlign
+001594  @ITOF
+0015CA  @DIVFF
+001724  @FLT
+00179A  SetBothPwm
+0017E8  LeftBackwardRightForward
+0017FA  RightBackwardLeftForward
+00180C  @MULFF
+0018FE  @ADDFF
+001B68  @SFTOI
+001BA0  SetLeft
+001BC8  SetRight
+001BF0  frente
+001C02  Align
+001E84  IsRight
+001ED0  IsCenterAlign
+002012  IsLeft
+00205E  IsMarginsInside
+00208E  InvertedAlign
+002330  IsMarginsOutside
+00235C  IsAllOutside
+0023A4  IsCenterInside
+0023D4  @cinit1
+0023D4  MAIN
+0023FC  @cinit2
 
 Project Directory:
-    C:\Users\Administrador.NP152499\Music\Receita Federal\Robo\Source Code\
+    D:\Projetos\Imposto\Source Code\
 
 Project Files:
-    main.c                                                  [28-ago-18 22:52  CRC=0C2538B5]
-    main.h                                                  [28-ago-18 20:45  CRC=6FD77C0A]
-    18F4550.h                                               [28-ago-18 20:45  CRC=5337E248]
-    Motor1.c                                                [28-ago-18 21:08  CRC=AFBA606B]
-    LCD_KIT.c                                               [28-ago-18 20:45  CRC=AD240354]
+    main.c                                                  [29-ago-18 08:07  CRC=5EE5D54A]
+    main.h                                                  [23-ago-18 01:55  CRC=6FD77C0A]
+    18F4550.h                                               [12-nov-13 14:35  CRC=5337E248]
+    Motor1.c                                                [29-ago-18 07:22  CRC=AFBA606B]
+    LCD_KIT.c                                               [23-ago-18 02:24  CRC=AD240354]
 
-Source signature=D936FE1A
+Source signature=2BF79AAF
 
 Units:
     main (main)

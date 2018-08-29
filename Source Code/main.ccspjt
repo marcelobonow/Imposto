@@ -47,12 +47,12 @@ AdditionalOptionString=
 [CompilerVersion]
 Fixed=
 [Opened Files]
-1=main.c
-2=
-3=SonarV1.1.c
-4=LCD_KIT.c
-5=main_old.c
-6=Motor1.c
+1=LinhasV1.1.c
+2=SonarV1.1.c
+3=LCD_KIT.c
+4=main_old.c
+5=Motor1.c
+6=main.c
 7=
 8=
 [Units]

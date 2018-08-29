@@ -1,7 +1,7 @@
-D G "__PCH__" 0 315 ""5.015""
-D G "__DEVICE__" 0 315 "4550"
-D G "__DATE__" 0 315 ""28-ago-18""
-D G "__TIME__" 0 315 ""22:52:42"" "Standard Header file for the PIC18F4550 device ////////////////"
+D G "__PCH__" 0 549 ""5.015""
+D G "__DEVICE__" 0 549 "4550"
+D G "__DATE__" 0 549 ""29-ago-18""
+D G "__TIME__" 0 549 ""08:07:26"" "Standard Header file for the PIC18F4550 device ////////////////"
 c L "set_tris_a" 2 3 6 "FUNCTION"
 v L "value" 2 45 "int8" `54 
 f B "set_tris_a" 2 45 "void(int8 value)" `53 
@@ -1010,42 +1010,79 @@ V G "alignRatio" 0 23 "float" `703
 f G "ClearScreen" 0 25 "void()" `704 
 f G "Setup" 0 26 "void()" `705 
 f G "AndarReto" 0 27 "void()" `706  "/Se tiver retorna 1"
-f G "IsCenterAlign" 0 29 "int8()" `707  "/Curva a direita"
-f G "IsRight" 0 31 "int8()" `708 
-f G "IsLeft" 0 32 "int8()" `709 
-f G "IsAllAlign" 0 33 "int8()" `710 
-f G "IsCenterAndNotMargins" 0 34 "int8()" `711  "/uma linha preta sobre todos"
-f G "Align" 0 36 "void()" `712 
-F G "timerTick" 0 40 "void()" `713 
+f G "IsCenterAlign" 0 29 "int8()" `707 
+f G "IsCenterAndNotMargins" 0 30 "int8()" `708 
+f G "IsCenterInside" 0 31 "int8()" `709 
+f G "IsMarginsInside" 0 32 "int8()" `710 
+f G "IsMarginsOutside" 0 33 "int8()" `711 
+f G "IsAllOutside" 0 34 "int8()" `712  "/Curva a direita"
+f G "IsRight" 0 36 "int8()" `713 
+f G "IsLeft" 0 37 "int8()" `714 
+f G "IsAllAlign" 0 38 "int8()" `715  "/uma linha preta sobre todos"
+f G "Align" 0 40 "void()" `716 
+f G "InvertedAlign" 0 41 "void()" `717 
+F G "timerTick" 0 45 "void()" `718 
 C L "timerTick" 0 19 9 "FUNCTION"
-F G "MAIN" 0 91 "void()" `724 
+F G "MAIN" 0 96 "void()" `729 
 C L "MAIN" 0 19 1 "FUNCTION"
 C L "MAIN" 0 19 1 "FUNCTION"
 C L "MAIN" 0 19 1 "FUNCTION"
 C L "MAIN" 0 19 1 "FUNCTION"
-F G "AndarReto" 0 171 "void()" `706 
-F G "IsCenterAlign" 0 176 "int8()" `707 
-V L "ad2Ratio" 0 177 "float" `730 
-V L "ad3Ratio" 0 178 "float" `736 
-F G "IsRight" 0 189 "int8()" `708 
-F G "IsCenterAndNotMargins" 0 200 "int8()" `711 
-F G "IsLeft" 0 211 "int8()" `709 
-F G "IsAllAlign" 0 222 "int8()" `710 
-F G "Align" 0 234 "void()" `712 
-V L "ad2Ratio" 0 235 "float" `740 
-V L "ad3Ratio" 0 236 "float" `741 
+C L "MAIN" 0 19 1 "FUNCTION"
+C L "MAIN" 0 19 1 "FUNCTION"
+C L "MAIN" 0 19 1 "FUNCTION"
+C L "MAIN" 0 19 1 "FUNCTION"
+C L "MAIN" 0 19 1 "FUNCTION"
+C L "MAIN" 0 19 4 "FUNCTION"
+C L "MAIN" 0 19 1 "FUNCTION"
+C L "MAIN" 0 19 1 "FUNCTION"
+C L "MAIN" 0 19 1 "FUNCTION"
+C L "MAIN" 0 19 1 "FUNCTION"
+C L "MAIN" 0 19 1 "FUNCTION"
+C L "MAIN" 0 19 1 "FUNCTION"
+C L "MAIN" 0 19 1 "FUNCTION"
+C L "MAIN" 0 19 2 "FUNCTION"
+C L "MAIN" 0 19 1 "FUNCTION"
+C L "MAIN" 0 19 1 "FUNCTION"
+C L "MAIN" 0 19 1 "FUNCTION"
+C L "MAIN" 0 19 1 "FUNCTION"
+F G "IsCenterAlign" 0 345 "int8()" `707 
+V L "ad2Ratio" 0 346 "float" `736 
+V L "ad3Ratio" 0 347 "float" `742 
+F G "IsRight" 0 358 "int8()" `713 
+F G "IsCenterAndNotMargins" 0 369 "int8()" `708 
+F G "IsCenterInside" 0 380 "int8()" `709 
+F G "IsMarginsInside" 0 391 "int8()" `710 
+F G "IsMarginsOutside" 0 402 "int8()" `711 
+F G "IsAllOutside" 0 413 "int8()" `712 
+F G "IsLeft" 0 424 "int8()" `714 
+F G "IsAllAlign" 0 435 "int8()" `715 
+F G "Align" 0 447 "void()" `716 
+V L "ad2Ratio" 0 448 "float" `746 
+V L "ad3Ratio" 0 449 "float" `747 
 C L "Align" 0 19 1 "FUNCTION"
 C L "Align" 0 19 2 "FUNCTION"
 C L "Align" 0 19 1 "FUNCTION"
 C L "Align" 0 19 3 "FUNCTION"
-V L "pwm1" 0 265 "int16" `744 
-V L "pwm2" 0 266 "int16" `753 
+V L "pwm1" 0 478 "int16" `750 
+V L "pwm2" 0 479 "int16" `759 
 C L "Align" 0 19 2 "FUNCTION"
 C L "Align" 0 19 2 "FUNCTION"
-F G "InvertedAlign" 0 285 "void()" `755 
-F G "Setup" 0 289 "void()" `705 
+C L "InvertedAlign" 0 19 1 "FUNCTION"
+F G "InvertedAlign" 0 499 "void()" `717 
+V L "ad2Ratio" 0 500 "float" `761 
+V L "ad3Ratio" 0 501 "float" `762 
+C L "InvertedAlign" 0 19 1 "FUNCTION"
+C L "InvertedAlign" 0 19 2 "FUNCTION"
+C L "InvertedAlign" 0 19 1 "FUNCTION"
+C L "InvertedAlign" 0 19 3 "FUNCTION"
+V L "pwm1" 0 530 "int16" `765 
+V L "pwm2" 0 531 "int16" `766 
+C L "InvertedAlign" 0 19 2 "FUNCTION"
+C L "InvertedAlign" 0 19 2 "FUNCTION"
+F G "Setup" 0 550 "void()" `705 
 C L "Setup" 0 19 2 "FUNCTION"
-F G "ClearScreen" 0 308 "void()" `704 
+F G "ClearScreen" 0 569 "void()" `704 
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep" 0 1
