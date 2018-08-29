@@ -1,5 +1,5 @@
 ÀÄAdministrador
-   ÃÄMAIN  0/356  Ram=1
+   ÃÄMAIN  0/576  Ram=1
    ³  ÃÄ@cinit1  (Inline)  Ram=0
    ³  ÃÄSetup  0/46  Ram=0
    ³  ³  ÃÄlcd_ini  0/162  Ram=2
@@ -85,6 +85,26 @@
    ³  ÃÄAlign  0/642  Ram=12
    ³  ³  ÀÄ*
    ³  ÃÄIsAllAlign  0/78  Ram=0
+   ³  ÃÄSetLeft  0/40  Ram=2
+   ³  ÃÄSetRight  0/40  Ram=2
+   ³  ÃÄRightBackwardLeftForward  0/18  Ram=0
+   ³  ÃÄ@delay_ms1  0/40  Ram=1
+   ³  ÃÄAlign  0/642  Ram=12
+   ³  ³  ÀÄ*
+   ³  ÃÄIsAllAlign  0/78  Ram=0
+   ³  ÃÄAlign  0/642  Ram=12
+   ³  ³  ÀÄ*
+   ³  ÃÄSetBothPwm  0/78  Ram=2
+   ³  ÃÄ@delay_ms1  0/40  Ram=1
+   ³  ÃÄSetBothPwm  0/78  Ram=2
+   ³  ÃÄAlign  0/642  Ram=12
+   ³  ³  ÀÄ*
+   ³  ÃÄIsAllAlign  0/78  Ram=0
+   ³  ÃÄAlign  0/642  Ram=12
+   ³  ³  ÀÄ*
+   ³  ÃÄIsLeft  0/78  Ram=0
+   ³  ÃÄSetBothPwm  0/78  Ram=2
+   ³  ÃÄSetBothPwm  0/78  Ram=2
    ³  ÀÄSetBothPwm  0/78  Ram=2
    ÀÄtimerTick  0/202  Ram=0
       ÃÄClearScreen  0/10  Ram=0
