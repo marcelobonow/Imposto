@@ -78,6 +78,36 @@ void para()
       output_bit(m2p2, 0);
 }
 
+void AllForward()
+{
+      output_bit(m1p1, 1);
+      output_bit(m1p2, 0);
+      output_bit(m2p1, 0);
+      output_bit(m2p2, 1);
+}
+void AllBackwards()
+{
+      output_bit(m1p1, 0);
+      output_bit(m1p2, 1);
+      output_bit(m2p1, 1);
+      output_bit(m2p2, 0);
+}
+
+void LeftBackwardRightForward()
+{
+      output_bit(m1p1, 1);
+      output_bit(m1p2, 0);
+      output_bit(m2p1, 1);
+      output_bit(m2p2, 0);
+}
+void RightBackwardLeftForward()
+{
+      output_bit(m1p1, 0);
+      output_bit(m1p2, 1);
+      output_bit(m2p1, 0);
+      output_bit(m2p2, 1);
+}
+
 void MotorInitialize()
 {
       setup_timer_2(T2_DIV_BY_16, 255, 1); //341 us overflow, 341 us interrupt

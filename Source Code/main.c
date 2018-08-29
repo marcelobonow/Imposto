@@ -31,6 +31,7 @@ int8 IsCenterAlign();
 int8 IsRight();
 int8 IsLeft();
 int8 IsAllAlign();
+int8 IsCenterAndNotMargins();
 ///uma linha preta sobre todos
 void Align();
 
@@ -56,22 +57,23 @@ void timerTick()
     if (timerBase == 2000)
     {
         timerBase = 0;
-        //ClearScreen();
+        ClearScreen();
         lcd_pos_xy(1, 1);
-        printf(lcd_escreve, "1: ");
-        printf(lcd_escreve, "%04ld", ad1);
-        printf(lcd_escreve, " 2: ");
-        printf(lcd_escreve, "%04ld", ad2);
-        lcd_pos_xy(1, 2);
-        printf(lcd_escreve, "3: ");
-        printf(lcd_escreve, "%04ld", ad3);
+        // printf(lcd_escreve, "1: ");
+        // printf(lcd_escreve, "%04ld", ad1);
+        // printf(lcd_escreve, " 2: ");
+        // printf(lcd_escreve, "%04ld", ad2);
+        // lcd_pos_xy(1, 2);
+        // printf(lcd_escreve, "3: ");
+        // printf(lcd_escreve, "%04ld", ad3);
         // printf(lcd_escreve, " 4: ");
         // printf(lcd_escreve, "%04ld", ad3);
         printf(lcd_escreve, " d: %d", decisionCounter);
+        printf(lcd_escreve, " c: %d", decisionInCoolDown);
 
-        if (decisionInCoolDown)
+        if (decisionInCoolDown > 0)
         {
-            decisionInCoolDown = 0;
+            decisionInCoolDown--;
         }
     }
     timerBase++;
@@ -107,33 +109,61 @@ void main()
             ///Esperar até ser colocado na linha de partida
             if (IsAllAlign())
             {
-                decisionCounter++;
-                decisionInCoolDown = 1;
-            }
-        }
-        else if (decisionCounter == 1 && !decisionInCoolDown)
-        {
-            if (running == 1)
-            {
-                Align();
+                lcd_pos_xy(1, 2);
+                printf(lcd_escreve, "TA NA POSICAO");
+                if (running)
+                {
+                    decisionCounter++;
+                    decisionInCoolDown = 5;
+                }
             }
             else
             {
-                SetBothPwm(0);
+                if (running)
+                {
+                    Align();
+                }
             }
-            if (IsAllAlign())
+        }
+        else if (decisionCounter == 1 && running)
+        {
+            Align();
+            ///TODO: Dobrar a direita
+            if (IsRight() && !decisionInCoolDown)
+            {
+                SetLeft(900);
+                SetRight(950);
+                RightBackwardLeftForward();
+                delay_ms(400);
+                decisionCounter++;
+                decisionInCoolDown = 5;
+            }
+        }
+        else if (decisionCounter == 2 && running)
+        {
+            if (IsCenterAlign() && !decisionInCoolDown)
             {
                 decisionCounter++;
-                decisionInCoolDown = 1;
+                decisionInCoolDown = 5;
+            }
+            else
+            {
+                ///Continua o que tava fazendo
             }
         }
-        else if (decisionCounter == 2 && !decisionInCoolDown)
+        else if (decisionCounter == 3)
+        {
+            Align();
+            if (IsAllAlign() && !decisionInCoolDown)
+            {
+                ///TODO: Dobrar a direita
+            }
+        }
+
+        if (running == 0)
         {
             SetBothPwm(0);
-            delay_ms(2000);
-            SetBothPwm(900);
         }
-        delay_ms(200);
     } while (1);
 }
 
@@ -158,6 +188,17 @@ int8 IsCenterAlign()
 int8 IsRight()
 {
     if (ad1 < 300 && ad2 >= 300 && ad3 >= 300 && ad4 >= 300)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+int8 IsCenterAndNotMargins()
+{
+    if (ad1 < 300 && ad2 >= 300 && ad3 >= 300 && ad4 < 300)
     {
         return 1;
     }
@@ -200,25 +241,34 @@ void Align()
         //Como quanto mais escuro mais alto, isso significa que o que esta com menos tem que subir,
         //e vai subir proporcionalmente a quanto a menos ele tem, esse valor é exatamente o oposto (que esta no outro ad)
 
-        lcd_pos_xy(1, 2);
+        lcd_pos_xy(1, 1);
 
-        //O ad1 é o da direita, se este esta maior, significa que o robo esta a direit
+        //O ad2 é o da direita, se este esta maior, significa que o robo esta a direita
         if (ad2Ratio > alignRatio)
         {
             printf(lcd_escreve, "Esta a direita");
-            SetRight(1000);
-            SetLeft(0);
+            SetBothPwm(950);
+            LeftBackwardRightForward();
         }
         else if (ad3Ratio > alignRatio)
         {
             printf(lcd_escreve, "Esta a esquerda");
-            SetRight(0);
-            SetLeft(1000);
+            SetBothPwm(950);
+            RightBackwardLeftForward();
         }
         else
         {
-            SetLeft((long)(ad2Ratio * 100) + 850);
-            SetRight((long)(ad3Ratio * 100) + 850);
+
+            ///777 é o minimo que o motor vai ter (ele precisa de uns 800 pra não ficar travado) e vai somar no maximo 246
+            ///Por isso que o maximo dele é 1023 (777 + 246), é possivel fazer com que o valor de maior que 1023 e limitar
+            ///Com um if, da para testar isso
+            long pwm1 = ad2Ratio * 246 + 777;
+            long pwm2 = ad3Ratio * 246 + 777;
+            SetLeft(pwm1);
+            SetRight(pwm2);
+            frente();
+            // SetLeft((long)(ad2Ratio * 100) + 850);
+            // SetRight((long)(ad3Ratio * 100) + 850);
         }
     }
     else
@@ -231,10 +281,14 @@ void Align()
     }
 }
 
+void InvertedAlign()
+{
+}
+
 void Setup()
 {
     adCounter = 1;
-    running = 1;
+    running = 0;
 
     setup_adc_ports(AN0_TO_AN3);
     setup_adc(ADC_CLOCK_DIV_4);
@@ -246,8 +300,8 @@ void Setup()
 
     lcd_ini();
     MotorInitialize();
-    SetBothPwm(1023);
-    frente();
+    // SetBothPwm(0);
+    // frente();
 }
 
 void ClearScreen()

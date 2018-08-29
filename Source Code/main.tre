@@ -1,25 +1,23 @@
-ÀÄmain
-   ÃÄMAIN  0/286  Ram=1
+ÀÄAdministrador
+   ÃÄMAIN  0/356  Ram=1
    ³  ÃÄ@cinit1  (Inline)  Ram=0
-   ³  ÃÄSetup  0/56  Ram=0
+   ³  ÃÄSetup  0/46  Ram=0
    ³  ³  ÃÄlcd_ini  0/162  Ram=2
    ³  ³  ³  ÃÄ@delay_ms1  0/40  Ram=1
    ³  ³  ³  ÃÄlcd_envia_nibble  0/58  Ram=1
    ³  ³  ³  ÃÄ@delay_ms1  0/40  Ram=1
    ³  ³  ³  ÃÄlcd_envia_nibble  0/58  Ram=1
-   ³  ³  ³  ÃÄ@const662  0/30  Ram=0
+   ³  ³  ³  ÃÄ@const666  0/30  Ram=0
    ³  ³  ³  ÀÄlcd_envia_byte  0/52  Ram=3
    ³  ³  ³     ÃÄ@delay_us1  0/32  Ram=1
    ³  ³  ³     ÃÄlcd_envia_nibble  0/58  Ram=1
    ³  ³  ³     ÀÄlcd_envia_nibble  0/58  Ram=1
-   ³  ³  ÃÄMotorInitialize  0/32  Ram=0
-   ³  ³  ÃÄSetBothPwm  0/78  Ram=2
-   ³  ³  ÀÄfrente  0/20  Ram=0
+   ³  ³  ÀÄMotorInitialize  0/32  Ram=0
    ³  ÃÄlcd_pos_xy  0/34  Ram=4
    ³  ³  ÀÄlcd_envia_byte  0/52  Ram=3
    ³  ³     ÀÄ*
    ³  ÃÄ@delay_ms1  0/40  Ram=1
-   ³  ÃÄ@PSTRINGC_678  0/32  Ram=2
+   ³  ÃÄ@PSTRINGC_682  0/44  Ram=2
    ³  ³  ÀÄlcd_escreve  0/70  Ram=1
    ³  ³     ÃÄlcd_envia_byte  0/52  Ram=3
    ³  ³     ³  ÀÄ*
@@ -32,7 +30,11 @@
    ³  ³        ÀÄ*
    ³  ÃÄ@delay_ms1  0/40  Ram=1
    ³  ÃÄIsAllAlign  0/78  Ram=0
-   ³  ÃÄAlign  0/604  Ram=12
+   ³  ÃÄlcd_pos_xy  0/34  Ram=4
+   ³  ³  ÀÄ*
+   ³  ÃÄ@PSTRINGC_682  0/44  Ram=2
+   ³  ³  ÀÄ*
+   ³  ÃÄAlign  0/642  Ram=12
    ³  ³  ÃÄ@ITOF  0/54  Ram=2
    ³  ³  ÃÄ@ITOF  0/54  Ram=2
    ³  ³  ÃÄ@DIVFF  0/346  Ram=14
@@ -42,60 +44,69 @@
    ³  ³  ÃÄlcd_pos_xy  0/34  Ram=4
    ³  ³  ³  ÀÄ*
    ³  ³  ÃÄ@FLT  0/118  Ram=10
-   ³  ³  ÃÄ@PSTRINGC_678  0/32  Ram=2
+   ³  ³  ÃÄ@PSTRINGC_682  0/44  Ram=2
    ³  ³  ³  ÀÄ*
-   ³  ³  ÃÄSetRight  0/40  Ram=2
-   ³  ³  ÃÄSetLeft  0/40  Ram=2
+   ³  ³  ÃÄSetBothPwm  0/78  Ram=2
+   ³  ³  ÃÄLeftBackwardRightForward  0/20  Ram=0
    ³  ³  ÃÄ@FLT  0/118  Ram=10
-   ³  ³  ÃÄ@PSTRINGC_678  0/32  Ram=2
+   ³  ³  ÃÄ@PSTRINGC_682  0/44  Ram=2
    ³  ³  ³  ÀÄ*
-   ³  ³  ÃÄSetRight  0/40  Ram=2
-   ³  ³  ÃÄSetLeft  0/40  Ram=2
+   ³  ³  ÃÄSetBothPwm  0/78  Ram=2
+   ³  ³  ÃÄRightBackwardLeftForward  0/18  Ram=0
    ³  ³  ÃÄ@MULFF  0/242  Ram=11
+   ³  ³  ÃÄ@ADDFF  0/618  Ram=16
+   ³  ³  ÃÄ@SFTOI  0/56  Ram=4
+   ³  ³  ÃÄ@MULFF  0/242  Ram=11
+   ³  ³  ÃÄ@ADDFF  0/618  Ram=16
    ³  ³  ÃÄ@SFTOI  0/56  Ram=4
    ³  ³  ÃÄSetLeft  0/40  Ram=2
-   ³  ³  ÃÄ@MULFF  0/242  Ram=11
-   ³  ³  ÃÄ@SFTOI  0/56  Ram=4
    ³  ³  ÃÄSetRight  0/40  Ram=2
+   ³  ³  ÃÄfrente  0/20  Ram=0
    ³  ³  ÃÄlcd_pos_xy  0/34  Ram=4
    ³  ³  ³  ÀÄ*
-   ³  ³  ÀÄ@PSTRINGC_678  0/32  Ram=2
+   ³  ³  ÀÄ@PSTRINGC_682  0/44  Ram=2
    ³  ³     ÀÄ*
-   ³  ÃÄSetBothPwm  0/78  Ram=2
-   ³  ÃÄIsAllAlign  0/78  Ram=0
-   ³  ÃÄSetBothPwm  0/78  Ram=2
+   ³  ÃÄAlign  0/642  Ram=12
+   ³  ³  ÀÄ*
+   ³  ÃÄIsRight  0/78  Ram=0
+   ³  ÃÄSetLeft  0/40  Ram=2
+   ³  ÃÄSetRight  0/40  Ram=2
+   ³  ÃÄRightBackwardLeftForward  0/18  Ram=0
    ³  ÃÄ@delay_ms1  0/40  Ram=1
-   ³  ÃÄSetBothPwm  0/78  Ram=2
-   ³  ÀÄ@delay_ms1  0/40  Ram=1
-   ÀÄtimerTick  0/258  Ram=0
-      ÃÄlcd_pos_xy  0/34  Ram=4
-      ³  ÀÄ*
-      ÃÄ@PSTRINGC_678  0/32  Ram=2
-      ³  ÀÄ*
-      ÃÄ@PRINTF_LD_678  0/242  Ram=9
+   ³  ÃÄIsCenterAlign  0/322  Ram=12
+   ³  ³  ÃÄ@ITOF  0/54  Ram=2
+   ³  ³  ÃÄ@ITOF  0/54  Ram=2
+   ³  ³  ÃÄ@DIVFF  0/346  Ram=14
+   ³  ³  ÃÄ@ITOF  0/54  Ram=2
+   ³  ³  ÃÄ@ITOF  0/54  Ram=2
+   ³  ³  ÃÄ@DIVFF  0/346  Ram=14
+   ³  ³  ÃÄ@FLT  0/118  Ram=10
+   ³  ³  ÀÄ@FLT  0/118  Ram=10
+   ³  ÃÄAlign  0/642  Ram=12
+   ³  ³  ÀÄ*
+   ³  ÃÄIsAllAlign  0/78  Ram=0
+   ³  ÀÄSetBothPwm  0/78  Ram=2
+   ÀÄtimerTick  0/202  Ram=0
+      ÃÄClearScreen  0/10  Ram=0
       ³  ÀÄlcd_escreve  0/70  Ram=1
       ³     ÀÄ*
-      ÃÄ@PSTRINGC_678  0/32  Ram=2
-      ³  ÀÄ*
-      ÃÄ@PRINTF_LD_678  0/242  Ram=9
-      ³  ÀÄ*
       ÃÄlcd_pos_xy  0/34  Ram=4
       ³  ÀÄ*
-      ÃÄ@PSTRINGC_678  0/32  Ram=2
-      ³  ÀÄ*
-      ÃÄ@PRINTF_LD_678  0/242  Ram=9
-      ³  ÀÄ*
-      ÃÄ@PSTRINGCN_678  0/32  Ram=3
+      ÃÄ@PSTRINGCN_682  0/30  Ram=3
       ³  ÀÄlcd_escreve  0/70  Ram=1
       ³     ÀÄ*
-      ÀÄ@PRINTF_D_678  0/172  Ram=6
-         ÃÄ@DIV88  0/40  Ram=3
-         ÃÄ@DIV88  0/40  Ram=3
-         ÃÄlcd_escreve  0/70  Ram=1
-         ³  ÀÄ*
-         ÃÄlcd_escreve  0/70  Ram=1
-         ³  ÀÄ*
-         ÃÄlcd_escreve  0/70  Ram=1
-         ³  ÀÄ*
-         ÀÄlcd_escreve  0/70  Ram=1
-            ÀÄ*
+      ÃÄ@PRINTF_D_682  0/170  Ram=6
+      ³  ÃÄ@DIV88  0/40  Ram=3
+      ³  ÃÄ@DIV88  0/40  Ram=3
+      ³  ÃÄlcd_escreve  0/70  Ram=1
+      ³  ³  ÀÄ*
+      ³  ÃÄlcd_escreve  0/70  Ram=1
+      ³  ³  ÀÄ*
+      ³  ÃÄlcd_escreve  0/70  Ram=1
+      ³  ³  ÀÄ*
+      ³  ÀÄlcd_escreve  0/70  Ram=1
+      ³     ÀÄ*
+      ÃÄ@PSTRINGCN_682  0/30  Ram=3
+      ³  ÀÄ*
+      ÀÄ@PRINTF_D_682  0/170  Ram=6
+         ÀÄ*

@@ -1,7 +1,7 @@
-D G "__PCH__" 0 257 ""5.015""
-D G "__DEVICE__" 0 257 "4550"
-D G "__DATE__" 0 257 ""28-ago-18""
-D G "__TIME__" 0 257 ""07:52:49"" "Standard Header file for the PIC18F4550 device ////////////////"
+D G "__PCH__" 0 315 ""5.015""
+D G "__DEVICE__" 0 315 "4550"
+D G "__DATE__" 0 315 ""28-ago-18""
+D G "__TIME__" 0 315 ""22:52:42"" "Standard Header file for the PIC18F4550 device ////////////////"
 c L "set_tris_a" 2 3 6 "FUNCTION"
 v L "value" 2 45 "int8" `54 
 f B "set_tris_a" 2 45 "void(int8 value)" `53 
@@ -925,15 +925,19 @@ F G "direita_tras" 3 50 "void()" `651
 F G "direita_frente" 3 58 "void()" `652 
 F G "esquerda_frente" 3 66 "void()" `653 
 F G "para" 3 74 "void()" `654 
-F G "MotorInitialize" 3 82 "void()" `655 
-C L "MotorInitialize" 3 83 1 "FUNCTION"
-V L "vel" 3 89 "int16" `657 
-F G "SetBothPwm" 3 90 "void(int16 vel)" `656 
-C L "SetBothPwm" 3 83 1 "FUNCTION"
-V L "vel" 3 95 "int16" `659 
-F G "SetRight" 3 96 "void(int16 vel)" `658 
-V L "vel" 3 99 "int16" `661 
-F G "SetLeft" 3 100 "void(int16 vel)" `660 
+F G "AllForward" 3 82 "void()" `655 
+F G "AllBackwards" 3 89 "void()" `656 
+F G "LeftBackwardRightForward" 3 97 "void()" `657 
+F G "RightBackwardLeftForward" 3 104 "void()" `658 
+F G "MotorInitialize" 3 112 "void()" `659 
+C L "MotorInitialize" 3 113 1 "FUNCTION"
+V L "vel" 3 119 "int16" `661 
+F G "SetBothPwm" 3 120 "void(int16 vel)" `660 
+C L "SetBothPwm" 3 113 1 "FUNCTION"
+V L "vel" 3 125 "int16" `663 
+F G "SetRight" 3 126 "void(int16 vel)" `662 
+V L "vel" 3 129 "int16" `665 
+F G "SetLeft" 3 130 "void(int16 vel)" `664 
 D G "lcd_rs" 4 29 "pin_d2" "pino rs do LCD"
 D G "lcd_enable" 4 30 "pin_d3" "pino enable do LCD"
 D G "lcd_d4" 4 31 "pin_d4" "pino de dados d4 do LCD"
@@ -942,11 +946,11 @@ D G "lcd_d6" 4 33 "pin_d6" "pino de dados d6 do LCD"
 D G "lcd_d7" 4 34 "pin_d7" "pino de dados d7 do LCD"
 D G "lcd_type" 4 37 "2" "0=5x7, 1=5x10, 2=2 linhas"
 D G "lcd_seg_lin" 4 38 "0x40" "Endere�o da segunda linha na RAM do LCD"
-V G "INI_LCD" 4 41 "[4]" `662 
+V G "INI_LCD" 4 41 "[4]" `666 
 C L "lcd_le_byte" 4 2 7 "FUNCTION"
 C L "lcd_le_byte" 4 2 1 "FUNCTION"
-F G "lcd_le_byte" 4 54 "int8()" `665 
-V L "dado" 4 55 "int8" `666  "configura os pinos de dados como entradas"
+F G "lcd_le_byte" 4 54 "int8()" `669 
+V L "dado" 4 55 "int8" `670  "configura os pinos de dados como entradas"
 C L "lcd_le_byte" 4 2 1 "FUNCTION"
 C L "lcd_le_byte" 4 2 1 "FUNCTION"
 C L "lcd_le_byte" 4 2 2 "FUNCTION"
@@ -954,84 +958,94 @@ C L "lcd_le_byte" 4 2 1 "FUNCTION"
 C L "lcd_le_byte" 4 2 1 "FUNCTION"
 C L "lcd_le_byte" 4 2 1 "FUNCTION"
 C L "lcd_le_byte" 4 2 1 "FUNCTION"
-V L "dado" 4 84 "int8" `668  "envia um dado de quatro bits para o display"
-F G "lcd_envia_nibble" 4 86 "void(int8 dado)" `667  "coloca os quatro bits nas saidas"
+V L "dado" 4 84 "int8" `672  "envia um dado de quatro bits para o display"
+F G "lcd_envia_nibble" 4 86 "void(int8 dado)" `671  "coloca os quatro bits nas saidas"
 C L "lcd_envia_nibble" 4 2 1 "FUNCTION"
-V L "endereco" 4 98 "int8" `670 
-V L "dado" 4 98 "int8" `671 
-F G "lcd_envia_byte" 4 99 "void(int8 endereco,int8 dado)" `669  "coloca a linha rs em 0"
+V L "endereco" 4 98 "int8" `674 
+V L "dado" 4 98 "int8" `675 
+F G "lcd_envia_byte" 4 99 "void(int8 endereco,int8 dado)" `673  "coloca a linha rs em 0"
 C L "lcd_envia_byte" 4 2 3 "FUNCTION"
 C L "lcd_envia_byte" 4 2 3 "FUNCTION"
 C L "lcd_envia_byte" 4 2 1 "FUNCTION"
 C L "lcd_envia_byte" 4 2 1 "FUNCTION"
 C L "lcd_ini" 4 2 1 "FUNCTION"
-F G "lcd_ini" 4 122 "void()" `672 
-V L "conta" 4 123 "int8" `673 
+F G "lcd_ini" 4 122 "void()" `676 
+V L "conta" 4 123 "int8" `677 
 C L "lcd_ini" 4 2 3 "FUNCTION"
 C L "lcd_ini" 4 2 1 "FUNCTION"
-V L "x" 4 147 "int8" `675 
-V L "y" 4 147 "int8" `676 
-F G "lcd_pos_xy" 4 148 "void(int8 x,int8 y)" `674 
-V L "endereco" 4 149 "int8" `677 
-V L "c" 4 158 "int8" `679  "envia caractere para o display"
-F G "lcd_escreve" 4 160 "void(int8 c)" `678 
-V L "x" 4 176 "int8" `681 
-V L "y" 4 176 "int8" `682  "le caractere do display"
-F G "lcd_le" 4 178 "int8(int8 x,int8 y)" `680 
-V L "valor" 4 179 "int8" `683  "seleciona a posi��o do caractere"
+V L "x" 4 147 "int8" `679 
+V L "y" 4 147 "int8" `680 
+F G "lcd_pos_xy" 4 148 "void(int8 x,int8 y)" `678 
+V L "endereco" 4 149 "int8" `681 
+V L "c" 4 158 "int8" `683  "envia caractere para o display"
+F G "lcd_escreve" 4 160 "void(int8 c)" `682 
+V L "x" 4 176 "int8" `685 
+V L "y" 4 176 "int8" `686  "le caractere do display"
+F G "lcd_le" 4 178 "int8(int8 x,int8 y)" `684 
+V L "valor" 4 179 "int8" `687  "seleciona a posi��o do caractere"
 C L "lcd_le" 4 2 1 "FUNCTION"
 C L "lcd_le" 4 2 1 "FUNCTION"
 C L "lcd_le" 4 2 1 "FUNCTION"
 C L "lcd_le" 4 2 1 "FUNCTION"
-F G "lcd_apaga" 4 193 "void()" `684 
-F G "lcd_cursor_on" 4 199 "void()" `685 
-F G "lcd_cursor_pisca" 4 204 "void()" `686 
-F G "lcd_cursor_off" 4 209 "void()" `687 
-F G "lcd_corre_esquerda" 4 214 "void()" `688 
-F G "lcd_corre_direita" 4 219 "void()" `689 
+F G "lcd_apaga" 4 193 "void()" `688 
+F G "lcd_cursor_on" 4 199 "void()" `689 
+F G "lcd_cursor_pisca" 4 204 "void()" `690 
+F G "lcd_cursor_off" 4 209 "void()" `691 
+F G "lcd_corre_esquerda" 4 214 "void()" `692 
+F G "lcd_corre_direita" 4 219 "void()" `693 
 D G "button1" 0 5 "pin_a4"
 D G "button2" 0 6 "pin_a5"
 D G "button3" 0 7 "pin_e0"
 D G "button4" 0 8 "pin_e1"
-V G "running" 0 10 "int8" `690  "extremo esquerda, centro esquerda, centro direita, extrema direita"
-V G "ad1" 0 13 "int16" `691 
-V G "ad2" 0 13 "int16" `692 
-V G "ad3" 0 13 "int16" `693 
-V G "ad4" 0 13 "int16" `694 
-V G "timerBase" 0 14 "int16" `695 
-V G "adCounter" 0 15 "int8" `696  "/Em qual decisão ele ta"
-V G "decisionCounter" 0 18 "int8" `697 
-V G "decisionInCoolDown" 0 20 "int8" `698 
-V G "alignRatio" 0 23 "float" `699 
-f G "ClearScreen" 0 25 "void()" `700 
-f G "Setup" 0 26 "void()" `701 
-f G "AndarReto" 0 27 "void()" `702  "/Se tiver retorna 1"
-f G "IsCenterAlign" 0 29 "int8()" `703  "/Curva a direita"
-f G "IsRight" 0 31 "int8()" `704 
-f G "IsLeft" 0 32 "int8()" `705 
-f G "IsAllAlign" 0 33 "int8()" `706  "/uma linha preta sobre todos"
-f G "Align" 0 35 "void()" `707 
-F G "timerTick" 0 39 "void()" `708 
-C L "timerTick" 0 19 1 "FUNCTION"
-C L "timerTick" 0 19 2 "FUNCTION"
-F G "MAIN" 0 89 "void()" `727 
+V G "running" 0 10 "int8" `694  "extremo esquerda, centro esquerda, centro direita, extrema direita"
+V G "ad1" 0 13 "int16" `695 
+V G "ad2" 0 13 "int16" `696 
+V G "ad3" 0 13 "int16" `697 
+V G "ad4" 0 13 "int16" `698 
+V G "timerBase" 0 14 "int16" `699 
+V G "adCounter" 0 15 "int8" `700  "/Em qual decisão ele ta"
+V G "decisionCounter" 0 18 "int8" `701 
+V G "decisionInCoolDown" 0 20 "int8" `702 
+V G "alignRatio" 0 23 "float" `703 
+f G "ClearScreen" 0 25 "void()" `704 
+f G "Setup" 0 26 "void()" `705 
+f G "AndarReto" 0 27 "void()" `706  "/Se tiver retorna 1"
+f G "IsCenterAlign" 0 29 "int8()" `707  "/Curva a direita"
+f G "IsRight" 0 31 "int8()" `708 
+f G "IsLeft" 0 32 "int8()" `709 
+f G "IsAllAlign" 0 33 "int8()" `710 
+f G "IsCenterAndNotMargins" 0 34 "int8()" `711  "/uma linha preta sobre todos"
+f G "Align" 0 36 "void()" `712 
+F G "timerTick" 0 40 "void()" `713 
+C L "timerTick" 0 19 9 "FUNCTION"
+F G "MAIN" 0 91 "void()" `724 
 C L "MAIN" 0 19 1 "FUNCTION"
-F G "AndarReto" 0 141 "void()" `702 
-F G "IsCenterAlign" 0 146 "int8()" `703 
-V L "ad2Ratio" 0 147 "float" `731 
-V L "ad3Ratio" 0 148 "float" `737 
-F G "IsRight" 0 159 "int8()" `704 
-F G "IsLeft" 0 170 "int8()" `705 
-F G "IsAllAlign" 0 181 "int8()" `706 
-F G "Align" 0 193 "void()" `707 
-V L "ad2Ratio" 0 194 "float" `741 
-V L "ad3Ratio" 0 195 "float" `742 
+C L "MAIN" 0 19 1 "FUNCTION"
+C L "MAIN" 0 19 1 "FUNCTION"
+C L "MAIN" 0 19 1 "FUNCTION"
+F G "AndarReto" 0 171 "void()" `706 
+F G "IsCenterAlign" 0 176 "int8()" `707 
+V L "ad2Ratio" 0 177 "float" `730 
+V L "ad3Ratio" 0 178 "float" `736 
+F G "IsRight" 0 189 "int8()" `708 
+F G "IsCenterAndNotMargins" 0 200 "int8()" `711 
+F G "IsLeft" 0 211 "int8()" `709 
+F G "IsAllAlign" 0 222 "int8()" `710 
+F G "Align" 0 234 "void()" `712 
+V L "ad2Ratio" 0 235 "float" `740 
+V L "ad3Ratio" 0 236 "float" `741 
 C L "Align" 0 19 1 "FUNCTION"
 C L "Align" 0 19 2 "FUNCTION"
 C L "Align" 0 19 1 "FUNCTION"
+C L "Align" 0 19 3 "FUNCTION"
+V L "pwm1" 0 265 "int16" `744 
+V L "pwm2" 0 266 "int16" `753 
 C L "Align" 0 19 2 "FUNCTION"
-F G "Setup" 0 235 "void()" `701 
-F G "ClearScreen" 0 254 "void()" `700 
+C L "Align" 0 19 2 "FUNCTION"
+F G "InvertedAlign" 0 285 "void()" `755 
+F G "Setup" 0 289 "void()" `705 
+C L "Setup" 0 19 2 "FUNCTION"
+F G "ClearScreen" 0 308 "void()" `704 
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep" 0 1
