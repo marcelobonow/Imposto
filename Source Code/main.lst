@@ -1,4 +1,4 @@
-CCS PCH C Compiler, Version 5.015, 5967               29-ago-18 20:37
+CCS PCH C Compiler, Version 5.015, 5967               29-ago-18 20:40
 
                Filename:   C:\Users\Administrador.NP152499\Music\Receita Federal\Robo\Source Code\main.lst
 
@@ -2197,8 +2197,8 @@ CCS PCH C Compiler, Version 5.015, 5967               29-ago-18 20:37
 ....................             { 
 ....................                 decisionCounter++; 
 23F6:  INCF   23,F
-....................                 decisionInCoolDown = 5; 
-23F8:  MOVLW  05
+....................                 decisionInCoolDown = 3; 
+23F8:  MOVLW  03
 23FA:  MOVWF  24
 ....................             } 
 ....................         } 
@@ -2226,8 +2226,8 @@ CCS PCH C Compiler, Version 5.015, 5967               29-ago-18 20:37
 241A:  CALL   1BA6
 ....................                 decisionCounter++; 
 241E:  INCF   23,F
-....................                 decisionInCoolDown = 5; 
-2420:  MOVLW  05
+....................                 decisionInCoolDown = 1; 
+2420:  MOVLW  01
 2422:  MOVWF  24
 ....................             } 
 ....................         } 
@@ -2249,8 +2249,8 @@ CCS PCH C Compiler, Version 5.015, 5967               29-ago-18 20:37
 ....................             { 
 ....................                 decisionCounter++; 
 243A:  INCF   23,F
-....................                 decisionInCoolDown = 2; 
-243C:  MOVLW  02
+....................                 decisionInCoolDown = 1; 
+243C:  MOVLW  01
 243E:  MOVWF  24
 ....................             } 
 ....................         } 

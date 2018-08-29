@@ -278,7 +278,7 @@ void main()
             if (IsAllOutside() && !decisionInCoolDown)
             {
                 decisionCounter++;
-                decisionInCoolDown = 5;
+                decisionInCoolDown = 3;
             }
         }
         else if (decisionCounter == 7)
@@ -289,7 +289,7 @@ void main()
             {
                 Align();
                 decisionCounter++;
-                decisionInCoolDown = 5;
+                decisionInCoolDown = 1;
             }
         }
         else if (decisionCounter == 8)
@@ -299,7 +299,7 @@ void main()
             if (IsLeft() && !decisionInCoolDown)
             {
                 decisionCounter++;
-                decisionInCoolDown = 2;
+                decisionInCoolDown = 1;
             }
         }
         else if (decisionCounter == 9)
