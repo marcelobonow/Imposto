@@ -109,101 +109,103 @@ void main()
         {
             running = 0;
         }
-        if (decisionCounter == 0)
-        {
-            ///Esperar até ser colocado na linha de partida
-            if (IsAllAlign())
-            {
-                lcd_pos_xy(1, 2);
-                printf(lcd_escreve, "TA NA POSICAO");
-                if (running)
-                {
-                    decisionCounter++;
-                    decisionInCoolDown = 5;
-                }
-            }
-            else
-            {
-                if (running)
-                {
-                    Align();
-                }
-            }
-        }
-        else if (decisionCounter == 1 && running)
-        {
-            ///Se alinha ate achar a curva a direita
-            Align();
-            if (IsRight() && !decisionInCoolDown)
-            {
-                ///Começa a fazer a curva a direita girando um pouco para a direita e dando uma ré
-                SetLeft(900);
-                SetRight(950);
-                RightBackwardLeftForward();
-                delay_ms(400);
-                decisionCounter++;
-                decisionInCoolDown = 5;
-            }
-        }
-        else if (decisionCounter == 2 && running)
-        {
-            if (IsCenterAlign() && !decisionInCoolDown)
-            {
-                decisionCounter++;
-                decisionInCoolDown = 5;
-            }
-            else
-            {
-                ///Continua Girando do jeito que estava ate ficar com os 2 sensores no centro
-            }
-        }
-        else if (decisionCounter == 3)
-        {
-            ///Anda alinhado até achar a linha preta
-            Align();
-            if (IsAllAlign() && !decisionInCoolDown)
-            {
-                SetLeft(900);
-                SetRight(950);
-                RightBackwardLeftForward();
-                delay_ms(500);
-                decisionCounter++;
-                decisionInCoolDown = 25;
-            }
-        }
-        else if (decisionCounter == 4)
-        {
-            ///Primeira linha de parada
-            Align();
-            if (IsAllAlign() && !decisionInCoolDown)
-            {
-                decisionCounter++;
-                decisionInCoolDown = 10;
-            }
-        }
-        else if (decisionCounter == 5)
-        {
-            ///Logo após passar a primeira linha de parada, anda alinhado até o decisioninCoolDown e para
-            Align();
-            if (!decisionInCoolDown)
-            {
-                SetBothPwm(0);
-                delay_ms(2000);
-                SetBothPwm(920);
-                decisionCounter++;
-            }
-        }
-        else if (decisionCounter == 6)
-        {
-            ///Logo após sair da parada, anda alinhado até achar a proxima linha completa
-            Align();
-            if (IsAllAlign() && !decisionInCoolDown)
-            {
-                decisionCounter++;
-                decisionInCoolDown = 5;
-            }
-        }
-        else if (decisionCounter == 7)
+        // if (decisionCounter == 0)
+        // {
+        //     ///Esperar até ser colocado na linha de partida
+        //     if (IsAllAlign())
+        //     {
+        //         lcd_pos_xy(1, 2);
+        //         printf(lcd_escreve, "TA NA POSICAO");
+        //         if (running)
+        //         {
+        //             decisionCounter++;
+        //             decisionInCoolDown = 5;
+        //         }
+        //     }
+        //     else
+        //     {
+        //         if (running)
+        //         {
+        //             Align();
+        //         }
+        //     }
+        // }
+        // else if (decisionCounter == 1 && running)
+        // {
+        //     ///Se alinha ate achar a curva a direita
+        //     Align();
+        //     if (IsRight() && !decisionInCoolDown)
+        //     {
+        //         ///Começa a fazer a curva a direita girando um pouco para a direita e dando uma ré
+        //         SetLeft(900);
+        //         SetRight(950);
+        //         RightBackwardLeftForward();
+        //         delay_ms(400);
+        //         decisionCounter++;
+        //         decisionInCoolDown = 5;
+        //     }
+        // }
+        // else if (decisionCounter == 2 && running)
+        // {
+        //     if (IsCenterAlign() && !decisionInCoolDown)
+        //     {
+        //         decisionCounter++;
+        //         decisionInCoolDown = 5;
+        //     }
+        //     else
+        //     {
+        //         ///Continua Girando do jeito que estava ate ficar com os 2 sensores no centro
+        //     }
+        // }
+        // else if (decisionCounter == 3)
+        // {
+        //     ///Anda alinhado até achar a linha preta
+        //     Align();
+        //     if (IsAllAlign() && !decisionInCoolDown)
+        //     {
+        //         SetLeft(900);
+        //         SetRight(950);
+        //         RightBackwardLeftForward();
+        //         delay_ms(500);
+        //         decisionCounter++;
+        //         decisionInCoolDown = 25;
+        //     }
+        // }
+        // else if (decisionCounter == 4)
+        // {
+        //     ///Primeira linha de parada
+        //     Align();
+        //     if (IsAllAlign() && !decisionInCoolDown)
+        //     {
+        //         decisionCounter++;
+        //         decisionInCoolDown = 10;
+        //     }
+        // }
+        // else if (decisionCounter == 5)
+        // {
+        //     ///Logo após passar a primeira linha de parada, anda alinhado até o decisioninCoolDown e para
+        //     Align();
+        //     if (!decisionInCoolDown)
+        //     {
+        //         SetBothPwm(0);
+        //         delay_ms(2000);
+        //         SetBothPwm(920);
+        //         decisionCounter++;
+        //     }
+        // }
+        // else if (decisionCounter == 6)
+        // {
+        //     ///Logo após sair da parada, anda alinhado até achar a proxima linha completa
+        //     Align();
+        //     if (IsAllAlign() && !decisionInCoolDown)
+        //     {
+        //         decisionCounter++;
+        //         decisionInCoolDown = 5;
+        //     }
+        // }
+
+        //Era 7
+        else if (decisionCounter == 0)
         {
             ///Passou pela linha completa do desafio de parar anda alinhado até a linha da esquerda do desafio de andar invertido
             Align();
@@ -213,26 +215,19 @@ void main()
                 decisionInCoolDown = 0;
             }
         }
-        else if (decisionCounter == 8)
+        else if (decisionCounter == 1)
         {
             ///Anda alinhado até chegar no desafio da linha invertida, a linha invertida começa quando o centro esta fora e as extremidades dentro
 
-            /*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                FREDERICO, TALVEZ AQUI SEJA BOM
-                ALINHAR COM UM VALOR MENOR DE PWM
-                OU ALINHAR DE FORMA MAIS SENSIVEL
-            !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            */
             Align();
             if (IsMarginsInside() && !decisionInCoolDown)
             {
                 ///Iniciou o desafio de linha invertido
                 decisionCounter++;
-                decisionInCoolDown = 20;
+                decisionInCoolDown = 1;
             }
         }
-        else if (decisionCounter == 9)
+        else if (decisionCounter == 2)
         {
             ///Desafio da linha invertida
             InvertedAlign();
@@ -240,36 +235,32 @@ void main()
             if (IsMarginsOutside() && !decisionInCoolDown)
             {
                 decisionCounter++;
-                decisionInCoolDown = 5;
+                decisionInCoolDown = 2;
             }
         }
-        else if (decisionCounter == 10)
+        else if (decisionCounter == 3)
         {
-            ///Fim do desafio de linha invertida
             Align();
             if (IsLeft() && !decisionInCoolDown)
             {
                 decisionCounter++;
-                decisionInCoolDown = 8;
+                decisionInCoolDown = 5;
             }
         }
-        ///11 e 12 curva esquerda
-        else if (decisionCounter == 11)
+        else if (decisionCounter == 4)
         {
-            ///Curva 90 graus a esquerda
             Align();
             if (IsLeft() && !decisionInCoolDown)
             {
-                ///TODO: Curva esquerda
                 SetLeft(950);
                 SetRight(900);
                 LeftBackwardRightForward();
                 delay_ms(500);
                 decisionCounter++;
-                decisionInCoolDown = 25;
+                decisionInCoolDown = 8;
             }
         }
-        else if (decisionCounter == 12)
+        else if (decisionCounter == 5)
         {
 
             Align();
@@ -279,7 +270,7 @@ void main()
                 decisionInCoolDown = 5;
             }
         }
-        else if (decisionCounter == 13)
+        else if (decisionCounter == 6)
         {
             ///Desafio de andar cego
             ///!!!!!!!!!!   AQUI ELE TERIA QUE ESTAR MUITO BEM ALINHADO, SERIA BOM TER A FUNÇÃO DE ALINHAR E COLOCAR PARA ALINHAR BEM AQUI
@@ -287,45 +278,77 @@ void main()
             if (IsAllOutside() && !decisionInCoolDown)
             {
                 decisionCounter++;
-                decisionInCoolDown = 25;
+                decisionInCoolDown = 5;
             }
         }
-        else if(decisionCounter == 14)
+        else if (decisionCounter == 7)
         {
             ///ESTA NO DESAFIO DE ANDAR SEM LINHA
             SetBothPwm(870);
-            if(IsCenterInside() && !decisionInCoolDown)
+            if (IsCenterInside() && !decisionInCoolDown)
             {
                 Align();
                 decisionCounter++;
                 decisionInCoolDown = 5;
             }
         }
-        else if(decisionCounter == 15)
+        else if (decisionCounter == 8)
         {
             ///Passou pelo desafio de andar sem linha
             Align();
-            if(IsLeft() && !decisionInCoolDown)
+            if (IsLeft() && !decisionInCoolDown)
             {
                 decisionCounter++;
-                decisionInCoolDown = 8;
+                decisionInCoolDown = 2;
             }
         }
-        else if(decisionCounter == 16)
+        else if (decisionCounter == 9)
         {
             Align();
-            if(IsRight() && !decisionInCoolDown)
+            if (IsRight() && !decisionInCoolDown)
             {
                 decisionCounter++;
-                decisionInCoolDown = 8;
+                decisionInCoolDown = 2;
             }
         }
-        else if(decisionCounter == 17)
+        else if (decisionCounter == 10)
+        {
+            Align();
+            if (IsRight() && !decisionInCoolDown)
+            {
+                decisionCounter++;
+                decisionInCoolDown = 2;
+            }
+        }
+        else if (decisionCounter == 11)
+        {
+            Align();
+            if (IsLeft() && !decisionInCoolDown)
+            {
+                SetLeft(950);
+                SetRight(900);
+                LeftBackwardRightForward();
+                delay_ms(500);
+                decisionCounter++;
+                decisionInCoolDown = 7;
+            }
+        }
+        else if (decisionCounter == 12)
+        {
+            Align();
+            if (IsAllAlign() && !decisionInCoolDown)
+            {
+                decisionCounter++;
+                decisionInCoolDown = 0;
+            }
+        }
+
+        else if (decisionCounter == 13)
         {
             ///TODO: desvia do desafio de remover o bloco
-           SetBothPwm(0);
-           lcd_pos_xy(1,1);
-           printf(lcd_escreve, "Fim do programado");
+            SetBothPwm(0);
+            lcd_pos_xy(1, 1);
+            printf(lcd_escreve, "Fim do programado");
         }
 
         else
@@ -378,7 +401,7 @@ int8 IsCenterAndNotMargins()
 }
 int8 IsCenterInside()
 {
-    if(ad2 >= 300 && ad3 >= 300)
+    if (ad2 >= 300 && ad3 >= 300)
     {
         return 1;
     }

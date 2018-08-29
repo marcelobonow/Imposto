@@ -1,8 +1,8 @@
 
-ROM used:   6040/32768 (18%)
-            6044/32768 (18%) including unused fragments
+ROM used:   5430/32768 (17%)
+            5434/32768 (17%) including unused fragments
 
-            3.4 Average locations per line
+            3.0 Average locations per line
             14.1 Average locations per statement
 
 RAM used:   42/2048 (2%) at main() level
@@ -13,13 +13,13 @@ Stack size: 31
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-  572   289  68  main.c
+  595   248  64  main.c
    14     0   0  main.h
   837     0   0  18F4550.h
-  133    59  14  Motor1.c
-  223    79  19  LCD_KIT.c
+  133    59  15  Motor1.c
+  223    79  20  LCD_KIT.c
 ----- -----
- 1779   427 Total
+ 1802   386 Total
 
 Page ROM  %  RAM   Vol Diff  Functions:
 ---- --- --- ---   --- ----  ----------
@@ -33,25 +33,23 @@ Page ROM  %  RAM   Vol Diff  Functions:
 0     40   0    2    30  1.5  SetRight
 0     40   0    2    40  0.6  SetLeft
 0     30   0    0             @const666
-0     58   0    1   260  1.9  lcd_envia_nibble
+0     58   1    1   260  1.9  lcd_envia_nibble
 0     52   0    3   176  2.7  lcd_envia_byte
 0    162   1    2   433  4.3  lcd_ini
 0     34   0    4   186  5.5  lcd_pos_xy
 0     70   1    1   290  4.1  lcd_escreve
 0    202   2    0   659  5.1  timerTick
-0      8   0    0   659  5.1  @const719
+0      8   0    0             @const719
 0     30   0    3             @PSTRINGCN_682
 0     40   0    3             @DIV88
-0    170   1    6             @PRINTF_D_682
+0    170   2    6             @PRINTF_D_682
 0      8   0    0             @const728
-0    968   8    1  4676  6.4  MAIN
-0     16   0    0  2696  6.4  @const732
+0    698   6    1  3409  6.4  MAIN
+0     16   0    0             @const732
 0     44   0    2             @PSTRINGC_682
-0     14   0    0             @const734
-0     18   0    0             @const735
+0     18   0    0             @const734
 0     54   0    2             @ITOF
 0    346   3   14   270  6.9  @DIVFF
-0    322   3   12   270  6.9  IsCenterAlign
 0    118   1   10   123  3.8  @FLT
 0     76   1    0   123  3.8  IsRight
 0     48   0    0    80  3.0  IsCenterInside
@@ -59,40 +57,40 @@ Page ROM  %  RAM   Vol Diff  Functions:
 0     44   0    0    80  3.0  IsMarginsOutside
 0     72   1    0   121  3.3  IsAllOutside
 0     76   1    0   123  3.8  IsLeft
-0     78   1    0   121  3.3  IsAllAlign
-0    642   5   12   771  5.8  Align
+0     80   1    0   121  3.3  IsAllAlign
+0    638   6   12   771  5.8  Align
+0     16   0    0   771  5.8  @const747
 0     16   0    0             @const748
-0     16   0    0             @const749
-0    242   2   11   774  6.3  @MULFF
-0    618   5   16   774  6.3  @ADDFF
-0     56   0    4   774  6.3  @SFTOI
-0     10   0    0             @const760
-0    674   6   12   774  6.3  InvertedAlign
-0     16   0    0   209  2.3  @const763
-0     16   0    0   209  2.3  @const764
-0     10   0    0    17  0.8  @const767
+0    242   2   11             @MULFF
+0    618   6   16             @ADDFF
+0     56   1    4             @SFTOI
+0     10   0    0   774  6.3  @const759
+0    672   6   12   774  6.3  InvertedAlign
+0     16   0    0   774  6.3  @const762
+0     16   0    0             @const763
+0     10   0    0   209  2.3  @const766
 0     46   0    0   209  2.3  Setup
 0     10   0    0    17  0.8  ClearScreen
- Inline         0             @cinit1
+ Inline         0    17  0.8  @cinit1
 
 Program metrics:
-    Functions               36
-    Statements              427
-    Comments                296
-    Volume (V)              28145
-    Difficulty (D)          135.1
-    Effort to implement (E) 3802191
-    Time to implement (T)   58 hours, 41 minutes
-    Est Delivered Bugs (B)  8
-    Cyclomatic Complexity   114
-    Maintainability (MI)    47
+    Functions               32
+    Statements              386
+    Comments                372
+    Volume (V)              19838
+    Difficulty (D)          113.7
+    Effort to implement (E) 2255246
+    Time to implement (T)   34 hours, 48 minutes
+    Est Delivered Bugs (B)  6
+    Cyclomatic Complexity   70
+    Maintainability (MI)    55
 
  Segment     Used  Free
 -----------  ----  ----
 00000-00FFE     0  4096  
 01000-01006     4  4  
 01008-01094   142  0  
-01096-07FFE  5894  22628  
+01096-07FFE  5284  23238  
 
 
 

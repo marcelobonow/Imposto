@@ -1,7 +1,7 @@
-D G "__PCH__" 0 549 ""5.015""
-D G "__DEVICE__" 0 549 "4550"
-D G "__DATE__" 0 549 ""29-ago-18""
-D G "__TIME__" 0 549 ""08:07:26"" "Standard Header file for the PIC18F4550 device ////////////////"
+D G "__PCH__" 0 596 ""5.015""
+D G "__DEVICE__" 0 596 "4550"
+D G "__DATE__" 0 596 ""29-ago-18""
+D G "__TIME__" 0 596 ""20:37:52"" "Standard Header file for the PIC18F4550 device ////////////////"
 c L "set_tris_a" 2 3 6 "FUNCTION"
 v L "value" 2 45 "int8" `54 
 f B "set_tris_a" 2 45 "void(int8 value)" `53 
@@ -1024,18 +1024,7 @@ f G "InvertedAlign" 0 41 "void()" `717
 F G "timerTick" 0 45 "void()" `718 
 C L "timerTick" 0 19 9 "FUNCTION"
 F G "MAIN" 0 96 "void()" `729 
-C L "MAIN" 0 19 1 "FUNCTION"
-C L "MAIN" 0 19 1 "FUNCTION"
-C L "MAIN" 0 19 1 "FUNCTION"
-C L "MAIN" 0 19 1 "FUNCTION"
-C L "MAIN" 0 19 1 "FUNCTION"
-C L "MAIN" 0 19 1 "FUNCTION"
-C L "MAIN" 0 19 1 "FUNCTION"
-C L "MAIN" 0 19 1 "FUNCTION"
-C L "MAIN" 0 19 1 "FUNCTION"
-C L "MAIN" 0 19 4 "FUNCTION"
-C L "MAIN" 0 19 1 "FUNCTION"
-C L "MAIN" 0 19 1 "FUNCTION"
+C L "MAIN" 0 19 59 "FUNCTION"
 C L "MAIN" 0 19 1 "FUNCTION"
 C L "MAIN" 0 19 1 "FUNCTION"
 C L "MAIN" 0 19 1 "FUNCTION"
@@ -1046,43 +1035,43 @@ C L "MAIN" 0 19 1 "FUNCTION"
 C L "MAIN" 0 19 1 "FUNCTION"
 C L "MAIN" 0 19 1 "FUNCTION"
 C L "MAIN" 0 19 1 "FUNCTION"
-F G "IsCenterAlign" 0 345 "int8()" `707 
-V L "ad2Ratio" 0 346 "float" `736 
-V L "ad3Ratio" 0 347 "float" `742 
-F G "IsRight" 0 358 "int8()" `713 
-F G "IsCenterAndNotMargins" 0 369 "int8()" `708 
-F G "IsCenterInside" 0 380 "int8()" `709 
-F G "IsMarginsInside" 0 391 "int8()" `710 
-F G "IsMarginsOutside" 0 402 "int8()" `711 
-F G "IsAllOutside" 0 413 "int8()" `712 
-F G "IsLeft" 0 424 "int8()" `714 
-F G "IsAllAlign" 0 435 "int8()" `715 
-F G "Align" 0 447 "void()" `716 
-V L "ad2Ratio" 0 448 "float" `746 
-V L "ad3Ratio" 0 449 "float" `747 
+F G "IsCenterAlign" 0 368 "int8()" `707 
+V L "ad2Ratio" 0 369 "float" `735 
+V L "ad3Ratio" 0 370 "float" `741 
+F G "IsRight" 0 381 "int8()" `713 
+F G "IsCenterAndNotMargins" 0 392 "int8()" `708 
+F G "IsCenterInside" 0 403 "int8()" `709 
+F G "IsMarginsInside" 0 414 "int8()" `710 
+F G "IsMarginsOutside" 0 425 "int8()" `711 
+F G "IsAllOutside" 0 436 "int8()" `712 
+F G "IsLeft" 0 447 "int8()" `714 
+F G "IsAllAlign" 0 458 "int8()" `715 
+F G "Align" 0 470 "void()" `716 
+V L "ad2Ratio" 0 471 "float" `745 
+V L "ad3Ratio" 0 472 "float" `746 
 C L "Align" 0 19 1 "FUNCTION"
 C L "Align" 0 19 2 "FUNCTION"
 C L "Align" 0 19 1 "FUNCTION"
 C L "Align" 0 19 3 "FUNCTION"
-V L "pwm1" 0 478 "int16" `750 
-V L "pwm2" 0 479 "int16" `759 
+V L "pwm1" 0 501 "int16" `749 
+V L "pwm2" 0 502 "int16" `758 
 C L "Align" 0 19 2 "FUNCTION"
 C L "Align" 0 19 2 "FUNCTION"
 C L "InvertedAlign" 0 19 1 "FUNCTION"
-F G "InvertedAlign" 0 499 "void()" `717 
-V L "ad2Ratio" 0 500 "float" `761 
-V L "ad3Ratio" 0 501 "float" `762 
+F G "InvertedAlign" 0 522 "void()" `717 
+V L "ad2Ratio" 0 523 "float" `760 
+V L "ad3Ratio" 0 524 "float" `761 
 C L "InvertedAlign" 0 19 1 "FUNCTION"
 C L "InvertedAlign" 0 19 2 "FUNCTION"
 C L "InvertedAlign" 0 19 1 "FUNCTION"
 C L "InvertedAlign" 0 19 3 "FUNCTION"
-V L "pwm1" 0 530 "int16" `765 
-V L "pwm2" 0 531 "int16" `766 
+V L "pwm1" 0 553 "int16" `764 
+V L "pwm2" 0 554 "int16" `765 
 C L "InvertedAlign" 0 19 2 "FUNCTION"
 C L "InvertedAlign" 0 19 2 "FUNCTION"
-F G "Setup" 0 550 "void()" `705 
+F G "Setup" 0 573 "void()" `705 
 C L "Setup" 0 19 2 "FUNCTION"
-F G "ClearScreen" 0 569 "void()" `704 
+F G "ClearScreen" 0 592 "void()" `704 
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep" 0 1
