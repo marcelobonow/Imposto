@@ -16,7 +16,7 @@ int8 adCounter;
 
 ///Em qual decisão ele ta
 int8 decisionCounter = 0;
-///Isso aqui serve para ele so contabilizar as tomadas de decisão a cadada 200ms (no timerBase)
+///Isso aqui serve para ele so contabilizar as tomadas de decisão a cada 200ms (no timerBase)
 int8 decisionInCoolDown = 0;
 
 //Quantos porcento pra um lado ele pode estar antes de ser considerado desalinhado
@@ -167,6 +167,7 @@ void main()
                 SetRight(950);
                 RightBackwardLeftForward();
                 delay_ms(500);
+				//if(isCenterAlign(){			-- if ad2 || ad3 is Align
                 decisionCounter++;
                 decisionInCoolDown = 25;
             }
@@ -387,7 +388,7 @@ int8 IsCenterInside()
         return 0;
     }
 }
-int8 IsMarginsInside()
+int8 IsMarginsInside() 
 {
     if (ad1 >= 300 && ad4 >= 400)
     {
