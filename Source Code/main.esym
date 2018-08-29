@@ -1,7 +1,7 @@
-D G "__PCH__" 0 354 ""5.015""
-D G "__DEVICE__" 0 354 "4550"
-D G "__DATE__" 0 354 ""28-ago-18""
-D G "__TIME__" 0 354 ""23:14:43"" "Standard Header file for the PIC18F4550 device ////////////////"
+D G "__PCH__" 0 315 ""5.015""
+D G "__DEVICE__" 0 315 "4550"
+D G "__DATE__" 0 315 ""28-ago-18""
+D G "__TIME__" 0 315 ""22:52:42"" "Standard Header file for the PIC18F4550 device ////////////////"
 c L "set_tris_a" 2 3 6 "FUNCTION"
 v L "value" 2 45 "int8" `54 
 f B "set_tris_a" 2 45 "void(int8 value)" `53 
@@ -1022,28 +1022,30 @@ F G "MAIN" 0 91 "void()" `724
 C L "MAIN" 0 19 1 "FUNCTION"
 C L "MAIN" 0 19 1 "FUNCTION"
 C L "MAIN" 0 19 1 "FUNCTION"
-F G "IsCenterAlign" 0 218 "int8()" `707 
-V L "ad2Ratio" 0 219 "float" `730 
-V L "ad3Ratio" 0 220 "float" `736 
-F G "IsRight" 0 231 "int8()" `708 
-F G "IsCenterAndNotMargins" 0 242 "int8()" `711 
-F G "IsLeft" 0 253 "int8()" `709 
-F G "IsAllAlign" 0 264 "int8()" `710 
-F G "Align" 0 276 "void()" `712 
-V L "ad2Ratio" 0 277 "float" `740 
-V L "ad3Ratio" 0 278 "float" `741 
+C L "MAIN" 0 19 1 "FUNCTION"
+F G "AndarReto" 0 171 "void()" `706 
+F G "IsCenterAlign" 0 176 "int8()" `707 
+V L "ad2Ratio" 0 177 "float" `730 
+V L "ad3Ratio" 0 178 "float" `736 
+F G "IsRight" 0 189 "int8()" `708 
+F G "IsCenterAndNotMargins" 0 200 "int8()" `711 
+F G "IsLeft" 0 211 "int8()" `709 
+F G "IsAllAlign" 0 222 "int8()" `710 
+F G "Align" 0 234 "void()" `712 
+V L "ad2Ratio" 0 235 "float" `740 
+V L "ad3Ratio" 0 236 "float" `741 
 C L "Align" 0 19 1 "FUNCTION"
 C L "Align" 0 19 2 "FUNCTION"
 C L "Align" 0 19 1 "FUNCTION"
 C L "Align" 0 19 3 "FUNCTION"
-V L "pwm1" 0 307 "int16" `744 
-V L "pwm2" 0 308 "int16" `753 
+V L "pwm1" 0 265 "int16" `744 
+V L "pwm2" 0 266 "int16" `753 
 C L "Align" 0 19 2 "FUNCTION"
 C L "Align" 0 19 2 "FUNCTION"
-F G "InvertedAlign" 0 327 "void()" `755 
-F G "Setup" 0 331 "void()" `705 
+F G "InvertedAlign" 0 285 "void()" `755 
+F G "Setup" 0 289 "void()" `705 
 C L "Setup" 0 19 2 "FUNCTION"
-F G "ClearScreen" 0 350 "void()" `704 
+F G "ClearScreen" 0 308 "void()" `704 
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep" 0 1

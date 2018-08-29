@@ -1,16 +1,16 @@
-CCS PCH C Compiler, Version 5.015, 5967               28-ago-18 23:14
+CCS PCH C Compiler, Version 5.015, 5967               28-ago-18 22:52
 
                Filename:   C:\Users\Administrador.NP152499\Music\Receita Federal\Robo\Source Code\main.lst
 
-               ROM used:   4710 bytes (14%)
-                           Largest free fragment is 23958
+               ROM used:   4412 bytes (13%)
+                           Largest free fragment is 24256
                RAM used:   42 (2%) at main() level
                            88 (4%) worst case
                Stack used: 12 locations (6 in main + 6 for interrupts)
                Stack size: 31
 
 *
-1000:  GOTO   202A
+1000:  GOTO   1FDC
 *
 1008:  MOVWF  04
 100A:  MOVFF  FD8,05
@@ -1808,398 +1808,256 @@ CCS PCH C Compiler, Version 5.015, 5967               28-ago-18 23:14
 ....................  
 .................... void main() 
 *
-202A:  CLRF   FF8
-202C:  BCF    FD0.7
-202E:  BSF    07.7
-2030:  CLRF   21
-2032:  MOVLW  01
-2034:  MOVWF  20
-2036:  CLRF   23
-2038:  CLRF   24
-203A:  MOVLW  33
-203C:  MOVWF  28
-203E:  MOVWF  27
-2040:  MOVWF  26
-2042:  MOVLW  7E
-2044:  MOVWF  25
-2046:  MOVF   FC1,W
-2048:  ANDLW  C0
-204A:  IORLW  0F
-204C:  MOVWF  FC1
-204E:  MOVLW  07
-2050:  MOVWF  FB4
+1FDC:  CLRF   FF8
+1FDE:  BCF    FD0.7
+1FE0:  BSF    07.7
+1FE2:  CLRF   21
+1FE4:  MOVLW  01
+1FE6:  MOVWF  20
+1FE8:  CLRF   23
+1FEA:  CLRF   24
+1FEC:  MOVLW  33
+1FEE:  MOVWF  28
+1FF0:  MOVWF  27
+1FF2:  MOVWF  26
+1FF4:  MOVLW  7E
+1FF6:  MOVWF  25
+1FF8:  MOVF   FC1,W
+1FFA:  ANDLW  C0
+1FFC:  IORLW  0F
+1FFE:  MOVWF  FC1
+2000:  MOVLW  07
+2002:  MOVWF  FB4
 .................... { 
 ....................     Setup(); 
-2052:  GOTO   14B0
-2056:  CLRF   16
-2058:  BTFSC  FF2.7
-205A:  BSF    16.7
-205C:  BCF    FF2.7
+2004:  GOTO   14B0
+2008:  CLRF   16
+200A:  BTFSC  FF2.7
+200C:  BSF    16.7
+200E:  BCF    FF2.7
 ....................     lcd_pos_xy(1, 1); 
-205E:  MOVLW  01
-2060:  MOVWF  50
-2062:  MOVWF  51
-2064:  CALL   116A
-2068:  BTFSC  16.7
-206A:  BSF    FF2.7
-206C:  CLRF   16
-206E:  BTFSC  FF2.7
-2070:  BSF    16.7
-2072:  BCF    FF2.7
+2010:  MOVLW  01
+2012:  MOVWF  50
+2014:  MOVWF  51
+2016:  CALL   116A
+201A:  BTFSC  16.7
+201C:  BSF    FF2.7
+201E:  CLRF   16
+2020:  BTFSC  FF2.7
+2022:  BSF    16.7
+2024:  BCF    FF2.7
 ....................     delay_ms(5); 
-2074:  MOVLW  05
-2076:  MOVWF  50
-2078:  CALL   1142
-207C:  BTFSC  16.7
-207E:  BSF    FF2.7
+2026:  MOVLW  05
+2028:  MOVWF  50
+202A:  CALL   1142
+202E:  BTFSC  16.7
+2030:  BSF    FF2.7
 ....................     printf(lcd_escreve, " Inicializando"); 
-2080:  MOVLW  A6
-2082:  MOVWF  FF6
-2084:  MOVLW  13
-2086:  MOVWF  FF7
-2088:  CALL   14DE
+2032:  MOVLW  A6
+2034:  MOVWF  FF6
+2036:  MOVLW  13
+2038:  MOVWF  FF7
+203A:  CALL   14DE
 ....................     delay_ms(1000); 
-208C:  MOVLW  04
-208E:  MOVWF  29
-2090:  CLRF   16
-2092:  BTFSC  FF2.7
-2094:  BSF    16.7
-2096:  BCF    FF2.7
-2098:  MOVLW  FA
-209A:  MOVWF  50
-209C:  CALL   1142
-20A0:  BTFSC  16.7
-20A2:  BSF    FF2.7
-20A4:  DECFSZ 29,F
-20A6:  BRA    2090
+203E:  MOVLW  04
+2040:  MOVWF  29
+2042:  CLRF   16
+2044:  BTFSC  FF2.7
+2046:  BSF    16.7
+2048:  BCF    FF2.7
+204A:  MOVLW  FA
+204C:  MOVWF  50
+204E:  CALL   1142
+2052:  BTFSC  16.7
+2054:  BSF    FF2.7
+2056:  DECFSZ 29,F
+2058:  BRA    2042
 ....................     do 
 ....................     { 
 ....................         if (input(button1) == 0) 
-20A8:  BSF    F92.4
-20AA:  BTFSC  F80.4
-20AC:  BRA    20B2
+205A:  BSF    F92.4
+205C:  BTFSC  F80.4
+205E:  BRA    2064
 ....................         { 
 ....................             running = 1; 
-20AE:  MOVLW  01
-20B0:  MOVWF  17
+2060:  MOVLW  01
+2062:  MOVWF  17
 ....................         } 
 ....................         if (input(button2) == 0) 
-20B2:  BSF    F92.5
-20B4:  BTFSC  F80.5
-20B6:  BRA    20BA
+2064:  BSF    F92.5
+2066:  BTFSC  F80.5
+2068:  BRA    206C
 ....................         { 
 ....................             running = 0; 
-20B8:  CLRF   17
+206A:  CLRF   17
 ....................         } 
 ....................         if (decisionCounter == 0) 
-20BA:  MOVF   23,F
-20BC:  BNZ   20FE
+206C:  MOVF   23,F
+206E:  BNZ   20B0
 ....................         { 
 ....................             ///Esperar até ser colocado na linha de partida 
 ....................             if (IsAllAlign()) 
-20BE:  CALL   150A
-20C2:  MOVF   01,F
-20C4:  BZ    20F6
-20C6:  CLRF   16
-20C8:  BTFSC  FF2.7
-20CA:  BSF    16.7
-20CC:  BCF    FF2.7
+2070:  CALL   150A
+2074:  MOVF   01,F
+2076:  BZ    20A8
+2078:  CLRF   16
+207A:  BTFSC  FF2.7
+207C:  BSF    16.7
+207E:  BCF    FF2.7
 ....................             { 
 ....................                 lcd_pos_xy(1, 2); 
-20CE:  MOVLW  01
-20D0:  MOVWF  50
-20D2:  MOVLW  02
-20D4:  MOVWF  51
-20D6:  CALL   116A
-20DA:  BTFSC  16.7
-20DC:  BSF    FF2.7
+2080:  MOVLW  01
+2082:  MOVWF  50
+2084:  MOVLW  02
+2086:  MOVWF  51
+2088:  CALL   116A
+208C:  BTFSC  16.7
+208E:  BSF    FF2.7
 ....................                 printf(lcd_escreve, "TA NA POSICAO"); 
-20DE:  MOVLW  B6
-20E0:  MOVWF  FF6
-20E2:  MOVLW  13
-20E4:  MOVWF  FF7
-20E6:  CALL   14DE
+2090:  MOVLW  B6
+2092:  MOVWF  FF6
+2094:  MOVLW  13
+2096:  MOVWF  FF7
+2098:  CALL   14DE
 ....................                 if (running) 
-20EA:  MOVF   17,F
-20EC:  BZ    20F4
+209C:  MOVF   17,F
+209E:  BZ    20A6
 ....................                 { 
 ....................                     decisionCounter++; 
-20EE:  INCF   23,F
+20A0:  INCF   23,F
 ....................                     decisionInCoolDown = 5; 
-20F0:  MOVLW  05
-20F2:  MOVWF  24
+20A2:  MOVLW  05
+20A4:  MOVWF  24
 ....................                 } 
 ....................             } 
-20F4:  BRA    20FC
+20A6:  BRA    20AE
 ....................             else 
 ....................             { 
 ....................                 if (running) 
-20F6:  MOVF   17,F
-20F8:  BZ    20FC
+20A8:  MOVF   17,F
+20AA:  BZ    20AE
 ....................                 { 
 ....................                     Align(); 
-20FA:  RCALL  1BCA
+20AC:  RCALL  1BCA
 ....................                 } 
 ....................             } 
 ....................         } 
-20FC:  BRA    2252
+20AE:  BRA    2130
 ....................         else if (decisionCounter == 1 && running) 
-20FE:  DECFSZ 23,W
-2100:  BRA    214E
-2102:  MOVF   17,F
-2104:  BZ    214E
+20B0:  DECFSZ 23,W
+20B2:  BRA    2100
+20B4:  MOVF   17,F
+20B6:  BZ    2100
 ....................         { 
 ....................             Align(); 
-2106:  RCALL  1BCA
+20B8:  RCALL  1BCA
 ....................             ///TODO: Dobrar a direita 
 ....................             if (IsRight() && !decisionInCoolDown) 
-2108:  BRA    1E4C
-210A:  MOVF   01,F
-210C:  BZ    214C
-210E:  MOVF   24,F
-2110:  BNZ   214C
+20BA:  BRA    1E4C
+20BC:  MOVF   01,F
+20BE:  BZ    20FE
+20C0:  MOVF   24,F
+20C2:  BNZ   20FE
 ....................             { 
 ....................                 SetLeft(900); 
-2112:  MOVLW  03
-2114:  MOVWF  36
-2116:  MOVLW  84
-2118:  MOVWF  35
-211A:  RCALL  1B66
+20C4:  MOVLW  03
+20C6:  MOVWF  36
+20C8:  MOVLW  84
+20CA:  MOVWF  35
+20CC:  RCALL  1B66
 ....................                 SetRight(950); 
-211C:  MOVLW  03
-211E:  MOVWF  36
-2120:  MOVLW  B6
-2122:  MOVWF  35
-2124:  RCALL  1B8E
+20CE:  MOVLW  03
+20D0:  MOVWF  36
+20D2:  MOVLW  B6
+20D4:  MOVWF  35
+20D6:  RCALL  1B8E
 ....................                 RightBackwardLeftForward(); 
-2126:  CALL   17C0
+20D8:  CALL   17C0
 ....................                 delay_ms(400); 
-212A:  MOVLW  02
-212C:  MOVWF  29
-212E:  CLRF   16
-2130:  BTFSC  FF2.7
-2132:  BSF    16.7
-2134:  BCF    FF2.7
-2136:  MOVLW  C8
-2138:  MOVWF  50
-213A:  CALL   1142
-213E:  BTFSC  16.7
-2140:  BSF    FF2.7
-2142:  DECFSZ 29,F
-2144:  BRA    212E
+20DC:  MOVLW  02
+20DE:  MOVWF  29
+20E0:  CLRF   16
+20E2:  BTFSC  FF2.7
+20E4:  BSF    16.7
+20E6:  BCF    FF2.7
+20E8:  MOVLW  C8
+20EA:  MOVWF  50
+20EC:  CALL   1142
+20F0:  BTFSC  16.7
+20F2:  BSF    FF2.7
+20F4:  DECFSZ 29,F
+20F6:  BRA    20E0
 ....................                 decisionCounter++; 
-2146:  INCF   23,F
+20F8:  INCF   23,F
 ....................                 decisionInCoolDown = 5; 
-2148:  MOVLW  05
-214A:  MOVWF  24
+20FA:  MOVLW  05
+20FC:  MOVWF  24
 ....................             } 
 ....................         } 
-214C:  BRA    2252
+20FE:  BRA    2130
 ....................         else if (decisionCounter == 2 && running) 
-214E:  MOVF   23,W
-2150:  SUBLW  02
-2152:  BNZ   216A
-2154:  MOVF   17,F
-2156:  BZ    216A
+2100:  MOVF   23,W
+2102:  SUBLW  02
+2104:  BNZ   211C
+2106:  MOVF   17,F
+2108:  BZ    211C
 ....................         { 
 ....................             if (IsCenterAlign() && !decisionInCoolDown) 
-2158:  BRA    1E9A
-215A:  MOVF   01,F
-215C:  BZ    2168
-215E:  MOVF   24,F
-2160:  BNZ   2168
+210A:  BRA    1E9A
+210C:  MOVF   01,F
+210E:  BZ    211A
+2110:  MOVF   24,F
+2112:  BNZ   211A
 ....................             { 
 ....................                 decisionCounter++; 
-2162:  INCF   23,F
+2114:  INCF   23,F
 ....................                 decisionInCoolDown = 5; 
-2164:  MOVLW  05
-2166:  MOVWF  24
+2116:  MOVLW  05
+2118:  MOVWF  24
 ....................             } 
 ....................             else 
 ....................             { 
 ....................                 ///Continua o que tava fazendo 
 ....................             } 
 ....................         } 
-2168:  BRA    2252
+211A:  BRA    2130
 ....................         else if (decisionCounter == 3) 
-216A:  MOVF   23,W
-216C:  SUBLW  03
-216E:  BNZ   21BA
+211C:  MOVF   23,W
+211E:  SUBLW  03
+2120:  BNZ   2130
 ....................         { 
 ....................             Align(); 
-2170:  RCALL  1BCA
+2122:  RCALL  1BCA
 ....................             if (IsAllAlign() && !decisionInCoolDown) 
-2172:  CALL   150A
-2176:  MOVF   01,F
-2178:  BZ    21B8
-217A:  MOVF   24,F
-217C:  BNZ   21B8
+2124:  CALL   150A
+2128:  MOVF   01,F
+212A:  BZ    2130
+212C:  MOVF   24,F
+212E:  BNZ   2130
 ....................             { 
-....................                 SetLeft(900); 
-217E:  MOVLW  03
-2180:  MOVWF  36
-2182:  MOVLW  84
-2184:  MOVWF  35
-2186:  RCALL  1B66
-....................                 SetRight(950); 
-2188:  MOVLW  03
-218A:  MOVWF  36
-218C:  MOVLW  B6
-218E:  MOVWF  35
-2190:  RCALL  1B8E
-....................                 RightBackwardLeftForward(); 
-2192:  CALL   17C0
-....................                 delay_ms(500); 
-2196:  MOVLW  02
-2198:  MOVWF  29
-219A:  CLRF   16
-219C:  BTFSC  FF2.7
-219E:  BSF    16.7
-21A0:  BCF    FF2.7
-21A2:  MOVLW  FA
-21A4:  MOVWF  50
-21A6:  CALL   1142
-21AA:  BTFSC  16.7
-21AC:  BSF    FF2.7
-21AE:  DECFSZ 29,F
-21B0:  BRA    219A
-....................                 decisionCounter++; 
-21B2:  INCF   23,F
-....................                 decisionInCoolDown = 25; 
-21B4:  MOVLW  19
-21B6:  MOVWF  24
+....................                 ///TODO: Dobrar a direita 
 ....................             } 
-....................         } 
-21B8:  BRA    2252
-....................         else if (decisionCounter == 4) 
-21BA:  MOVF   23,W
-21BC:  SUBLW  04
-21BE:  BNZ   21D6
-....................         { 
-....................             Align(); 
-21C0:  RCALL  1BCA
-....................             if (IsAllAlign() && !decisionInCoolDown) 
-21C2:  CALL   150A
-21C6:  MOVF   01,F
-21C8:  BZ    21D4
-21CA:  MOVF   24,F
-21CC:  BNZ   21D4
-....................             { 
-....................                 decisionCounter++; 
-21CE:  INCF   23,F
-....................                 decisionInCoolDown = 10; 
-21D0:  MOVLW  0A
-21D2:  MOVWF  24
-....................             } 
-....................         } 
-21D4:  BRA    2252
-....................         else if (decisionCounter == 5) 
-21D6:  MOVF   23,W
-21D8:  SUBLW  05
-21DA:  BNZ   2216
-....................         { 
-....................             Align(); 
-21DC:  RCALL  1BCA
-....................             if (!decisionInCoolDown) 
-21DE:  MOVF   24,F
-21E0:  BNZ   2214
-....................             { 
-....................                 SetBothPwm(0); 
-21E2:  CLRF   36
-21E4:  CLRF   35
-21E6:  CALL   175E
-....................                 delay_ms(2000); 
-21EA:  MOVLW  08
-21EC:  MOVWF  29
-21EE:  CLRF   16
-21F0:  BTFSC  FF2.7
-21F2:  BSF    16.7
-21F4:  BCF    FF2.7
-21F6:  MOVLW  FA
-21F8:  MOVWF  50
-21FA:  CALL   1142
-21FE:  BTFSC  16.7
-2200:  BSF    FF2.7
-2202:  DECFSZ 29,F
-2204:  BRA    21EE
-....................                 SetBothPwm(920); 
-2206:  MOVLW  03
-2208:  MOVWF  36
-220A:  MOVLW  98
-220C:  MOVWF  35
-220E:  CALL   175E
-....................                 decisionCounter++; 
-2212:  INCF   23,F
-....................             } 
-....................         } 
-2214:  BRA    2252
-....................         else if (decisionCounter == 6) 
-2216:  MOVF   23,W
-2218:  SUBLW  06
-221A:  BNZ   2232
-....................         { 
-....................             Align(); 
-221C:  RCALL  1BCA
-....................             if (IsAllAlign() && !decisionInCoolDown) 
-221E:  CALL   150A
-2222:  MOVF   01,F
-2224:  BZ    2230
-2226:  MOVF   24,F
-2228:  BNZ   2230
-....................             { 
-....................                 decisionCounter++; 
-222A:  INCF   23,F
-....................                 decisionInCoolDown = 5; 
-222C:  MOVLW  05
-222E:  MOVWF  24
-....................             } 
-....................         } 
-2230:  BRA    2252
-....................         else if (decisionCounter == 7) 
-2232:  MOVF   23,W
-2234:  SUBLW  07
-2236:  BNZ   224A
-....................         { 
-....................             Align(); 
-2238:  RCALL  1BCA
-....................             if (IsLeft() && !decisionInCoolDown) 
-223A:  BRA    1FDC
-223C:  MOVF   01,F
-223E:  BZ    2248
-2240:  MOVF   24,F
-2242:  BNZ   2248
-....................             { 
-....................                 decisionCounter++; 
-2244:  INCF   23,F
-....................                 decisionInCoolDown = 0; 
-2246:  CLRF   24
-....................             } 
-....................         } 
-2248:  BRA    2252
-....................         else 
-....................         { 
-....................             SetBothPwm(0); 
-224A:  CLRF   36
-224C:  CLRF   35
-224E:  CALL   175E
 ....................         } 
 ....................  
 ....................         if (running == 0) 
-2252:  MOVF   17,F
-2254:  BNZ   2266
+2130:  MOVF   17,F
+2132:  BNZ   213C
 ....................         { 
 ....................             SetBothPwm(0); 
-2256:  CLRF   36
-2258:  CLRF   35
-225A:  CALL   175E
-....................             SetBothPwm(0); 
-225E:  CLRF   36
-2260:  CLRF   35
-2262:  CALL   175E
+2134:  CLRF   36
+2136:  CLRF   35
+2138:  CALL   175E
 ....................         } 
 ....................     } while (1); 
-2266:  BRA    20A8
+213C:  BRA    205A
 .................... } 
+....................  
+213E:  SLEEP 
+.................... void AndarReto() 
+.................... { 
+....................     SetBothPwm(1023); 
+.................... } 
+....................  
 .................... int8 IsCenterAlign() 
 *
 1E9A:  MOVFF  1B,3A
@@ -2260,13 +2118,10 @@ CCS PCH C Compiler, Version 5.015, 5967               28-ago-18 23:14
 1F5A:  MOVFF  02,2F
 1F5E:  MOVFF  01,2E
 1F62:  MOVFF  00,2D
-*
-2268:  SLEEP 
 .................... { 
 ....................     float ad2Ratio = (float)ad2 / (float)(ad1 + ad2); 
 ....................     float ad3Ratio = (float)ad3 / (float)(ad1 + ad2); 
 ....................     if (ad2 + ad3 > 300 && ad2Ratio < alignRatio && ad3Ratio < alignRatio) 
-*
 1F66:  MOVF   1C,W
 1F68:  ADDWF  1A,W
 1F6A:  MOVWF  31
@@ -2313,7 +2168,7 @@ CCS PCH C Compiler, Version 5.015, 5967               28-ago-18 23:14
 1FD4:  MOVLW  00
 1FD6:  MOVWF  01
 ....................     } 
-1FD8:  GOTO   215A (RETURN)
+1FD8:  GOTO   210C (RETURN)
 .................... } 
 .................... int8 IsRight() 
 .................... { 
@@ -2363,7 +2218,7 @@ CCS PCH C Compiler, Version 5.015, 5967               28-ago-18 23:14
 1E92:  MOVLW  00
 1E94:  MOVWF  01
 ....................     } 
-1E96:  GOTO   210A (RETURN)
+1E96:  GOTO   20BC (RETURN)
 .................... } 
 .................... int8 IsCenterAndNotMargins() 
 .................... { 
@@ -2379,52 +2234,13 @@ CCS PCH C Compiler, Version 5.015, 5967               28-ago-18 23:14
 .................... int8 IsLeft() 
 .................... { 
 ....................     if (ad1 >= 300 && ad2 >= 300 && ad3 >= 300 && ad4 < 300) 
-*
-1FDC:  MOVF   19,W
-1FDE:  SUBLW  00
-1FE0:  BC    2022
-1FE2:  XORLW  FF
-1FE4:  BNZ   1FEC
-1FE6:  MOVF   18,W
-1FE8:  SUBLW  2B
-1FEA:  BC    2022
-1FEC:  MOVF   1B,W
-1FEE:  SUBLW  00
-1FF0:  BC    2022
-1FF2:  XORLW  FF
-1FF4:  BNZ   1FFC
-1FF6:  MOVF   1A,W
-1FF8:  SUBLW  2B
-1FFA:  BC    2022
-1FFC:  MOVF   1D,W
-1FFE:  SUBLW  00
-2000:  BC    2022
-2002:  XORLW  FF
-2004:  BNZ   200C
-2006:  MOVF   1C,W
-2008:  SUBLW  2B
-200A:  BC    2022
-200C:  MOVF   1F,W
-200E:  SUBLW  01
-2010:  BNC   2022
-2012:  BNZ   201A
-2014:  MOVF   1E,W
-2016:  SUBLW  2B
-2018:  BNC   2022
 ....................     { 
 ....................         return 1; 
-201A:  MOVLW  01
-201C:  MOVWF  01
-201E:  BRA    2026
 ....................     } 
-2020:  BRA    2026
 ....................     else 
 ....................     { 
 ....................         return 0; 
-2022:  MOVLW  00
-2024:  MOVWF  01
 ....................     } 
-2026:  GOTO   223C (RETURN)
 .................... } 
 .................... int8 IsAllAlign() 
 .................... { 
@@ -2638,15 +2454,15 @@ CCS PCH C Compiler, Version 5.015, 5967               28-ago-18 23:14
 ....................             ///777 é o minimo que o motor vai ter (ele precisa de uns 800 pra não ficar travado) e vai somar no maximo 246 
 ....................             ///Por isso que o maximo dele é 1023 (777 + 246), é possivel fazer com que o valor de maior que 1023 e limitar 
 ....................             ///Com um if, da para testar isso 
-....................             long pwm1 = ad2Ratio * 173 + 850; 
-....................             long pwm2 = ad3Ratio * 173 + 850; 
+....................             long pwm1 = ad2Ratio * 246 + 777; 
+....................             long pwm2 = ad3Ratio * 246 + 777; 
 1D3A:  MOVFF  2C,38
 1D3E:  MOVFF  2B,37
 1D42:  MOVFF  2A,36
 1D46:  MOVFF  29,35
 1D4A:  CLRF   3C
 1D4C:  CLRF   3B
-1D4E:  MOVLW  2D
+1D4E:  MOVLW  76
 1D50:  MOVWF  3A
 1D52:  MOVLW  86
 1D54:  MOVWF  39
@@ -2661,9 +2477,9 @@ CCS PCH C Compiler, Version 5.015, 5967               28-ago-18 23:14
 1D72:  MOVFF  01,3A
 1D76:  MOVFF  00,39
 1D7A:  CLRF   40
-1D7C:  MOVLW  80
+1D7C:  MOVLW  40
 1D7E:  MOVWF  3F
-1D80:  MOVLW  54
+1D80:  MOVLW  42
 1D82:  MOVWF  3E
 1D84:  MOVLW  88
 1D86:  MOVWF  3D
@@ -2681,7 +2497,7 @@ CCS PCH C Compiler, Version 5.015, 5967               28-ago-18 23:14
 1DB0:  MOVFF  2D,35
 1DB4:  CLRF   3C
 1DB6:  CLRF   3B
-1DB8:  MOVLW  2D
+1DB8:  MOVLW  76
 1DBA:  MOVWF  3A
 1DBC:  MOVLW  86
 1DBE:  MOVWF  39
@@ -2696,9 +2512,9 @@ CCS PCH C Compiler, Version 5.015, 5967               28-ago-18 23:14
 1DDC:  MOVFF  01,3A
 1DE0:  MOVFF  00,39
 1DE4:  CLRF   40
-1DE6:  MOVLW  80
+1DE6:  MOVLW  40
 1DE8:  MOVWF  3F
-1DEA:  MOVLW  54
+1DEA:  MOVLW  42
 1DEC:  MOVWF  3E
 1DEE:  MOVLW  88
 1DF0:  MOVWF  3D
@@ -2793,7 +2609,7 @@ CCS PCH C Compiler, Version 5.015, 5967               28-ago-18 23:14
 14D6:  BRA    13EE
 ....................     MotorInitialize(); 
 14D8:  BRA    1490
-14DA:  GOTO   2056 (RETURN)
+14DA:  GOTO   2008 (RETURN)
 ....................     // SetBothPwm(0); 
 ....................     // frente(); 
 .................... } 

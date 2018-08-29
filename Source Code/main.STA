@@ -1,9 +1,9 @@
 
-ROM used:   4710/32768 (14%)
-            4714/32768 (14%) including unused fragments
+ROM used:   4412/32768 (13%)
+            4416/32768 (13%) including unused fragments
 
-            3.0 Average locations per line
-            15.0 Average locations per statement
+            2.9 Average locations per line
+            16.0 Average locations per statement
 
 RAM used:   42/2048 (2%) at main() level
             88/2048 (4%) worst case
@@ -13,13 +13,13 @@ Stack size: 31
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-  353   176  56  main.c
+  311   138  50  main.c
    14     0   0  main.h
   837     0   0  18F4550.h
-  133    59  19  Motor1.c
-  223    79  25  LCD_KIT.c
+  133    59  21  Motor1.c
+  223    79  29  LCD_KIT.c
 ----- -----
- 1560   314 Total
+ 1518   276 Total
 
 Page ROM  %  RAM   Vol Diff  Functions:
 ---- --- --- ---   --- ----  ----------
@@ -44,46 +44,45 @@ Page ROM  %  RAM   Vol Diff  Functions:
 0     40   0    3             @DIV88
 0    170   2    6    17  0.8  @PRINTF_D_682
 0      8   0    0             @const723
-0    576   6    1  2342  6.3  MAIN
+0    356   4    1  1247  6.2  MAIN
 0     16   0    0   270  6.9  @const727
 0     44   0    2             @PSTRINGC_682
 0     14   0    0    17  0.8  @const729
-0     54   1    2    17  0.8  @ITOF
-0    346   4   14   121  3.3  @DIVFF
-0    322   3   12   270  6.9  IsCenterAlign
-0    118   1   10   270  6.9  @FLT
+0     54   1    2   121  3.3  @ITOF
+0    346   4   14   270  6.9  @DIVFF
+0    322   4   12   270  6.9  IsCenterAlign
+0    118   1   10   123  3.8  @FLT
 0     78   1    0   123  3.8  IsRight
-0     78   1    0   123  3.8  IsLeft
 0     78   1    0   121  3.3  IsAllAlign
 0    642   7   12   771  5.8  Align
-0     16   0    0   771  5.8  @const742
-0     16   0    0   123  3.8  @const743
-0    242   3   11   209  2.3  @MULFF
+0     16   0    0   123  3.8  @const742
+0     16   0    0   209  2.3  @const743
+0    242   3   11    17  0.8  @MULFF
 0    618   7   16    17  0.8  @ADDFF
-0     56   1    4    17  0.8  @SFTOI
-0     10   0    0   209  2.3  @const754
-0     46   0    0   209  2.3  Setup
+0     56   1    4   209  2.3  @SFTOI
+0     10   0    0     3  0.0  @const754
+0     46   1    0   209  2.3  Setup
 0     10   0    0    17  0.8  ClearScreen
  Inline         0    17  0.8  @cinit1
 
 Program metrics:
-    Functions               35
-    Statements              314
-    Comments                257
-    Volume (V)              15891
-    Difficulty (D)          107.3
-    Effort to implement (E) 1705113
-    Time to implement (T)   26 hours, 19 minutes
-    Est Delivered Bugs (B)  5
-    Cyclomatic Complexity   52
-    Maintainability (MI)    60
+    Functions               34
+    Statements              276
+    Comments                258
+    Volume (V)              12974
+    Difficulty (D)          100.0
+    Effort to implement (E) 1296989
+    Time to implement (T)   20 hours, 1 minutes
+    Est Delivered Bugs (B)  4
+    Cyclomatic Complexity   41
+    Maintainability (MI)    61
 
  Segment     Used  Free
 -----------  ----  ----
 00000-00FFE     0  4096  
 01000-01006     4  4  
 01008-01094   142  0  
-01096-07FFE  4564  23958  
+01096-07FFE  4266  24256  
 
 
 

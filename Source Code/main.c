@@ -156,64 +156,22 @@ void main()
             Align();
             if (IsAllAlign() && !decisionInCoolDown)
             {
-                SetLeft(900);
-                SetRight(950);
-                RightBackwardLeftForward();
-                delay_ms(500);
-                decisionCounter++;
-                decisionInCoolDown = 25;
+                ///TODO: Dobrar a direita
             }
-        }
-        else if (decisionCounter == 4)
-        {
-            Align();
-            if (IsAllAlign() && !decisionInCoolDown)
-            {
-                decisionCounter++;
-                decisionInCoolDown = 10;
-            }
-        }
-        else if (decisionCounter == 5)
-        {
-            Align();
-            if (!decisionInCoolDown)
-            {
-                SetBothPwm(0);
-                delay_ms(2000);
-                SetBothPwm(920);
-                decisionCounter++;
-            }
-        }
-        else if (decisionCounter == 6)
-        {
-            Align();
-            if (IsAllAlign() && !decisionInCoolDown)
-            {
-                decisionCounter++;
-                decisionInCoolDown = 5;
-            }
-        }
-        else if (decisionCounter == 7)
-        {
-            Align();
-            if (IsLeft() && !decisionInCoolDown)
-            {
-                decisionCounter++;
-                decisionInCoolDown = 0;
-            }
-        }
-        else
-        {
-            SetBothPwm(0);
         }
 
         if (running == 0)
         {
             SetBothPwm(0);
-            SetBothPwm(0);
         }
     } while (1);
 }
+
+void AndarReto()
+{
+    SetBothPwm(1023);
+}
+
 int8 IsCenterAlign()
 {
     float ad2Ratio = (float)ad2 / (float)(ad1 + ad2);
@@ -304,8 +262,8 @@ void Align()
             ///777 é o minimo que o motor vai ter (ele precisa de uns 800 pra não ficar travado) e vai somar no maximo 246
             ///Por isso que o maximo dele é 1023 (777 + 246), é possivel fazer com que o valor de maior que 1023 e limitar
             ///Com um if, da para testar isso
-            long pwm1 = ad2Ratio * 173 + 850;
-            long pwm2 = ad3Ratio * 173 + 850;
+            long pwm1 = ad2Ratio * 246 + 777;
+            long pwm2 = ad3Ratio * 246 + 777;
             SetLeft(pwm1);
             SetRight(pwm2);
             frente();

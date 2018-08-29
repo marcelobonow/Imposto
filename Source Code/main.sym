@@ -165,22 +165,21 @@ ROM Allocation:
 001BCA  Align
 001E4C  IsRight
 001E9A  IsCenterAlign
-001FDC  IsLeft
-00202A  MAIN
-00202A  @cinit1
-002052  @cinit2
+001FDC  @cinit1
+001FDC  MAIN
+002004  @cinit2
 
 Project Directory:
     C:\Users\Administrador.NP152499\Music\Receita Federal\Robo\Source Code\
 
 Project Files:
-    main.c                                                  [28-ago-18 23:14  CRC=AA80BD66]
+    main.c                                                  [28-ago-18 22:52  CRC=0C2538B5]
     main.h                                                  [28-ago-18 20:45  CRC=6FD77C0A]
     18F4550.h                                               [28-ago-18 20:45  CRC=5337E248]
     Motor1.c                                                [28-ago-18 21:08  CRC=AFBA606B]
     LCD_KIT.c                                               [28-ago-18 20:45  CRC=AD240354]
 
-Source signature=779282CB
+Source signature=D936FE1A
 
 Units:
     main (main)
