@@ -15,7 +15,7 @@ int16 timerBase = 1;
 int8 adCounter;
 
 ///Em qual decisão ele ta
-int8 decisionCounter = 0;
+int8 decisionCounter = 3;//0
 ///Isso aqui serve para ele so contabilizar as tomadas de decisão a cadada 200ms (no timerBase)
 int8 decisionInCoolDown = 0;
 
@@ -109,7 +109,7 @@ void main()
         {
             running = 0;
         }
-         if (decisioncounter == 0)
+         /*if (decisioncounter == 0)
          {
              ///esperar até ser colocado na linha de partida
              if (isallalign())
@@ -130,121 +130,38 @@ void main()
                  }
              }
          }
-		 ///Começa desvio da Rampa
+		 ///Começa desafio da caixa
          else if (decisioncounter == 1 && running)
          {
              ///se alinha ate achar a curva a direita
              align();
              if (isright() && !decisionincooldown)
              {
-                 ///começa a fazer a curva a direita girando um pouco para a direita e dando uma ré
-                 setleft(900);
-                 setright(950);
-                 rightbackwardleftforward();
-                 delay_ms(400);
                  decisioncounter++;
                  decisionincooldown = 5;
              }
          }
+		 ///Termina desafio caixa
 		 else if (decisioncounter == 2 && running)
 		 {
-			 if (iscenteralign() && !decisionincooldown)
-			 {
-				 decisioncounter++;
-				 decisionincooldown = 5;
-			 }
-			 else
-			 {
-				 ///continua girando do jeito que estava ate ficar com os 2 sensores no centro
-			 }
-		 }
-		 else if (decisioncounter == 3) 
-		 {
-				align();
-				if (isLeft() && !decisionincooldown)
-				{
-					setleft(950);
-					setright(900);
-					leftbackwardrightforward();
-					delay_ms(400);
-					decisioncounter++;
-					decisionincooldown = 5;
-				}
-		 }
-		 else if (decisioncounter == 4)
-		 {
-			 if (iscenteralign() && !decisionincooldown)
-			 {
-				 decisioncounter++;
-				 decisionincooldown = 5;
-			 }
-			 else
-			 {
-				 ///continua girando do jeito que estava ate ficar com os 2 sensores no centro
-			 }
-		 }
-		 else if (decisioncounter == 5)
-		 {
 			 align();
-			 if (isLeft() && !decisionincooldown)
-			 {
-				 setleft(950);
-				 setright(900);
-				 leftbackwardrightforward();
-				 delay_ms(400);
-				 decisioncounter++;
-				 decisionincooldown = 5;
-			 }
-		 }
-		 else if (decisioncounter == 6)
-		 {
-			 if (iscenteralign() && !decisionincooldown)
+			 if (isright() && !decisionincooldown)
 			 {
 				 decisioncounter++;
 				 decisionincooldown = 5;
 			 }
-			 else
-			 {
-				 ///continua girando do jeito que estava ate ficar com os 2 sensores no centro
-			 }
-		 }
-		 ///Volta pra pista
-		 else if (decisioncounter == 7)
-		 {
-			 align();
-			 if (isRight() && !decisionincooldown)
-			 {
-				 setleft(900);
-				 setright(950);
-				 rightbackwardleftforward();
-				 delay_ms(400);
-				 decisioncounter++;
-				 decisionincooldown = 5;
-			 }
-		 }
-		 else if (decisioncounter == 8)
-		 {
-			 if (iscenteralign() && !decisionincooldown)
-			 {
-				 decisioncounter++;
-				 decisionincooldown = 5;
-			 }
-			 else
-			 {
-				 ///continua girando do jeito que estava ate ficar com os 2 sensores no centro
-			 }
-		 }
+		 }*/
 		 ///Primeira curva
-		 else if (decisioncounter == 9)
+		 else if (decisioncounter == 3)
 		 {
 			 align();
 			 if (isRight() && !decisionincooldown)
 			 {
-				 setleft(900);
-				 setright(950);
+				 setleft(920);
+				 setright(1000);
 				 rightbackwardleftforward();
-				 delay_ms(400);
-				 decisioncounter++;
+				 delay_ms(350);
+				 decisioncounter = decisioncounter + 7;
 				 decisionincooldown = 5;
 			 }
 		 }
@@ -266,10 +183,10 @@ void main()
 			 align();
 			 if (isRight() && !decisionincooldown)
 			 {
-				 setleft(900);
-				 setright(950);
+				 setleft(920);
+				 setright(1000);
 				 rightbackwardleftforward();
-				 delay_ms(400);
+				 delay_ms(350);
 				 decisioncounter++;
 				 decisionincooldown = 5;
 			 }
@@ -291,10 +208,10 @@ void main()
 			 align();
 			 if (isLeft() && !decisionincooldown)
 			 {
-				 setleft(950);
-				 setright(900);
+				 setleft(1000);
+				 setright(920);
 				 leftbackwardrightforward();
-				 delay_ms(400);
+				 delay_ms(350);
 				 decisioncounter++;
 				 decisionincooldown = 5;
 			 }
@@ -316,10 +233,10 @@ void main()
 			 align();
 			 if (isLeft() && !decisionincooldown)
 			 {
-				 setleft(950);
-				 setright(900);
+				 setleft(1000);
+				 setright(920);
 				 leftbackwardrightforward();
-				 delay_ms(400);
+				 delay_ms(350);
 				 decisioncounter++;
 				 decisionincooldown = 5;
 			 }
@@ -342,10 +259,10 @@ void main()
 			 align();
 			 if (isRight() && !decisionincooldown)
 			 {
-				 setleft(900);
-				 setright(950);
+				 setleft(950);
+				 setright(1000);
 				 rightbackwardleftforward();
-				 delay_ms(400);
+				 delay_ms(350);
 				 decisioncounter++;
 				 decisionincooldown = 5;
 			 }
@@ -369,10 +286,10 @@ void main()
 			 align();
 			 if (isLeft() && !decisionincooldown)
 			 {
-				 setleft(950);
-				 setright(900);
+				 setleft(1000);
+				 setright(920);
 				 leftbackwardrightforward();
-				 delay_ms(400);
+				 delay_ms(350);
 				 decisioncounter++;
 				 decisionincooldown = 5;
 			 }
@@ -419,10 +336,10 @@ void main()
 			 align();
 			 if (isRight() && !decisionincooldown)
 			 {
-				 setleft(900);
-				 setright(950);
+				 setleft(920);
+				 setright(1000);
 				 rightbackwardleftforward();
-				 delay_ms(400);
+				 delay_ms(350);
 				 decisioncounter++;
 				 decisionincooldown = 5;
 			 }
@@ -456,10 +373,10 @@ void main()
 			 if (isright() && !decisionincooldown)
 			 {
 				 ///começa a fazer a curva a direita girando um pouco para a direita e dando uma ré
-				 setleft(900);
-				 setright(950);
+				 setleft(920);
+				 setright(1000);
 				 rightbackwardleftforward();
-				 delay_ms(400);
+				 delay_ms(350);
 				 decisioncounter++;
 				 decisionincooldown = 5;
 			 }
@@ -481,10 +398,10 @@ void main()
 			 align();
 			 if (isLeft() && !decisionincooldown)
 			 {
-				 setleft(950);
-				 setright(900);
+				 setleft(1000);
+				 setright(920);
 				 leftbackwardrightforward();
-				 delay_ms(400);
+				 delay_ms(350);
 				 decisioncounter++;
 				 decisionincooldown = 5;
 			 }
