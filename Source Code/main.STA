@@ -1,94 +1,91 @@
 
-ROM used:   6094/32768 (19%)
-            6098/32768 (19%) including unused fragments
+ROM used:   3948/32768 (12%)
+            3952/32768 (12%) including unused fragments
 
             2.7 Average locations per line
-            10.7 Average locations per statement
+            16.7 Average locations per statement
 
-RAM used:   42/2048 (2%) at main() level
-            88/2048 (4%) worst case
+RAM used:   41/2048 (2%) at main() level
+            80/2048 (4%) worst case
 
-Stack used: 12 worst case (6 in main + 6 for interrupts)
+Stack used: 8 worst case (6 in main + 2 for interrupts)
 Stack size: 31
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
- 1014   430  76  main.c
+  135    64  27  main.c
    14     0   0  main.h
   837     0   0  18F4550.h
-  133    59  10  Motor1.c
-  223    79  14  LCD_KIT.c
+   58    23  10  Motor.c
+  185    71  30  Alignment.c
+  223    79  33  LCD_KIT.c
 ----- -----
- 2221   568 Total
+ 1452   237 Total
 
 Page ROM  %  RAM   Vol Diff  Functions:
 ---- --- --- ---   --- ----  ----------
-0     40   0    1             @delay_ms1
-0     32   0    1             @delay_us1
-0     20   0    0   108  1.7  frente
-0     18   0    0   108  1.7  LeftBackwardRightForward
-0     18   0    0   108  1.7  RightBackwardLeftForward
+0     40   1    1             @delay_ms1
+0     34   0    1             @delay_us1
+0     20   0    0   108  1.7  SetAllForward
+0     20   0    0   108  1.7  SetLeftBackwardRightForward
+0     20   0    0   108  1.7  SetRightBackwardLeftForward
 0     32   0    0    90  2.1  MotorInitialize
 0     78   1    2    53  1.7  SetBothPwm
-0     40   0    2    30  1.5  SetRight
-0     40   0    2    40  0.6  SetLeft
-0     30   0    0             @const666
-0     58   0    1   260  1.9  lcd_envia_nibble
-0     52   0    3   176  2.7  lcd_envia_byte
-0    162   1    2   433  4.3  lcd_ini
+0     42   1    2    30  1.5  SetRightPWM
+0     42   1    2    40  0.6  SetLeftPWM
+0     30   0    0   108  1.7  @const657
+0     58   1    1   260  1.9  lcd_envia_nibble
+0     52   1    3   176  2.7  lcd_envia_byte
+0    102   1    2   433  4.3  lcd_ini
 0     34   0    4   186  5.5  lcd_pos_xy
 0     70   1    1   290  4.1  lcd_escreve
-0    202   2    0   659  5.1  timerTick
-0      8   0    0             @const719
-0     30   0    3             @PSTRINGCN_682
-0     40   0    3             @DIV88
-0    170   1    6             @PRINTF_D_682
-0      8   0    0             @const728
-0   1810  15    1  9534  6.9  MAIN
-0     16   0    0             @const732
-0     44   0    2             @PSTRINGC_682
-0     18   0    0             @const734
-0     54   0    2             @ITOF
-0    346   3   14             @DIVFF
-0    320   3   12   270  6.9  IsCenterAlign
-0    118   1   10   270  6.9  @FLT
-0     76   1    0   123  3.8  IsRight
-0     48   0    0    80  3.0  IsCenterInside
-0     72   1    0   121  3.3  IsAllOutside
-0     76   1    0   123  3.8  IsLeft
-0     78   1    0   121  3.3  IsAllAlign
-0    634   5   12   771  5.8  Align
-0     16   0    0   771  5.8  @const747
-0     16   0    0             @const748
-0    242   2   11             @MULFF
-0    618   5   16             @ADDFF
-0     56   0    4             @SFTOI
-0     10   0    0             @const759
-0     16   0    0   774  6.3  @const762
-0     16   0    0             @const763
-0     10   0    0             @const766
-0     46   0    0   209  2.3  Setup
+0     36   0    8   123  2.9  SetAds
+0     54   1    2   176  2.7  @ITOF
+0    346   4   14   331  8.1  @DIVFF
+0    118   1   10   176  5.3  @FLT
+0     72   1    0   112  3.3  IsAllOutside
+0     80   1    0   112  3.3  IsAllAlign
+0    614   8   12   771  5.8  Align
+0     16   0    0    17  0.8  @const717
+0     32   0    2    17  0.8  @PSTRINGC_673
+0     16   0    0    17  0.8  @const719
+0    242   3   11    17  0.8  @MULFF
+0    618   8   16   480  4.6  @ADDFF
+0     56   1    4   121  3.3  @SFTOI
+0     10   0    0   882  6.7  @const730
+0     16   0    0   209  2.3  @const734
+0     16   0    0    17  0.8  @const735
+0     10   0    0   407  4.2  @const738
+0    212   3    0   477  4.7  timerTick
+0    236   3    1   861  5.2  MAIN
+0     16   0    0    17  0.8  @const750
+0      8   0    0   774  6.3  @const751
+0     30   0    3   774  6.3  @PSTRINGCN_673
+0     40   1    3   480  4.6  @DIV88
+0    170   2    6   771  5.8  @PRINTF_D_673
+0      8   0    0   209  2.3  @const760
+0     46   1    0   209  2.3  Setup
 0     10   0    0    17  0.8  ClearScreen
- Inline         0    17  0.8  @cinit1
+ Inline         0             @cinit1
 
 Program metrics:
-    Functions               27
-    Statements              568
-    Comments                551
-    Volume (V)              23331
-    Difficulty (D)          95.2
-    Effort to implement (E) 2221129
-    Time to implement (T)   34 hours, 17 minutes
+    Functions               40
+    Statements              237
+    Comments                257
+    Volume (V)              20148
+    Difficulty (D)          129.4
+    Effort to implement (E) 2607731
+    Time to implement (T)   40 hours, 15 minutes
     Est Delivered Bugs (B)  6
-    Cyclomatic Complexity   102
-    Maintainability (MI)    118
+    Cyclomatic Complexity   53
+    Maintainability (MI)    74
 
  Segment     Used  Free
 -----------  ----  ----
 00000-00FFE     0  4096  
 01000-01006     4  4  
 01008-01094   142  0  
-01096-07FFE  5948  22574  
+01096-07FFE  3802  24720  
 
 
 

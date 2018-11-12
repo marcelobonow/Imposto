@@ -48,9 +48,9 @@ AdditionalOptionString=
 Fixed=
 [Opened Files]
 1=main.c
-2=
-3=18F4550.h
-4=Motor1.c
+2=Alignment.c
+3=
+4=
 5=LCD_KIT.c
 6=
 7=
