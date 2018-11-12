@@ -16,10 +16,7 @@ void SetAds(int16 newAd1, int16 newAd2, int16 newAd3, int16 newAd4)
 
 int8 IsCenterAlign()
 {
-    float ad2Ratio = (float)ad2 / (float)(ad1 + ad2);
-    float ad3Ratio = (float)ad3 / (float)(ad1 + ad2);
-
-    if (ad2 + ad3 > 300 && ad2Ratio < alignRatio && ad3Ratio < alignRatio)
+    if (ad2 > 300 && ad3 > 300)
         return 1;
     else
         return 0;
@@ -86,7 +83,7 @@ void Align()
     float ad3Ratio = (float)ad3 / (float)(ad2 + ad3);
 
     ///alto significa escuro
-    if (ad2 + ad3 > 400)
+    if (ad2 > 300 || ad3 > 300)
     {
         //Como quanto mais escuro mais alto, isso significa que o que esta com menos tem que subir,
         //e vai subir proporcionalmente a quanto a menos ele tem, esse valor é exatamente o oposto (que esta no outro ad)
@@ -94,6 +91,8 @@ void Align()
         lcd_pos_xy(1, 1);
 
         //O ad2 é o da direita, se este esta maior, significa que o robo esta a direita
+
+        ///TODO: Talvez so ativar quanto tiver com valor absoluto maior q x
         if (ad2Ratio > alignRatio)
         {
             printf(lcd_escreve, "Esta a direita");
@@ -112,8 +111,8 @@ void Align()
             ///850 é o minimo que o motor vai ter (ele precisa de uns 800 pra não ficar travado) e vai somar no maximo 173
             ///Por isso que o maximo dele é 1023 (850 + 173), é possivel fazer com que o valor de maior que 1023 e limitar
             ///Com um if, da para testar isso
-            long pwm1 = ad2Ratio * 123 + 900;
-            long pwm2 = ad3Ratio * 123 + 900;
+            long pwm1 = ad2Ratio * 100 + 850;
+            long pwm2 = ad3Ratio * 100 + 850;
             SetLeftPWM(pwm1);
             SetRightPWM(pwm2);
             SetAllForward();
